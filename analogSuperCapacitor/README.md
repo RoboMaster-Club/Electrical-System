@@ -11,3 +11,10 @@ rm_supercap.pro
 ```
 
 Once selected the project should be loaded and ready to view or edit!
+
+## Todo
+
+1. Update `README.md`
+2. Update board design:
+3. Make bill of materials (BOM)
+4. Upload SPICE files
