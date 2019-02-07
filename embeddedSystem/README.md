@@ -4,7 +4,7 @@ This folder contains Arduino code (or future code) for the Super Capacitor Boost
 
 ## Usage
 
-
+To implement the code, simply import it to the Arduino IDE with corresponding library installed.
 
 ## Contributing
 
