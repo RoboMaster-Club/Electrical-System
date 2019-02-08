@@ -1,5 +1,7 @@
-# **Super capacitor power distribution test**
+# **Supercapacitor power distribution test**
 > For validating the design, it is necessary to simulate or create the actual circuit to see whether the design matches the expection. 
+
+## **code has been in the folder**
 
 ## **Stage 1**
 > Feb,2,2019
