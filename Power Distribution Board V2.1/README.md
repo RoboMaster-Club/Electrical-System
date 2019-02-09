@@ -1,31 +1,15 @@
-# Power System
-This repository belong to Purdue Robomaster, Electrical team's Robotics Power System
+# Power Distribution Board
+The power distibution board is used to deliver 24V power for the entire robot by @cmkz97
 
-## SubProjects
-1. `digitalSuperCapacitor/`
-   1. Digital Super Capacitor Modulator led by @[LEADER]
-   2. Folder Contents
-      1. Schematics Files
-      2. Schematics PDF
-      3. Board Files
-      4. Board PDF
-2. `analogSuperCapacitor/`
-   1. Analog Super Capacitor approach lead by @gantro
-   2. Folder Contents
-      1. Schematics Files
-      2. Schematics PDF
-      3. Board Files
-      4. Board PDF
-3. `embeddedSystem/`
-   1. Arduino based embedded system controller lead by @[LEADER]
-   2. Folder Contents
-      1. `src/`
-         1. Arduino Code 
-      2. `hardware/`
-         1. Schematics Files
-         2. Schematics PDF
-         3. Board Files
-         4. Board PDF 
+## Feature
+1. `Voltage Divier for ADC to monitoring voltage in real time`
+   1. with variable resistor for adjustment
+2. `Temperature Monitoring IC using I2C`
+   1. Enabled by <a href = 'http://ww1.microchip.com/downloads/en/DeviceDoc/25095A.pdf'>MCP9808M</a>
+3. `Hall Effect Currentl Monitor Up to 15A`
+   1. IC Used  <a href = 'https://www.allegromicro.com/~/media/Files/Datasheets/ACS723-Datasheet.ashx?la=en&hash=1800BF05ABE975CB295D729784D3AEABF820A0DC'>ACS723</a>
+   2. <b>Pls becareful of the MAX current rating. This same chip has multiple serial number that has different MAX current Seting</b>
+
 
 ## Todos
-1. [ ] Each team needs to write separate `README.md` file in their folder
+1. [ ] I faild to consider that the Flywheel draws up to 30A OF CURRENT.... I NEED MORE RESEARCH
