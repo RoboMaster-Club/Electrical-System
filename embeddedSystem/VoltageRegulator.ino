@@ -2,12 +2,12 @@
 #include "Adafruit_LiquidCrystal.h"
 //#include "Serial.h"
 
-# define VBATPIN 6
-# define VCAPIN  9
-# define IBATTPIN  10
-# define VRATIO 30 //Votage ratio: max voltage displayed
+# define VBATPIN A0
+# define VCAPIN  A1
+# define IBATTPIN  A2
+# define VRATIO 30.0//votage ratio: max voltage displayed
 # define VMIN 1
-# define VBOOST 10
+# define VBOOST A3
 
 Adafruit_LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 float vbatt = 0; //votage of battery
@@ -20,7 +20,7 @@ void setup()
 {
   lcd.begin(16,2);
   lcd.setBacklight(HIGH);
-
+ // Serial.begin(9600);
   pinMode(VBATPIN, INPUT);
   pinMode(VCAPIN, INPUT);
   pinMode(IBATTPIN, INPUT);
@@ -29,13 +29,14 @@ void setup()
 void loop() 
 {
   //reading data from mainboard
-  int v_batt_raw = analogRead(VBATPIN);
-  int v_cap_raw = analogRead(VCAPIN);
-  int i_batt_raw = analogRead(IBATTPIN);
+  float v_batt_raw = analogRead(VBATPIN); //A6
+  float v_cap_raw = analogRead(VCAPIN); //A9
+  float i_batt_raw = analogRead(IBATTPIN); //A10
 
-  vbatt = (float(v_batt_raw) / 1023) * VRATIO;
-  vcap =(float(v_cap_raw) / 1023) * VRATIO;
-  ibatt = (float(i_batt_raw) / 1023) * VRATIO;
+  //Serial.println(v_batt_raw);
+  vbatt = (v_batt_raw / 1023) * VRATIO;     //Hey we're getting 1.5ish when we're supposed to get 4.23 and we don't know why. Fantastic.
+  vcap =(v_cap_raw / 1023) * VRATIO;
+  ibatt = (i_batt_raw / 1023) * VRATIO;
 
   if(vcap <= VMIN)
   {
