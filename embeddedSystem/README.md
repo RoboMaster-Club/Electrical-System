@@ -18,4 +18,4 @@ VoltageRegulator.ino reads voltage of the battery, voltage of capacitor, current
 ## Notes
 
 Check out https://learn.adafruit.com/adafruit-mcp9808-precision-i2c-temperature-sensor-guide/arduino-code
-to see the temperature sensor code. Yet not sure if it's the right one--Charl
+to see the temperature sensor code. Sure it's the right one--Charl
