@@ -8,5 +8,9 @@ To implement the code, simply import it to the Arduino IDE with corresponding li
 
 ## Contributing
 
+Charlotte Huang, Roshni Sarma, Megan Singer
 
-## License
+## Progress
+
+VoltageRegulator.ino reads voltage of the battery, voltage of capacitor, current of battery to decide whether it boosts, and display the result on the LCD screen.
+(Once the other .inos are finished, they will be put on this colunm)
