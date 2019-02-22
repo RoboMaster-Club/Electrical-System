@@ -1,6 +1,6 @@
 # Embedded System
 
-This folder contains Arduino code (or future code) for the Super Capacitor Booster Project.
+This folder contains Arduino code (or future code)  and PCB designfor the Super Capacitor Booster Project.
 
 ## Usage
 
