@@ -28,3 +28,27 @@ Validating the charging, discharging, and detection functionality by using Analo
 - After analog input reading reaches 76/1023, the value stays constant
 
 ![qq 20190208070718](https://user-images.githubusercontent.com/47236078/52451397-c654e380-2b79-11e9-9a8b-113af8291b56.jpg)
+
+## **Stage 2**
+>Feb.15, 2019
+
+Supercapacitor voltage detecting circuit modification
+
+>Board modification
+![qq 20190222134428](https://user-images.githubusercontent.com/47236078/53222323-2d10eb80-36a8-11e9-92af-49cb25383e23.jpg)
+- The diameters of the connector holes expand to 0.95mm due to wrong calculations(P4 and P2 connector)
+- MOSFETs (Bottom 2 red areas) and  Schottky diode array (upper right) are placed on the exposure copper plate (red area). 
+- Some wire widh has been adjusted. 
+- circuit detecting circuit has been formally modified (first time). 
+- P2 connection has been changed to 5V from A3-detect. 
+
+>Detection circuit
+- Read the value correctly from A3-DETECT
+
+![qq 20190222140208](https://user-images.githubusercontent.com/47236078/53222925-79f5c180-36aa-11e9-9f79-3a7b80bee091.jpg)
+
+>Next Plan
+- Go EE to get components. 
+- Test Supercapacitors: teammate responses for.
+- Learn LT SPICE with Matthew. 
+- Overall supercapacitor program in Arduino. 
