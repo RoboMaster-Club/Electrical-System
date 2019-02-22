@@ -8,5 +8,14 @@ To implement the code, simply import it to the Arduino IDE with corresponding li
 
 ## Contributing
 
+Charlotte Huang, Roshni Sarma, Megan Singer
 
-## License
+## Progress
+
+VoltageRegulator.ino reads voltage of the battery, voltage of capacitor, current of battery to decide whether it boosts, and display the result on the LCD screen.
+(Once the other .inos are finished, they will be put on this colunm)
+
+## Notes
+
+Check out https://learn.adafruit.com/adafruit-mcp9808-precision-i2c-temperature-sensor-guide/arduino-code
+to see the temperature sensor code. Sure it's the right one--Charl

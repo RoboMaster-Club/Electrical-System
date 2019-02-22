@@ -1,34 +1,42 @@
 #include "Wire.h"
 #include "Adafruit_LiquidCrystal.h"
-#include "Serial.h"
+//#include "Serial.h"
 
-#define VBATPIN 3
-#define VCAPIN  2
-#define IBATTPIN  1
+# define VBATPIN A0
+# define VCAPIN  A1
+# define IBATTPIN  A2
+# define VRATIO 30.0//votage ratio: max voltage displayed
+# define VMIN 1
+# define VBOOST A3
 
+Adafruit_LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+float vbatt = 0; //votage of battery
+float vcap = 0; //votage of capacitor
+float ibatt = 0; //current of battery
+float temp = 0;
+bool boost = false; //whether it boosts
 
 void setup() 
 {
-  // put your setup code here, to run once:
-  float vbatt=0;
-  float vcap= 0;
-  float ibatt = 0;
-  float temp = 0;
-  bool boost=false;
   lcd.begin(16,2);
   lcd.setBacklight(HIGH);
+ // Serial.begin(9600);
+  pinMode(VBATPIN, INPUT);
+  pinMode(VCAPIN, INPUT);
+  pinMode(IBATTPIN, INPUT);
 }
 
 void loop() 
 {
-  // put your main code here, to run repeatedly:
-  int v_batt_raw =analogRead(VBATPIN);
-  int v_cap_raw = analogRead(VCAPIN);
-  int i_batt_raw = analogRead(IBATTPIN);
+  //reading data from mainboard
+  float v_batt_raw = analogRead(VBATPIN); //A6
+  float v_cap_raw = analogRead(VCAPIN); //A9
+  float i_batt_raw = analogRead(IBATTPIN); //A10
 
-  vbatt = (5.0f / v_batt_raw) * VRATIO;
-  vcap =(5.0f /v_cap_raw)*VRATIO;
-  ibatt = (5.0f/i_batt_raw)*VRATIO;
+  //Serial.println(v_batt_raw);
+  vbatt = (v_batt_raw / 1023) * VRATIO;     //Hey we're getting 1.5ish when we're supposed to get 4.23 and we don't know why. Fantastic.
+  vcap =(v_cap_raw / 1023) * VRATIO;
+  ibatt = (i_batt_raw / 1023) * VRATIO;
 
   if(vcap <= VMIN)
   {
@@ -36,10 +44,15 @@ void loop()
   }
   if(vcap>=VBOOST)
   {
-  boost = true; 
+    boost = true; 
   }
   
-  }
+  lcd.setCursor(0, 0);
+  lcd.print("vb:");
   lcd.print(vbatt);
+  lcd.print(" vc:");
   lcd.print(vcap);
+  lcd.setCursor(0, 1);
+  lcd.print("ib:");
   lcd.print(ibatt);
+  }
