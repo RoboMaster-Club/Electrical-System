@@ -1,7 +1,3 @@
-#include "Wire.h"
-#include "Adafruit_LiquidCrystal.h"
-//#include "Serial.h"
-
 # define VBATPIN A0
 # define VCAPIN  A1
 # define IBATTPIN  A2
@@ -16,17 +12,16 @@ float ibatt = 0; //current of battery
 float temp = 0;
 bool boost = false; //whether it boosts
 
-void setup() 
+void setup2() 
 {
   lcd.begin(16,2);
   lcd.setBacklight(HIGH);
- // Serial.begin(9600);
   pinMode(VBATPIN, INPUT);
   pinMode(VCAPIN, INPUT);
   pinMode(IBATTPIN, INPUT);
 }
 
-void loop() 
+void loop2() 
 {
   //reading data from mainboard
   float v_batt_raw = analogRead(VBATPIN); //A6
