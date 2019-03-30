@@ -1,8 +1,9 @@
 //Include Libraries
 #include "Wire.h"
-#include "WiFi.h"
 #include "Adafruit_LiquidCrystal.h"
 #include "Adafruit_MCP9808.h"
+#include "WiFi.h"
+// #include <WebSocketServer.h>
 
 //Defining Pins
 # define VBATPIN A0
@@ -27,12 +28,13 @@ Adafruit_LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 Adafruit_MCP9808 tempsensor = Adafruit_MCP9808();
 //SoftwareSerial esp32(RX, TX);
 
+// Set web server port number to 80
+WiFiServer server(80);
+// WebSocketServer webSocketServer;
+
 // Replace with your network credentials
 const char* ssid     = "RM-Access-Point";
 const char* password = "123456789";
-
-// Set web server port number to 80
-WiFiServer server(80);
 
 // Variable to store the HTTP request
 String header;
@@ -46,6 +48,4 @@ void setup() {
 
 void loop() {
   loop_AP();
-//  loop_temp();
-//  loop_reg();
 }
