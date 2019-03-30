@@ -1,14 +1,4 @@
-/* This is the "main" function of the program!!!*/
 
-// Replace with your network credentials
-const char* ssid     = "RM-Access-Point";
-const char* password = "123456789";
-
-// Set web server port number to 80
-WiFiServer server(80);
-
-// Variable to store the HTTP request
-String header;
 
 // Auxiliar variables to store the current output state
 String output26State = "off";
@@ -18,14 +8,13 @@ String output27State = "off";
 const int output26 = 26;
 const int output27 = 27;
 
-void setup3() {
+void setup_AP() {
   Serial.begin(115200);
   // Initialize the output variables as outputs
   pinMode(output26, OUTPUT);
   pinMode(output27, OUTPUT);
   // Set outputs to LOW
-  digitalWrite(o
-  utput26, LOW);
+  digitalWrite(output26, LOW);
   digitalWrite(output27, LOW);
 
   // Connect to Wi-Fi network with SSID and password
@@ -40,7 +29,7 @@ void setup3() {
   server.begin();
 }
 
-void loop3(){
+void loop_AP(){
   WiFiClient client = server.available();   // Listen for incoming clients
 
   if (client) {                             // If a new client connects,
@@ -95,7 +84,7 @@ void loop3(){
             client.println(".button2 {background-color: #555555;}</style></head>");
             
             // Web Page Heading
-            client.println("<body><h1>ESP32 Web Server</h1>");
+            client.println("<body><h1>Message Board</h1>");
             
             // Display current state, and ON/OFF buttons for GPIO 26  
             client.println("<p>GPIO 26 - State " + output26State + "</p>");
@@ -114,6 +103,25 @@ void loop3(){
             } else {
               client.println("<p><a href=\"/27/off\"><button class=\"button button2\">OFF</button></a></p>");
             }
+            client.println("Get the temperature work first");
+
+            if(output26State=="on"){
+              readTemperature();
+              voltageRegulator();
+            }
+            
+            client.print("<p>-----------------------------------------------------------------\n</p>");
+            client.print(tempC, 4); 
+            client.print("*C\t and "); 
+            client.print(tempF, 4); 
+            client.println("*F.");
+            client.print("<p>-----------------------------------------------------------------\n</p>");
+            client.print(vbatt, 6);
+            client.print("<p>\t</p>");
+            client.print(vcap, 6);
+            client.print("<p>\t</p>");
+            client.print(ibatt, 6);
+            client.print("<p>\t</p>");
             client.println("</body></html>");
             
             // The HTTP response ends with another blank line

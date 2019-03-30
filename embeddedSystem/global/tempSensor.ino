@@ -9,16 +9,12 @@ please support Adafruit and open-source hardware by purchasing
 products from Adafruit!
 */
 /**************************************************************************/
+void setup_temp() {
+//  Serial.begin(9600);
+//  Serial.begin(115200);
+//  while (!Serial); //waits for serial terminal to be open, necessary in newer arduino boards.
+//  Serial.println("MCP9808 demo");
 
-
-// Create the MCP9808 temperature sensor object
-Adafruit_MCP9808 tempsensor = Adafruit_MCP9808();
-
-void setup1() {
-  Serial.begin(9600);
-  while (!Serial); //waits for serial terminal to be open, necessary in newer arduino boards.
-  Serial.println("MCP9808 demo");
-  
   // Make sure the sensor is found, you can also pass in a different i2c
   // address with tempsensor.begin(0x19) for example, also can be left in blank for default address use
   // Also there is a table with all addres possible for this sensor, you can connect multiple sensors
@@ -33,11 +29,11 @@ void setup1() {
   //  1  1  0   0x1E
   //  1  1  1   0x1F
   if (!tempsensor.begin(0x18)) {
-    Serial.println("Couldn't find MCP9808! Check your connections and verify the address is correct.");
+//    Serial.println("Couldn't find MCP9808! Check your connections and verify the address is correct.");
     while (1);
   }
     
-   Serial.println("Found MCP9808!");
+//   Serial.println("Found MCP9808!");
 
   tempsensor.setResolution(3); // sets the resolution mode of reading, the modes are defined in the table bellow:
   // Mode Resolution SampleTime
@@ -47,7 +43,7 @@ void setup1() {
   //  3    0.0625°C    250 ms
 }
 
-void loop1() {
+void loop_temp() {
   Serial.println("wake up MCP9808.... "); // wake up MCP9808 - power consumption ~200 mikro Ampere
   tempsensor.wake();   // wake up, ready to read!
 
@@ -65,4 +61,13 @@ void loop1() {
   tempsensor.shutdown_wake(1); // shutdown MSP9808 - power consumption ~0.1 mikro Ampere, stops temperature sampling
   Serial.println("");
   delay(200);
+}
+
+void readTemperature(){
+  tempsensor.wake();   // wake up, ready to read!
+
+  tempC = tempsensor.readTempC();
+  tempF = tempsensor.readTempF();
+  
+  tempsensor.shutdown_wake(1); // shutdown MSP9808 - power consumption ~0.1 mikro Ampere, stops temperature sampling
 }
