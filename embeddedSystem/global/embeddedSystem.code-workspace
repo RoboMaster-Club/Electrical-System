@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "/Users/william/Desktop/BoilerBot/2019/EE Team/Power-System/embeddedSystem"
+		},
+		{
+			"name": "global",
+			"path": "."
+		}
+	],
+	"settings": {
+		"terminal.integrated.env.osx": {
+			"PATH": "/Users/william/.platformio/penv/bin:/Users/william/.platformio/penv:/Applications/Julia-1.1.app/Contents/Resources/julia/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/opt/local/bin:/opt/local/sbin:/usr/local/opt/openssl/bin:/Users/william/.mos/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/william/anaconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin",
+			"PLATFORMIO_CALLER": "vscode"
+		}
+	}
+}
