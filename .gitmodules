@@ -1,0 +1,6 @@
+[submodule "embeddedSystem/global/lib/ESPAsyncWebServer"]
+	path = embeddedSystem/global/lib/ESPAsyncWebServer
+	url = https://github.com/me-no-dev/ESPAsyncWebServer.git
+[submodule "embeddedSystem/global/lib/AsyncTCP"]
+	path = embeddedSystem/global/lib/AsyncTCP
+	url = https://github.com/me-no-dev/AsyncTCP.git
