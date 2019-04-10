@@ -1,1 +1,0 @@
-Files in `data/` will be uploaded to esp32 using [this](https://github.com/me-no-dev/arduino-esp32fs-plugin).
