@@ -22,6 +22,7 @@
 //Include Libraries
 #include "Wire.h"
 #include "Adafruit_MCP9808.h"
+#include "BluetoothSerial.h"
 #include "RTClib.h"
 #include <math.h>
 
@@ -78,6 +79,12 @@ bool isAccessMeasurement = false;
 // Adafruit_LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 // Adafruit_MCP9808 tempsensor = Adafruit_MCP9808();
 // SoftwareSerial esp32(RX, TX);
+
+#if !defined(CONFIG_BT_ENABLED) || !defined(CONFIG_BLUEDROID_ENABLED)
+#error Bluetooth is not enabled! Please run `make menuconfig` to and enable it
+#endif
+
+BluetoothSerial SerialErr;
 
 // RTC sensor
 RTC_PCF8523 rtc;

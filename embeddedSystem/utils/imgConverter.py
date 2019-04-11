@@ -22,4 +22,5 @@ for rowVec in mat:
             line += ", B"
         line += str(element)
         counter += 1
+    line += ","
     print(line)

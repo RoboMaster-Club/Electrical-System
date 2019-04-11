@@ -20,8 +20,7 @@
 
 #include <SPI.h>
 #include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include "OledMonitor.h"
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 32 // OLED display height, in pixels
@@ -29,109 +28,112 @@
 // Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
 #define OLED_RESET     4 // Reset pin # (or -1 if sharing Arduino reset pin)
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+OledMonitor monitor(&display);
 
 #define NUMFLAKES     10 // Number of snowflakes in the animation example
 
-#define LOGO_HEIGHT   32
-#define LOGO_WIDTH    32
-static const unsigned char PROGMEM logo_bmp[] =
-{ 
-  B11111111, B11111111, B11111111, B11111111
-  B10000000, B00000000, B00000000, B00000001
-  B10000000, B00000000, B00000000, B00000000
-  B00011000, B00000000, B00000000, B00001100
-  B10011000, B00000000, B00000000, B00001100
-  B00000000, B00000000, B00000000, B00000001
-  B10000000, B00000000, B00000000, B00000000
-  B00000000, B00000000, B00000000, B00000000
-  B10000000, B00000000, B00000000, B00000001
-  B00000000, B00000000, B00000000, B00000000
-  B10000001, B11111111, B11111111, B00000001
-  B01000011, B11111111, B11111111, B11000000
-  B00100001, B11111111, B11111111, B11000010
-  B10000000, B00000000, B00000000, B11100001
-  B01000000, B00000000, B00000000, B11000000
-  B01000001, B11111111, B11111111, B11000010
-  B00100011, B11111111, B11111111, B10000001
-  B10000011, B10000000, B00000000, B00000000
-  B01000011, B10000000, B00000000, B00000010
-  B01000011, B10010001, B10011001, B10000001
-  B00100011, B10111001, B10011001, B10000000
-  B10000000, B00000000, B00000000, B00000010
-  B01000000, B00000000, B00000000, B00000000
-  B00010010, B10101010, B00101001, B01001001
-  B10100101, B01011101, B00110010, B10100100
-  B00000000, B00000000, B00000000, B00000000
-  B10000000, B00000000, B00000000, B00000001
-  B00010000, B00000000, B00000000, B00001000
-  B10011000, B00000000, B00000000, B00001100
-  B00011000, B00000000, B00000000, B00001001
-  B10000000, B00000000, B00000000, B00000001
-  B11010010, B01001001, B00100100, B10010011
-};
+// #define LOGO_HEIGHT   32
+// #define LOGO_WIDTH    32
+// static const unsigned char PROGMEM logo_bmp[] =
+// { 
+//   B11111111, B11111111, B11111111, B11111111
+//   B10000000, B00000000, B00000000, B00000001
+//   B10000000, B00000000, B00000000, B00000000
+//   B00011000, B00000000, B00000000, B00001100
+//   B10011000, B00000000, B00000000, B00001100
+//   B00000000, B00000000, B00000000, B00000001
+//   B10000000, B00000000, B00000000, B00000000
+//   B00000000, B00000000, B00000000, B00000000
+//   B10000000, B00000000, B00000000, B00000001
+//   B00000000, B00000000, B00000000, B00000000
+//   B10000001, B11111111, B11111111, B00000001
+//   B01000011, B11111111, B11111111, B11000000
+//   B00100001, B11111111, B11111111, B11000010
+//   B10000000, B00000000, B00000000, B11100001
+//   B01000000, B00000000, B00000000, B11000000
+//   B01000001, B11111111, B11111111, B11000010
+//   B00100011, B11111111, B11111111, B10000001
+//   B10000011, B10000000, B00000000, B00000000
+//   B01000011, B10000000, B00000000, B00000010
+//   B01000011, B10010001, B10011001, B10000001
+//   B00100011, B10111001, B10011001, B10000000
+//   B10000000, B00000000, B00000000, B00000010
+//   B01000000, B00000000, B00000000, B00000000
+//   B00010010, B10101010, B00101001, B01001001
+//   B10100101, B01011101, B00110010, B10100100
+//   B00000000, B00000000, B00000000, B00000000
+//   B10000000, B00000000, B00000000, B00000001
+//   B00010000, B00000000, B00000000, B00001000
+//   B10011000, B00000000, B00000000, B00001100
+//   B00011000, B00000000, B00000000, B00001001
+//   B10000000, B00000000, B00000000, B00000001
+//   B11010010, B01001001, B00100100, B10010011
+// };
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
+  monitor.init();
+
 
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
-  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3C for 128x32
-    Serial.println(F("SSD1306 allocation failed"));
-    for(;;); // Don't proceed, loop forever
-  }
+  // if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3C for 128x32
+  //   Serial.println(F("SSD1306 allocation failed"));
+  //   for(;;); // Don't proceed, loop forever
+  // }
 
-  // Show initial display buffer contents on the screen --
-  // the library initializes this with an Adafruit splash screen.
-  display.display();
-  delay(2000); // Pause for 2 seconds
+  // // Show initial display buffer contents on the screen --
+  // // the library initializes this with an Adafruit splash screen.
+  // display.display();
+  // delay(2000); // Pause for 2 seconds
 
-  // Clear the buffer
-  display.clearDisplay();
+  // // Clear the buffer
+  // display.clearDisplay();
 
-  // Draw a single pixel in white
-  display.drawPixel(10, 10, WHITE);
+  // // Draw a single pixel in white
+  // display.drawPixel(10, 10, WHITE);
 
-  // Show the display buffer on the screen. You MUST call display() after
-  // drawing commands to make them visible on screen!
-  display.display();
-  delay(2000);
-  // display.display() is NOT necessary after every single drawing command,
-  // unless that's what you want...rather, you can batch up a bunch of
-  // drawing operations and then update the screen all at once by calling
-  // display.display(). These examples demonstrate both approaches...
+  // // Show the display buffer on the screen. You MUST call display() after
+  // // drawing commands to make them visible on screen!
+  // display.display();
+  // delay(2000);
+  // // display.display() is NOT necessary after every single drawing command,
+  // // unless that's what you want...rather, you can batch up a bunch of
+  // // drawing operations and then update the screen all at once by calling
+  // // display.display(). These examples demonstrate both approaches...
 
-  testdrawline();      // Draw many lines
+  // testdrawline();      // Draw many lines
 
-  testdrawrect();      // Draw rectangles (outlines)
+  // testdrawrect();      // Draw rectangles (outlines)
 
-  testfillrect();      // Draw rectangles (filled)
+  // testfillrect();      // Draw rectangles (filled)
 
-  testdrawcircle();    // Draw circles (outlines)
+  // testdrawcircle();    // Draw circles (outlines)
 
-  testfillcircle();    // Draw circles (filled)
+  // testfillcircle();    // Draw circles (filled)
 
-  testdrawroundrect(); // Draw rounded rectangles (outlines)
+  // testdrawroundrect(); // Draw rounded rectangles (outlines)
 
-  testfillroundrect(); // Draw rounded rectangles (filled)
+  // testfillroundrect(); // Draw rounded rectangles (filled)
 
-  testdrawtriangle();  // Draw triangles (outlines)
+  // testdrawtriangle();  // Draw triangles (outlines)
 
-  testfilltriangle();  // Draw triangles (filled)
+  // testfilltriangle();  // Draw triangles (filled)
 
-  testdrawchar();      // Draw characters of the default font
+  // testdrawchar();      // Draw characters of the default font
 
-  testdrawstyles();    // Draw 'stylized' characters
+  // testdrawstyles();    // Draw 'stylized' characters
 
-  testscrolltext();    // Draw scrolling text
+  // testscrolltext();    // Draw scrolling text
 
-  testdrawbitmap();    // Draw a small bitmap image
+  // testdrawbitmap();    // Draw a small bitmap image
 
-  // Invert and restore display, pausing in-between
-  display.invertDisplay(true);
-  delay(1000);
-  display.invertDisplay(false);
-  delay(1000);
+  // // Invert and restore display, pausing in-between
+  // display.invertDisplay(true);
+  // delay(1000);
+  // display.invertDisplay(false);
+  // delay(1000);
 
-  testanimate(logo_bmp, LOGO_WIDTH, LOGO_HEIGHT); // Animate bitmaps
+  // testanimate(logo_bmp, LOGO_WIDTH, LOGO_HEIGHT); // Animate bitmaps
 }
 
 void loop() {
