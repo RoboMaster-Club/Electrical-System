@@ -52,3 +52,51 @@ Supercapacitor voltage detecting circuit modification
 - Test Supercapacitors: teammate responses for.
 - Learn LT SPICE with Matthew. 
 - Overall supercapacitor program in Arduino. 
+
+
+## Stage 3
+* (finishing testing and more ideas on modifying the board design.) 
+* Code has been in the folder. 
+
+### Competing with being "nothing". 
+> Some problems has been excountered. 
+* Ground has been exposed outside the board, causing fatal short that penetrated the FKBJT.
+* IN and OUT ports for Voltage stablizer and amplifier are not standardized designs.
+* Charging, discharging, and detecing circuits' width is not enough.
+* BJTs is very stupid that easy to die in front of me. 
+* Detecing circuit is not functioning. 
+* Spacing arrangement of the circuit can be improved. 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+> Improvement that can be done
+* IN and OUT ports for Voltage stablizer and amplifier, VCC, Capacitors, and Motor connectors should change to [XT60 series connector](https://www.amazon.com/OOOUSE-XT60-Connector-Pairs-pairs/dp/B005FAPYXS) for better design integration.  
+* All the BJTs should switch to MOSFETs for reliability. 
+* All the circuit should have lower power LEDs for indicating the circuits' validation and decent labels for each funtionality. 
+* Detecting circuit must be modified. 
+* The board can be larger for better spacing arrangement and larger trace width. 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+> Next Stage
+* New design
+* New Programs values. 
+
+
+## Stage 4
+* New, modified design has been here now. 
+
+### Schematic and Board
+![QQ截图20190412221912](https://user-images.githubusercontent.com/47236078/56044090-0ea6a280-5d71-11e9-9c71-48397d7a8fd6.jpg)
+![Modified Circuit design](https://user-images.githubusercontent.com/47236078/56043842-a3f56700-5d70-11e9-9d14-b3087c8afb3d.jpg)
+
+### Modifications. 
+* All connectors except microcontroller input have been changed into [XT60 series connector](https://www.amazon.com/OOOUSE-XT60-Connector-Pairs-pairs/dp/B005FAPYXS). 
+* All BJTs have been changed to 40V 5A MOSFET
+* The discharging and charging circuit for supercapacitor have individual LEDs to indicate circuit working status. 
+* Trace width for all circuit has been modified according to its functionality. 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+> Next Stage
+* Waiting for further notifying. 
