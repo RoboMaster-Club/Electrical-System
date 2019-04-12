@@ -92,7 +92,7 @@ Supercapacitor voltage detecting circuit modification
 
 ### Modifications. 
 * All connectors except microcontroller input have been changed into [XT60 series connector](https://www.amazon.com/OOOUSE-XT60-Connector-Pairs-pairs/dp/B005FAPYXS). 
-* All BJTs have been changed to 40V 5A MOSFET
+* All BJTs have been changed to 40V 5A MOSFET - All the circuit will not need analog output to control anymore. 
 * The discharging and charging circuit for supercapacitor have individual LEDs to indicate circuit working status. 
 * Trace width for all circuit has been modified according to its functionality. 
 
