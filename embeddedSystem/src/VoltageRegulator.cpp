@@ -2,12 +2,12 @@
 
 VoltageRegulator::VoltageRegulator(uint8_t vBattPin, uint8_t vCapPin, uint8_t iBattPin, 
                                   float vCapMax, float vBatMax, float vBoostRef) {
-  this.vBattPin = vBattPin;
-  this.vCapPin = vCapPin;
-  this.iBattPin = iBattPin;
-  this.vBoostRef = vBoostRef;
-  this.vCapMax = vCapMax;
-  this.vBatMax = vBatMax;
+  this->vBattPin = vBattPin;
+  this->vCapPin = vCapPin;
+  this->iBattPin = iBattPin;
+  this->vBoostRef = vBoostRef;
+  this->vCapMax = vCapMax;
+  this->vBatMax = vBatMax;
   pinMode(vBattPin, INPUT);
   pinMode(vCapPin, INPUT);
   pinMode(iBattPin, INPUT);
@@ -27,5 +27,5 @@ float VoltageRegulator::getBatteryCurrent(void) {
 
 bool VoltageRegulator::canBoost(void) {
   // Todo set a buffer range to calculate boosting time?
-  return getCapacitorVoltage >= vBoostRef;
+  return getCapacitorVoltage() >= vBoostRef;
 }

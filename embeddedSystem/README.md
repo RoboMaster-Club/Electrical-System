@@ -39,6 +39,7 @@ VoltageRegulator.ino reads voltage of the battery, voltage of capacitor, current
       * Log file management
       * Log file download
       * Log file plotting
+        * [ESP32 SD Flush not working](https://github.com/espressif/arduino-esp32/issues/1293), use newest release version
     * Reconnection button
     * Status
     * setting

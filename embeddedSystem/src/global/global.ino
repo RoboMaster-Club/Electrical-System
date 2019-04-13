@@ -24,6 +24,7 @@
 #include "Adafruit_MCP9808.h"
 #include "BluetoothSerial.h"
 #include "RTClib.h"
+#include "SDlogger.h"
 #include <math.h>
 
 //Defining Pins
@@ -65,7 +66,7 @@ struct DataPacket
 union SerializedDataPacket
 {
   struct DataPacket rawData;
-  byte serialized[42];
+  byte serialized[50];
 };
 
 const struct DataPacket DefaultValue = {
@@ -80,6 +81,7 @@ bool isAccessMeasurement = false;
 // Adafruit_MCP9808 tempsensor = Adafruit_MCP9808();
 // SoftwareSerial esp32(RX, TX);
 
+// Bluetooth debug serial port
 #if !defined(CONFIG_BT_ENABLED) || !defined(CONFIG_BLUEDROID_ENABLED)
 #error Bluetooth is not enabled! Please run `make menuconfig` to and enable it
 #endif
@@ -88,6 +90,9 @@ BluetoothSerial SerialErr;
 
 // RTC sensor
 RTC_PCF8523 rtc;
+
+// SD logger
+SDloggerFactory SDlogger = SDloggerFactory();
 
 // Web server
 AsyncWebServer server(80);
@@ -148,15 +153,21 @@ void setup() {
     // Serial
     Serial.begin(115200);
     Serial.println();
-    Serial.println("Configuring access point...");
 
     // AP setup
+    Serial.println("Configuring access point...");
     WiFi.softAPsetHostname(HOSTNAME);
     WiFi.softAP(SSID);
 
     Serial.print("IP Address: ");
     Serial.println(WiFi.softAPIP());
     Serial.print("Hostname: ");
+
+    // Logger setup
+    Serial.println("SD logger test");
+    SDlogger.init(CHIP_SELECT);
+    SDlogger.info(&Serial);
+    SDlogger.setFp("/log", FILE_WRITE);
 
     // Initialize measurement
     currentMeasurement = DefaultValue;
@@ -196,4 +207,7 @@ void loop() {
   currentMeasurement.ibatt = cos(millis() / 1000.0);
   currentMeasurement.vbatt = sin(millis() / 1000.0);
   currentMeasurement.vcap  = log10(millis() / 1000.0);
+  union SerializedDataPacket data;
+  data.rawData = currentMeasurement;
+  SDlogger.logByte(data.serialized, sizeof(data));
 }

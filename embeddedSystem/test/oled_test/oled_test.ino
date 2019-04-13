@@ -73,6 +73,7 @@ OledMonitor monitor(&display);
 void setup() {
   Serial.begin(115200);
   monitor.init();
+  // monitor.print("IP Address: 192.168.1.4 Testing:test");
 
 
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
