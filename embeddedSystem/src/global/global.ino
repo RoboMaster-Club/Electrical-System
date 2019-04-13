@@ -9,6 +9,9 @@
 #include <WiFiAP.h>
 #include <WiFiClient.h>
 
+// mDNS for local domain name resolution
+#include <ESPmDNS.h>
+
 // Async library
 #include <ESPAsyncWebServer.h>
 #include <AsyncTCP.h>
@@ -25,29 +28,38 @@
 #include "BluetoothSerial.h"
 #include "RTClib.h"
 #include "SDlogger.h"
+#include "OledMonitor.h"
 #include <math.h>
 
 //Defining Pins
-# define VBATPIN A0
-# define VCAPIN  A1
-# define IBATTPIN  A2
-# define VRATIO 30.0//votage ratio: max voltage displayed
-# define VMIN 1
-# define VBOOST A3
-# define TX 10
-# define RX 11
-# define RX2 16
-# define TX2 17
-# define BUZZ_PIN 0
-# define CHIP_SELECT 33
+#define VBATPIN A0
+#define VCAPIN  A1
+#define IBATTPIN  A2
+#define VRATIO 30.0//votage ratio: max voltage displayed
+#define VMIN 1
+#define VBOOST A3
+#define TX 10
+#define RX 11
+#define RX2 16
+#define TX2 17
+#define BUZZ_PIN 0
+
+// SD card
+#define CHIP_SELECT 33
+
+// Oled
+#define SCREEN_WIDTH 128 // OLED display width, in pixels
+#define SCREEN_HEIGHT 32 // OLED display height, in pixels
+// Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
+#define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
 
 // Debugging
 #define LED_BUILTIN 2
 
 // Define data structure
-struct DataPacket
+struct Measurement
 {
-  unsigned long timestamp;
+  uint32_t timestamp;
   float vbatt;
   float vcap;
   float ibatt;
@@ -63,17 +75,18 @@ struct DataPacket
   bool isRightClaw;
 };
 
-union SerializedDataPacket
+union DataPacket
 {
-  struct DataPacket rawData;
+  struct Measurement rawData;
   byte serialized[50];
 };
 
-const struct DataPacket DefaultValue = {
+const struct Measurement DefaultValue = {
   0, 0, 0, 1, 3, true, 0, 0, 0, 0, 0, 0, false, false
 };
 
-struct DataPacket currentMeasurement;
+struct Measurement currentMeasurement;
+union DataPacket packet;
 bool isAccessMeasurement = false;
 
 // Sensors initialization
@@ -88,6 +101,10 @@ bool isAccessMeasurement = false;
 
 BluetoothSerial SerialErr;
 
+// Oled
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+OledMonitor monitor(&display);
+
 // RTC sensor
 RTC_PCF8523 rtc;
 
@@ -101,7 +118,7 @@ AsyncWebSocket ws("/ws");
 // Replace with your network credentials
 const char* SSID     = "BoilerBot_Standard_1";
 const char* PASSWORD = "TESTIRES";
-const char* HOSTNAME = "boiler.bot";
+const char* DOMAIN_NAME = "boilerbot";
 
 // Websocket connection tracker
 uint32_t broadcast_id = -1;
@@ -129,16 +146,16 @@ void onWsEvent(AsyncWebSocket * server, AsyncWebSocketClient * client, AwsEventT
     //pong message was received (in response to a ping request maybe)
     Serial.printf("ws[%s][%u] pong[%u]: %s\n", server->url(), client->id(), len, (len)?(char*)data:"");
   } else if(type == WS_EVT_DATA) {
-    Serial.printf("Broadcast id: %d\n", broadcast_id);
-    Serial.printf("Client id: %d\n", client->id());
+    #ifdef DEBUG
+      Serial.printf("Broadcast id: %d\n", broadcast_id);
+      Serial.printf("Client id: %d\n", client->id());
+    #endif
     if (broadcast_id != -1 && broadcast_id != client->id()) {
       return;
     } else {
       broadcast_id = client->id();
-      union SerializedDataPacket data;
-      data.rawData = currentMeasurement;
-      server->binaryAll(data.serialized, sizeof(data));
-      Serial.printf("ws[%s][%u] sent response: %u\n", server->url(), client->id());
+      server->binaryAll(packet.serialized, sizeof(packet.serialized));
+      Serial.printf("ws[%s][%u] sent response\n", server->url(), client->id());
     }
   }
 }
@@ -150,18 +167,27 @@ void setup() {
   // currentMeasurement = DefaultValue
     pinMode(LED_BUILTIN, OUTPUT);
 
-    // Serial
+    // Serial & Monitor initialization
     Serial.begin(115200);
     Serial.println();
+    monitor.init(&Serial);
 
     // AP setup
     Serial.println("Configuring access point...");
-    WiFi.softAPsetHostname(HOSTNAME);
     WiFi.softAP(SSID);
 
     Serial.print("IP Address: ");
     Serial.println(WiFi.softAPIP());
     Serial.print("Hostname: ");
+    Serial.println(WiFi.softAPgetHostname());
+    Serial.print("Domain name: ");
+    Serial.println(DOMAIN_NAME);
+
+    // mDNS setup
+    if (!MDNS.begin(DOMAIN_NAME)) {
+        Serial.println("Error setting up MDNS responder!");
+    }
+    MDNS.addService("http", "tcp", 80);
 
     // Logger setup
     Serial.println("SD logger test");
@@ -207,7 +233,7 @@ void loop() {
   currentMeasurement.ibatt = cos(millis() / 1000.0);
   currentMeasurement.vbatt = sin(millis() / 1000.0);
   currentMeasurement.vcap  = log10(millis() / 1000.0);
-  union SerializedDataPacket data;
-  data.rawData = currentMeasurement;
-  SDlogger.logByte(data.serialized, sizeof(data));
+  packet.rawData = currentMeasurement;
+  SDlogger.logByte(packet.serialized, sizeof(packet.serialized));
+  delay(1000);
 }

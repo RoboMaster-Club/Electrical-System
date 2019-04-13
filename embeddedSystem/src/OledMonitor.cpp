@@ -8,11 +8,14 @@ OledMonitor::OledMonitor(Adafruit_SSD1306* oled, uint8_t addr) {
     this->addr = addr;
 }
 
-void OledMonitor::init() {
-  if(!oled->begin(SSD1306_SWITCHCAPVCC, addr=0x3C)) { // Address 0x3C for 128x32
-    Serial.println(F("SSD1306 allocation failed"));
-    for(;;); // Don't proceed, loop forever
+void OledMonitor::init(Print* stream) {
+  if(!oled->begin(SSD1306_SWITCHCAPVCC, addr)) {
+    stream->println(F("SSD1306 allocation failed"));
+    isConnected = false;
+    return;
   }
+  isConnected = true;
+
   oled->clearDisplay();
   oled->setTextWrap(false);
 
@@ -33,6 +36,8 @@ void OledMonitor::init() {
 }
 
 void OledMonitor::print(char* text, uint8_t size) {
+  if (!isConnected)
+    return;
   // TODO able to print text with indent
   // and scroll through the whole char sequence like a banner
 

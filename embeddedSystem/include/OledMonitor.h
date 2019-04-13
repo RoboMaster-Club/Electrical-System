@@ -50,12 +50,13 @@ class OledMonitor
 {
 private:
     Adafruit_SSD1306* oled;
+    bool isConnected;
     uint16_t height;
     uint16_t width;
     uint8_t addr;
 public:
     OledMonitor(Adafruit_SSD1306* oled, uint8_t addr=0x3C);
-    void init();
+    void init(Print*);
     void print(char*, uint8_t=1);
     Adafruit_SSD1306 getOled(void);
 };
