@@ -1,5 +1,7 @@
-# Super-Capacitor-Booster
-This repository belong to Purdue Robomaster, Electrical team's  Super Capactor Booster Project
+# Power System
+This repository belong to Purdue Robomaster, Electrical team's Robotics Power System
+
+<img src = "https://github.com/RoboMaster-Club/Power-System/raw/master/download.png"> 
 
 ## SubProjects
 1. `digitalSuperCapacitor/`
