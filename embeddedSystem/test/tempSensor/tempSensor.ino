@@ -1,7 +1,6 @@
-// TODO Delete this file as the library
+#include "Adafruit_MCP9808.h"
 /**************************************************************************/
 /*!
-****THIS PROGRAM IS NOT DONE BY US!!!****
 This is a demo for the Adafruit MCP9808 breakout
 ----> http://www.adafruit.com/products/1782
 Adafruit invests time and resources providing this open source code,
@@ -9,11 +8,12 @@ please support Adafruit and open-source hardware by purchasing
 products from Adafruit!
 */
 /**************************************************************************/
-void setup_temp() {
+Adafruit_MCP9808 tempsensor = Adafruit_MCP9808();
+
+void setup() {
 //  Serial.begin(9600);
-//  Serial.begin(115200);
-//  while (!Serial); //waits for serial terminal to be open, necessary in newer arduino boards.
-//  Serial.println("MCP9808 demo");
+ Serial.begin(115200);
+ Serial.println("MCP9808 demo");
 
   // Make sure the sensor is found, you can also pass in a different i2c
   // address with tempsensor.begin(0x19) for example, also can be left in blank for default address use
@@ -35,7 +35,7 @@ void setup_temp() {
     
 //   Serial.println("Found MCP9808!");
 
-  tempsensor.setResolution(3); // sets the resolution mode of reading, the modes are defined in the table bellow:
+  tempsensor.setResolution(1); // sets the resolution mode of reading, the modes are defined in the table bellow:
   // Mode Resolution SampleTime
   //  0    0.5°C       30 ms
   //  1    0.25°C      65 ms
@@ -43,9 +43,9 @@ void setup_temp() {
   //  3    0.0625°C    250 ms
 }
 
-void loop_temp() {
-  Serial.println("wake up MCP9808.... "); // wake up MCP9808 - power consumption ~200 mikro Ampere
-  tempsensor.wake();   // wake up, ready to read!
+void loop() {
+//   Serial.println("wake up MCP9808.... "); // wake up MCP9808 - power consumption ~200 mikro Ampere
+//   tempsensor.wake();   // wake up, ready to read!
 
   // Read and print out the temperature, also shows the resolution mode used for reading.
   Serial.print("Resolution in mode: ");
@@ -55,19 +55,8 @@ void loop_temp() {
   Serial.print("Temp: "); 
   Serial.print(c, 4); Serial.print("*C\t and "); 
   Serial.print(f, 4); Serial.println("*F.");
-  
-  delay(2000);
-  Serial.println("Shutdown MCP9808.... ");
-  tempsensor.shutdown_wake(1); // shutdown MSP9808 - power consumption ~0.1 mikro Ampere, stops temperature sampling
-  Serial.println("");
-  delay(200);
-}
-
-void readTemperature(){
-  tempsensor.wake();   // wake up, ready to read!
-
-  tempC = tempsensor.readTempC();
-  tempF = tempsensor.readTempF();
-  
-  tempsensor.shutdown_wake(1); // shutdown MSP9808 - power consumption ~0.1 mikro Ampere, stops temperature sampling
+//   Serial.println("Shutdown MCP9808.... ");
+//   tempsensor.shutdown_wake(1); // shutdown MSP9808 - power consumption ~0.1 mikro Ampere, stops temperature sampling
+//   Serial.println("");
+//   delay(200);
 }

@@ -27,10 +27,12 @@ VoltageRegulator.ino reads voltage of the battery, voltage of capacitor, current
 
 * Todos
   * Sensors
-    * Data Logging
+    * [x] Data Logging
     * Sensors reading
+    * Use led to indicate status and error
   * Serial
     * Create debug port?
+    * Bluetooth Lib too big [Solution](https://github.com/SensorsIot/Bluetooth-BLE-on-Arduino-IDE/issues/3)
   * Threading issue?
   * Web
     * Speed increasing?

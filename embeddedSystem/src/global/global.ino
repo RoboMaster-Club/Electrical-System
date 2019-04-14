@@ -7,7 +7,6 @@
 // WIFI libraries
 #include <WiFi.h>
 #include <WiFiAP.h>
-#include <WiFiClient.h>
 
 // mDNS for local domain name resolution
 #include <ESPmDNS.h>
@@ -23,21 +22,18 @@
 #include <SPIFFSEditor.h>
 
 //Include Libraries
-#include "Wire.h"
 #include "Adafruit_MCP9808.h"
-#include "BluetoothSerial.h"
 #include "RTClib.h"
 #include "SDlogger.h"
 #include "OledMonitor.h"
-#include <math.h>
+#include "PowerDistributionBoard.h"
 
 //Defining Pins
-#define VBATPIN A0
-#define VCAPIN  A1
+#define VBATPIN 13
+#define VCAPIN  32
 #define IBATTPIN  A2
-#define VRATIO 30.0//votage ratio: max voltage displayed
+#define VRATIO 30.0
 #define VMIN 1
-#define VBOOST A3
 #define TX 10
 #define RX 11
 #define RX2 16
@@ -48,10 +44,17 @@
 #define CHIP_SELECT 33
 
 // Oled
-#define SCREEN_WIDTH 128 // OLED display width, in pixels
-#define SCREEN_HEIGHT 32 // OLED display height, in pixels
-// Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
-#define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
+// HUD
+#define HUD_OLED_WIDTH 128
+#define HUD_OLEDHEIGHT 64
+#define HUD_OLED_ADDR 0X3D
+
+
+// Debug oled
+#define DEBUG_OLED_WIDTH 128 // OLED display width, in pixels
+#define DEBUG_OLED_HEIGHT 32 // OLED display height, in pixels
+#define DEBUG_OLED_ADDR 0x3C
+#define DEBUG_OLED_RESET -1 // Reset pin # (or -1 if sharing Arduino reset pin)
 
 // Debugging
 #define LED_BUILTIN 2
@@ -90,23 +93,17 @@ union DataPacket packet;
 bool isAccessMeasurement = false;
 
 // Sensors initialization
-// Adafruit_LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-// Adafruit_MCP9808 tempsensor = Adafruit_MCP9808();
-// SoftwareSerial esp32(RX, TX);
-
-// Bluetooth debug serial port
-#if !defined(CONFIG_BT_ENABLED) || !defined(CONFIG_BLUEDROID_ENABLED)
-#error Bluetooth is not enabled! Please run `make menuconfig` to and enable it
-#endif
-
-BluetoothSerial SerialErr;
+Adafruit_MCP9808 tempsensor = Adafruit_MCP9808();
 
 // Oled
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-OledMonitor monitor(&display);
+Adafruit_SSD1306 display(DEBUG_OLED_WIDTH, DEBUG_OLED_HEIGHT, &Wire, DEBUG_OLED_RESET);
+OledMonitor monitor(&display, DEBUG_OLED_ADDR);
 
 // RTC sensor
 RTC_PCF8523 rtc;
+
+// Power distribution board
+PDP pdp(VBATPIN, VCAPIN, IBATTPIN);
 
 // SD logger
 SDloggerFactory SDlogger = SDloggerFactory();
@@ -181,7 +178,7 @@ void setup() {
     Serial.print("Hostname: ");
     Serial.println(WiFi.softAPgetHostname());
     Serial.print("Domain name: ");
-    Serial.println(DOMAIN_NAME);
+    Serial.printf("%s.local\n", DOMAIN_NAME);
 
     // mDNS setup
     if (!MDNS.begin(DOMAIN_NAME)) {
@@ -193,7 +190,10 @@ void setup() {
     Serial.println("SD logger test");
     SDlogger.init(CHIP_SELECT);
     SDlogger.info(&Serial);
-    SDlogger.setFp("/log", FILE_WRITE);
+    DateTime now = rtc.now();
+    char logfile[40];
+    sprintf(logfile, "/log-%d-%d-%d-%d-%d-%d.boiler", now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second());
+    SDlogger.setFp(logfile, FILE_WRITE);
 
     // Initialize measurement
     currentMeasurement = DefaultValue;
@@ -203,6 +203,18 @@ void setup() {
       Serial.println("Couldn't find RTC");
       while (1);
     }
+
+    // Temperature sensor init
+    // if (! tempsensor.begin(0x18)) {
+    //   Serial.println("Couldn't find MCP9808! Check your connections and verify the address is correct.");
+    //   while (1);
+    // }
+    // Mode Resolution SampleTime
+    //  0    0.5°C       30 ms
+    //  1    0.25°C      65 ms
+    //  2    0.125°C     130 ms
+    //  3    0.0625°C    250 ms
+    // tempsensor.setResolution(1);
 
     // FS
     SPIFFS.begin();
@@ -229,11 +241,12 @@ void loop() {
   // isAccessMeasurement = true;
   DateTime now = rtc.now();
   currentMeasurement.timestamp = now.unixtime();
-  currentMeasurement.ableBoost = !currentMeasurement.ableBoost;
-  currentMeasurement.ibatt = cos(millis() / 1000.0);
-  currentMeasurement.vbatt = sin(millis() / 1000.0);
-  currentMeasurement.vcap  = log10(millis() / 1000.0);
+  currentMeasurement.ableBoost = pdp.canBoost();
+  currentMeasurement.ibatt = pdp.getBatteryCurrent();
+  currentMeasurement.vbatt = pdp.getBatteryVoltage();
+  currentMeasurement.vcap  = pdp.getCapacitorVoltage();
+  // currentMeasurement.tempC = tempsensor.readTempC();
   packet.rawData = currentMeasurement;
   SDlogger.logByte(packet.serialized, sizeof(packet.serialized));
-  delay(1000);
+  delay(250);
 }
