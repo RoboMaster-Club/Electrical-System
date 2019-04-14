@@ -8,11 +8,7 @@ To implement the code, simply import it to the Arduino IDE with corresponding li
 
 ## Contributing
 
-<<<<<<< HEAD
 Charlotte Huang, Roshni Sarma, Megan Singer, William An
-=======
-Charlotte Huang, Roshni Sarma, Megan Singer,William An
->>>>>>> master
 
 ## Progress
 
