@@ -65,8 +65,7 @@ The web interface part mainly provides graphical representation of the sensor va
       1. Open `.code-workspace` configuration file
       2. Modify the path so that they match your computer's setting
       3. [ ] Todo: use system path?
-7. Copy all header files and cpp source files to the arduino library directory under a folder name `BoilerBot`
-8. Compile and upload `src/global/global.ino` to the ESP32
+7. Compile and upload `src/global/global.ino` to the ESP32
 
 ## Todos
 

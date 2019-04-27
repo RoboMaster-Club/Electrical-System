@@ -1,6 +1,6 @@
 #include <SPI.h>
 #include <SD.h>
-#include "SDlogger.h"
+#include "src/SDlogger.h"
 
 // Set the pins used
 #define cardSelect 33

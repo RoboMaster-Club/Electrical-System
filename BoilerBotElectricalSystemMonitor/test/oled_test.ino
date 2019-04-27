@@ -20,7 +20,7 @@
 
 #include <SPI.h>
 #include <Wire.h>
-#include "OledMonitor.h"
+#include "src/OledMonitor.h"
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 32 // OLED display height, in pixels
