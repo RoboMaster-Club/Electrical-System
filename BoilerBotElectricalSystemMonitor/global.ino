@@ -12,8 +12,8 @@
 #include <ESPmDNS.h>
 
 // Async library
-#include <ESPAsyncWebServer.h>
 #include <AsyncTCP.h>
+#include <ESPAsyncWebServer.h>
 #include <AsyncWebSocket.h>
 
 // FS
@@ -22,11 +22,11 @@
 #include <SPIFFSEditor.h>
 
 //Include Libraries
-#include "Adafruit_MCP9808.h"
-#include "RTClib.h"
-#include "SDlogger.h"
-#include "OledMonitor.h"
-#include "PowerDistributionBoard.h"
+#include <Adafruit_MCP9808.h>
+#include <RTClib.h>
+#include "src/SDlogger.h"
+#include "src/OledMonitor.h"
+#include "src/PowerDistributionBoard.h"
 
 //Defining Pins
 #define VBATPIN 13
@@ -219,6 +219,7 @@ void setup() {
     // FS
     SPIFFS.begin();
     server.serveStatic("/", SPIFFS, "/").setDefaultFile("index.htm");
+    // server.serveStatic("/log", SD, "/")
 
     // Server Handlers
     // WS Handlers

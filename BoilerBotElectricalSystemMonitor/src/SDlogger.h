@@ -18,7 +18,7 @@ public:
     size_t logText(char*);
     void info(Print*);
     bool setFp(char*, const char* = FILE_WRITE);
-    static File* getFp();
+    File getFp();
 };
 
 #endif

@@ -1,4 +1,4 @@
-#include "PowerDistributionBoard.h"
+#include "src/PowerDistributionBoard.h"
 
     // Note you can only read analog inputs on ADC #1 once WiFi has started
     // Include A2 A3 A4 13 33 32 

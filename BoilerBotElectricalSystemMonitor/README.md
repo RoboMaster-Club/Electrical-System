@@ -44,22 +44,34 @@ The web interface part mainly provides graphical representation of the sensor va
 
 ## Usage
 
-1. Install Arduino IDE
-2. Install ESP32 board in Arduino IDE
-3. Install CP2102 Driver (or other kinds, depend on your chip) for USB2UART
-4. Install necessary third-party library
-  1. ESPAsyncWebServer
-  2. AsyncTCP
-  3. Adafruit_MCP9808
-  4. RTClib
-  5. Adafruit_SSD1306
-  6. VL53L0X by pololu
-5. Copy all header files and cpp source files to the arduino library directory under a folder name `BoilerBot`
-6. Compile and upload `src/global/global.ino` to the ESP32
+1. Install Arduino IDE 
+2. For VSCode development
+      1. Open `.code-workspace` configuration file
+      2. Or install Arduino extension by Microsoft
+3. Install ESP32 board in Arduino IDE [here](https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md)
+      1. For vscode
+         1. Use Board manager of the arduino extension
+         2. Press `ctrl/cmd + Shift + P` and type `arduino board manager`
+         3. Search `ESP32` and install it
+4. Install CP2102 Driver (or other kinds, depend on your chip) for USB2UART
+5. Install necessary third-party library
+     1. [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer#installation)
+     2. [AsyncTCP](https://github.com/me-no-dev/AsyncTCP)
+     3. Adafruit_MCP9808
+     4. RTClib
+     5. Adafruit_SSD1306
+     6. VL53L0X by pololu
+6. Configure include path for vscode
+      1. Open `.code-workspace` configuration file
+      2. Modify the path so that they match your computer's setting
+      3. [ ] Todo: use system path?
+7. Compile and upload `src/global/global.ino` to the ESP32
 
 ## Todos
+
   * Sensors
     * [x] Data Logging
+    * [ ] Handle sensor disconnection
     * Sensors reading
     * Use led to indicate status and error
   * Serial
@@ -101,6 +113,8 @@ The web interface part mainly provides graphical representation of the sensor va
     * cleanup
   * data
     * sensor data
+* Library
+  * Better include method
 
 ## Contributors
 
