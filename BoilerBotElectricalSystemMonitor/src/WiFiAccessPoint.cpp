@@ -1,4 +1,4 @@
-
+#include <Arduino.h>
 
 // Auxiliar variables to store the current output state
 String output26State = "off";

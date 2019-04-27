@@ -13,7 +13,8 @@
 #include <Adafruit_SSD1306.h>
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
-#define SCREEN_HEIGHT 64 // OLED display height, in pixels
+#define SCREEN_HEIGHT 32 // OLED display height, in pixels
+#define MAX_RANGE 8200 // In mm
 
 // Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
 #define OLED_RESET     4 // Reset pin # (or -1 if sharing Arduino reset pin)
@@ -46,12 +47,12 @@ void setup()
   Wire.begin();
 
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
-  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3D)) { // Address 0x3D for 128x64
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
     Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
   }
   display.display();
-  display.dim();
+  display.dim(true);
   // text display big!
   display.setTextSize(2);
   display.setTextColor(WHITE);
@@ -79,11 +80,14 @@ void setup()
 void loop()
 {
   uint16_t measure = sensor.readRangeSingleMillimeters();
-  Serial.printf("\rDistance: %d mm", measure);
+  uint8_t length = measure * 1000 / MAX_RANGE;
+  for (int i = 0; i < length; i++) {
+    Serial.print(".");
+  }
+  Serial.println();
   if (sensor.timeoutOccurred()) { Serial.print(" TIMEOUT"); }
   display.clearDisplay();
   display.setCursor(0,0);
-  display.print(measure);
-  display.print("mm");
+  display.printf("%d mm", measure);
   display.display();
 }
