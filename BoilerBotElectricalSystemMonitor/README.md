@@ -65,7 +65,7 @@ The web interface part mainly provides graphical representation of the sensor va
       1. Open `.code-workspace` configuration file
       2. Modify the path so that they match your computer's setting
       3. [ ] Todo: use system path?
-7. Compile and upload `src/global/global.ino` to the ESP32
+7. Compile and upload `global.ino` to the ESP32
 
 ## Todos
 
@@ -115,6 +115,7 @@ The web interface part mainly provides graphical representation of the sensor va
     * sensor data
 * Library
   * Better include method
+* Performance check
 
 ## Contributors
 
