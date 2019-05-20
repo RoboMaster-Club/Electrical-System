@@ -80,7 +80,8 @@ The web interface part mainly provides graphical representation of the sensor va
 - [x] Able to reset
 - [x] SD read and write
 - [ ] MCP2300x Testing
-- [ ] TCA9548A
+- [ ] Reading from new power distribution board
+- [x] TCA9548A
 - [x] Timer
 - [ ] System Stability Test (Connect all peripheral)
 - [ ] Buzzer (DJI)
