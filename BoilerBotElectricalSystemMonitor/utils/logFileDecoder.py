@@ -6,7 +6,7 @@ import csv
 Decode binary log file and output as csv file
 """
 
-data_format = 'Iffff?ffffff??'
+data_format = 'Iffff?HHHHHH??'
 packet_length = struct.calcsize(data_format)
 log_path = sys.argv[1]
 csv_path = sys.argv[2]

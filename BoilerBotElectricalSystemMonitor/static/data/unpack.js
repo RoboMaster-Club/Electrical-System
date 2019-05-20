@@ -4,7 +4,7 @@ const MAPPING = {
         converter: Uint8Array
     },
     '?': {
-        size: 1,
+        size: 2,
         converter: Uint8Array
     },
     'f': {
@@ -14,6 +14,10 @@ const MAPPING = {
     'h': {
         size: 2,
         converter: Int16Array
+    },
+    'H': {
+        size: 2,
+        converter: Uint16Array
     },
     'i': {
         size: 4,
@@ -37,7 +41,7 @@ function unpack(buffer, format, bigendian = false) {
     var pointer = 0;
     var resultArray = [];
     for (let index = 0; index < format.length; index++) {
-        let t = format.charAt(index).toLowerCase();
+        let t = format.charAt(index);
         let byteLength = MAPPING[t].size;
         var bytes = buffer.slice(pointer, pointer + byteLength);
         if (bigendian)

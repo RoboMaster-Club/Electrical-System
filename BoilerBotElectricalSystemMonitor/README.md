@@ -69,43 +69,73 @@ The web interface part mainly provides graphical representation of the sensor va
 
 ## Todos
 
-  * Sensors
-    * [x] Data Logging
-    * [ ] Handle sensor disconnection
-    * Sensors reading
-    * Use led to indicate status and error
-  * Serial
-    * Create debug port?
-    * Bluetooth Lib too big [Solution](https://github.com/SensorsIot/Bluetooth-BLE-on-Arduino-IDE/issues/3)
-  * Threading issue?
-  * Web
-    * Speed increasing?
-    * Turn off animation
-    * Log
-      * Log file management
-      * Log file download
-      * Log file plotting
-        * [ESP32 SD Flush not working](https://github.com/espressif/arduino-esp32/issues/1293), use newest release version
-    * Reconnection button
-    * Status
-    * setting
-      * Set mode of system
-      * Set ssid, pass, hostname (eeprom)
-    * Embed css and js files to avoid running out of mem?
-  * Extendability
-    * Able to use in the next season
+### Functionality Test from Power Dis
+- [ ] Control of Relay (Cap or not)
+- [x] Temperature Read
+- [ ] Current Read (I2C)
+- [ ] Read of battery voltage (I2C)
+
+### Functionality Test from Controller Board
+- [x] Able to Program
+- [x] Able to reset
+- [x] SD read and write
+- [ ] MCP2300x Testing
+- [ ] TCA9548A
+- [x] Timer
+- [ ] System Stability Test (Connect all peripheral)
+- [ ] Buzzer (DJI)
+- [ ] All I2C peripherals
+- [ ] Digital limit switch
+- [ ] UART Protocols to STM32F4
+- [ ] UART Protocols to STM32F3
+
+### Updates Power Dis
+- [ ] Check Relay
+- [ ] Check Switch by pass
+
+### Update Super Capacitor Charging Board
+- [ ] Read of all voltage
+- [ ] Read of all current
+- [ ] UART all functionality
+- [ ] PID
+
+* Sensors
+  * [x] Data Logging
+  * [ ] Handle sensor disconnection
+  * Sensors reading
+  * Use led to indicate status and error
+* Serial
+  * Create debug port?
+  * Bluetooth Lib too big [Solution](https://github.com/SensorsIot/Bluetooth-BLE-on-Arduino-IDE/issues/3)
+* Threading issue?
+* Web
+  * Speed increasing?
+  * Turn off animation
+  * Log
+    * Log file management
+    * Log file download
+    * Log file plotting
+      * [ESP32 SD Flush not working](https://github.com/espressif/arduino-esp32/issues/1293), use newest release version
+  * Reconnection button
+  * Status
+  * setting
+    * Set mode of system
+    * Set ssid, pass, hostname (eeprom)
+  * Embed css and js files to avoid running out of mem?
+* Extendability
+  * Able to use in the next season
 * API Explanation
-  * `/`
-    * Handle logging chart display
-  * `/log`
-    * Provide logging file downloads 
-  * `/status`
-    * Whether each module is online or not
-  * `/setting`
-    * Mode selection
-      * Super cap MODE
-      * mix mode
-      * battery only mode
+* `/`
+  * Handle logging chart display
+* `/log`
+  * Provide logging file downloads 
+* `/status`
+  * Whether each module is online or not
+* `/setting`
+  * Mode selection
+    * Super cap MODE
+    * mix mode
+    * battery only mode
 * WebSocket Event
   * connect
     * server broadcast current sensor data to this client

@@ -17,8 +17,8 @@
 #define MAX_RANGE 8200 // In mm
 
 // Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
-#define OLED_RESET     4 // Reset pin # (or -1 if sharing Arduino reset pin)
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+// #define OLED_RESET     4 // Reset pin # (or -1 if sharing Arduino reset pin)
+// Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 VL53L0X sensor;
 
@@ -43,19 +43,19 @@ VL53L0X sensor;
 
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
   Wire.begin();
 
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
-  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
-    Serial.println(F("SSD1306 allocation failed"));
-    for(;;); // Don't proceed, loop forever
-  }
-  display.display();
-  display.dim(true);
-  // text display big!
-  display.setTextSize(2);
-  display.setTextColor(WHITE);
+  // if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
+  //   Serial.println(F("SSD1306 allocation failed"));
+  //   for(;;); // Don't proceed, loop forever
+  // }
+  // display.display();
+  // display.dim(true);
+  // // text display big!
+  // display.setTextSize(2);
+  // display.setTextColor(WHITE);
 
   sensor.init();
   sensor.setTimeout(500);
@@ -80,14 +80,11 @@ void setup()
 void loop()
 {
   uint16_t measure = sensor.readRangeSingleMillimeters();
-  uint8_t length = measure * 1000 / MAX_RANGE;
-  for (int i = 0; i < length; i++) {
-    Serial.print(".");
-  }
-  Serial.println();
+  Serial.printf("%d mm\n", measure);
+
   if (sensor.timeoutOccurred()) { Serial.print(" TIMEOUT"); }
-  display.clearDisplay();
-  display.setCursor(0,0);
-  display.printf("%d mm", measure);
-  display.display();
+  // display.clearDisplay();
+  // display.setCursor(0,0);
+  // display.printf("%d mm", measure);
+  // display.display();
 }

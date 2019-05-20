@@ -27,6 +27,7 @@
 #include "src/SDlogger.h"
 #include "src/OledMonitor.h"
 #include "src/PowerDistributionBoard.h"
+#include "src/DistanceSensorManager.h"
 
 //Defining Pins
 #define VBATPIN 13
@@ -68,12 +69,7 @@ struct Measurement
   float ibatt;
   float tempC;
   bool ableBoost;
-  float vertiDist;
-  float leftDist;
-  float rightDist;
-  float rearDist;
-  float leftGrabDist;
-  float rightGrabDist;
+  uint16_t dist[6];
   bool isLeftClaw;
   bool isRightClaw;
 };
@@ -81,11 +77,11 @@ struct Measurement
 union DataPacket
 {
   struct Measurement rawData;
-  byte serialized[50];
+  byte serialized[sizeof(Measurement)];
 };
 
 const struct Measurement DefaultValue = {
-  0, 0, 0, 1, 3, true, 0, 0, 0, 0, 0, 0, false, false
+  0, 0, 0, 1, 3, true, {0, 0, 0, 0, 0, 0}, false, false
 };
 
 struct Measurement currentMeasurement;
@@ -104,6 +100,9 @@ RTC_PCF8523 rtc;
 
 // Power distribution board
 PDP pdp(VBATPIN, VCAPIN, IBATTPIN);
+
+// Distance Sensors
+SensorManager manager;
 
 // SD logger
 SDloggerFactory SDlogger = SDloggerFactory();
@@ -204,6 +203,9 @@ void setup() {
       while (1);
     }
 
+    // VL530 Time of flight sensor setup
+    manager.setupSensors(LONG_RANGE);
+
     // Temperature sensor init
     // if (! tempsensor.begin(0x18)) {
     //   Serial.println("Couldn't find MCP9808! Check your connections and verify the address is correct.");
@@ -237,17 +239,22 @@ void setup() {
 }
 
 void loop() {
-  // loop_AP();
-  // while (isAccessMeasurement);
-  // isAccessMeasurement = true;
   DateTime now = rtc.now();
+  manager.getDistance(currentMeasurement.dist);
   currentMeasurement.timestamp = now.unixtime();
-  currentMeasurement.ableBoost = pdp.canBoost();
-  currentMeasurement.ibatt = pdp.getBatteryCurrent();
-  currentMeasurement.vbatt = pdp.getBatteryVoltage();
-  currentMeasurement.vcap  = pdp.getCapacitorVoltage();
+  // currentMeasurement.ableBoost = pdp.canBoost();
+  // currentMeasurement.ibatt = pdp.getBatteryCurrent();
+  // currentMeasurement.vbatt = pdp.getBatteryVoltage();
+  // currentMeasurement.vcap  = pdp.getCapacitorVoltage();
   // currentMeasurement.tempC = tempsensor.readTempC();
   packet.rawData = currentMeasurement;
   SDlogger.logByte(packet.serialized, sizeof(packet.serialized));
+  Serial.print(currentMeasurement.dist[0]);
+  Serial.print("\t");
+  for(int i = 0; i < sizeof(packet.serialized); i++) {
+    Serial.print(packet.serialized[i]);
+    Serial.print(" ");
+  }
+  Serial.println();
   delay(250);
 }
