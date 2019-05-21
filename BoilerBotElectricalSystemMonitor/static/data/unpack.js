@@ -5,7 +5,7 @@ const MAPPING = {
     },
     '?': {
         size: 2,
-        converter: Uint8Array
+        converter: Uint16Array
     },
     'f': {
         size: 4,

@@ -12,27 +12,68 @@
         <div class="container">
             <div>
                 <h1>BoilerBot Electrical System Monitor</h1>
-                <h2>Date Time: <i id="response"></i></h2>
+                <h3>Date Time: <i id="response"></i></h3>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <canvas class="canvas" width="200" height="200"></canvas>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
+                    <canvas class="canvas" width="200" height="200"></canvas>
+                </div>
+                <div class="col-4">
                     <canvas class="canvas" width="200" height="200"></canvas>
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <canvas class="canvas" width="200" height="200"></canvas>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
+                    <canvas class="canvas" width="200" height="200"></canvas>
+                </div>
+                <div class="col-4">
+                    <canvas class="canvas" width="200" height="200"></canvas>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <canvas class="canvas" width="200" height="200"></canvas>
+                </div>
+                <div class="col-4">
+                    <canvas class="canvas" width="200" height="200"></canvas>
+                </div>
+                <div class="col-4">
+                    <canvas class="canvas" width="200" height="200"></canvas>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <canvas class="canvas" width="200" height="200"></canvas>
+                </div>
+                <div class="col-4">
+                    <canvas class="canvas" width="200" height="200"></canvas>
+                </div>
+                <div class="col-4">
+                    <canvas class="canvas" width="200" height="200"></canvas>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <canvas class="canvas" width="200" height="200"></canvas>
+                </div>
+                <div class="col-4">
+                    <canvas class="canvas" width="200" height="200"></canvas>
+                </div>
+                <div class="col-4">
                     <canvas class="canvas" width="200" height="200"></canvas>
                 </div>
             </div>
         </div>
         
         <script>
+            // Set the axis to zero
+            const startTime = Math.floor(((new Date()).getTime() - (new Date()).getTimezoneOffset() * 60000) / 1000) - 17;
             const msg_structure = 'Iffff?HHHHHH??';
             const socket = new WebSocket('ws://192.168.4.1/ws');
             const readSerializedStruct = (inputBlob) => {
@@ -48,6 +89,22 @@
                     };
                     temporaryFileReader.readAsArrayBuffer(inputBlob);
                 });
+            };
+
+            function toggleChartSize(event) {
+                canvas = event.currentTarget;
+                if (canvas.parentNode.style.width == '') {
+                    canvas.parentNode.style.width = '50vw'
+                    canvas.parentNode.style.height = '50vw'
+                    canvas.style.border = 'thin solid rgba(255, 99, 132, 1)'
+                    canvas.style['border-radius'] = '2vw'
+                    canvas.style['box-shadow'] = '10px 10px 5px #888888';
+                } else {
+                    canvas.parentNode.style.width = ''
+                    canvas.parentNode.style.height = ''
+                    canvas.style.border = ''
+                    canvas.style['box-shadow'] = ''
+                }
             };
 
             // Update chart data
@@ -77,10 +134,10 @@
                 msg = unpack(sensorDataArrays, msg_structure);
                 console.log('Received Message from server ', msg[0]);
                 var node = document.getElementById("response");
-                node.innerHTML = Date(msg[0]).toString();
+                node.innerHTML = Date().toString();
 
                 for (let i = 0; i < ctxs.length; i++) {
-                    addData(charts[i], msg[0], msg[i + 1]);
+                    addData(charts[i], msg[0] - startTime, msg[i + 1]);
                 }
             });
 
@@ -88,24 +145,11 @@
             var charts = new Array();
             for (var i = 0; i < ctxs.length; i++) {
                 var ctx = ctxs[i];
-                // Demo code
-                // var time = [0, 1, 2, 3, 4, 5];
-                // var variable = new Array(time.length);
-                // var points = new Array(time.length);
-
-                // for (var j = 0; j < time.length; j++) {
-                //     variable[j] = Math.sin(time[j] + i * j);
-                //     points[j] = {
-                //         x: time[j],
-                //         y: variable[j]
-                //     }
-                // }
                 var myChart = new Chart(ctx, {
                     type: 'line',
                     data: {
                         labels: [],
                         datasets: [{
-                            label: '#: ' + i.toString(),
                             data: [],
                             fill: false,
                             borderColor: 'rgba(255, 99, 132, 1)',
@@ -115,13 +159,28 @@
                     options: {
                         scales: {
                             yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: chartsAxesConfig[i].ylabel
+                                }
+                            }],
+                            xAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: chartsAxesConfig[i].xlabel
                                 }
                             }]
+                        },
+                        title: {
+                            display: true,
+                            text: chartsAxesConfig[i].name
+                        },
+                        legend: {
+                            display: false
                         }
                     }
                 });
+                myChart.canvas.onclick = toggleChartSize;
                 charts.push(myChart);
             }
         </script>

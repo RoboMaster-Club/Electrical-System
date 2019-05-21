@@ -15,8 +15,10 @@ void setup() {
   pneumatic.pinMode(1, OUTPUT);
   pneumatic.pinMode(2, OUTPUT);
   pneumatic.pinMode(3, OUTPUT);
+  pneumatic.pinMode(4, OUTPUT);
 
-  for(int i = 0; i < 4; i++)
+
+  for(int i = 0; i < 5; i++)
   {
     // Set high for all pins
     pneumatic.digitalWrite(i, HIGH);

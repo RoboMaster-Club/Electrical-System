@@ -1,6 +1,8 @@
 // Debug setting
 #define DEBUG 
 
+#include <stdint.h>
+
 // I2C
 #include <Wire.h>
 
@@ -23,6 +25,7 @@
 
 //Include Libraries
 #include <Adafruit_MCP9808.h>
+#include "Adafruit_MCP23008.h"
 #include <RTClib.h>
 #include "src/SDlogger.h"
 #include "src/OledMonitor.h"
@@ -69,20 +72,20 @@ struct Measurement
   float vcap;
   float ibatt;
   float tempC;
-  bool ableBoost;
+  uint16_t ableBoost;
   uint16_t dist[6];
-  bool isLeftClaw;
-  bool isRightClaw;
+  uint16_t isLeftClaw;
+  uint16_t isRightClaw;
 };
 
 union DataPacket
 {
   struct Measurement rawData;
-  byte serialized[sizeof(Measurement)];
+  byte serialized[38];
 };
 
-const struct Measurement DefaultValue = {
-  0, 0, 0, 1, 3, true, {0, 0, 0, 0, 0, 0}, false, false
+struct Measurement DefaultValue = {
+  0, 0, 0, 1, 3, true, {3, 1, 0, 0, 1, 3}, true, true
 };
 
 struct Measurement currentMeasurement;
@@ -104,6 +107,17 @@ PDP pdp(VBATPIN, VCAPIN, IBATTPIN);
 
 // Distance Sensors
 SensorManager manager;
+
+// Digital Control
+// Include Pneumatic system and limit switch
+Adafruit_MCP23008 digitalControl;
+
+const uint8_t pneumatic0 = 0;
+const uint8_t pneumatic1 = 1;
+const uint8_t pneumatic2 = 2;
+const uint8_t pneumatic3 = 3;
+const uint8_t limitSW1 = 4;
+const uint8_t limitSW2 = 5;
 
 // SD logger
 SDloggerFactory SDlogger = SDloggerFactory();
@@ -162,85 +176,101 @@ void setup() {
   // setup_temp();
   // setup_reg();
   // currentMeasurement = DefaultValue
-    pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
 
-    // Serial & Monitor initialization
-    Serial.begin(9600);
-    Serial.println();
-    monitor.init(&Serial);
+  // Serial & Monitor initialization
+  Serial.begin(9600);
+  Serial.println();
+  monitor.init(&Serial);
 
-    // AP setup
-    Serial.println("Configuring access point...");
-    WiFi.softAP(SSID);
+  // AP setup
+  Serial.println("Configuring access point...");
+  WiFi.softAP(SSID);
 
-    Serial.print("IP Address: ");
-    Serial.println(WiFi.softAPIP());
-    Serial.print("Hostname: ");
-    Serial.println(WiFi.softAPgetHostname());
-    Serial.print("Domain name: ");
-    Serial.printf("%s.local\n", DOMAIN_NAME);
+  Serial.print("IP Address: ");
+  Serial.println(WiFi.softAPIP());
+  Serial.print("Hostname: ");
+  Serial.println(WiFi.softAPgetHostname());
+  Serial.print("Domain name: ");
+  Serial.printf("%s.local\n", DOMAIN_NAME);
 
-    // mDNS setup
-    if (!MDNS.begin(DOMAIN_NAME)) {
-        Serial.println("Error setting up MDNS responder!");
-    }
-    MDNS.addService("http", "tcp", 80);
+  // mDNS setup
+  if (!MDNS.begin(DOMAIN_NAME)) {
+      Serial.println("Error setting up MDNS responder!");
+  }
+  MDNS.addService("http", "tcp", 80);
 
-    // Logger setup
-    Serial.println("SD logger test");
-    SDlogger.init(CHIP_SELECT);
-    SDlogger.info(&Serial);
-    DateTime now = rtc.now();
-    char logfile[40];
-    sprintf(logfile, "/log-%d-%d-%d-%d-%d-%d.boiler", now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second());
-    SDlogger.setFp(logfile, FILE_WRITE);
+  // Logger setup
+  Serial.println("SD logger test");
+  SDlogger.init(CHIP_SELECT);
+  SDlogger.info(&Serial);
+  DateTime now = rtc.now();
+  char logfile[40];
+  sprintf(logfile, "/log-%d-%d-%d-%d-%d-%d.boiler", now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second());
+  SDlogger.setFp(logfile, FILE_WRITE);
 
-    // Initialize measurement
-    currentMeasurement = DefaultValue;
+  // Initialize measurement
+  currentMeasurement = DefaultValue;
 
-    // RTC setup
-    if (! rtc.begin()) {
-      Serial.println("Couldn't find RTC");
-      while (1);
-    }
+  // RTC setup
+  if (! rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
 
-    // VL530 Time of flight sensor setup
-    manager.setupSensors(LONG_RANGE);
-    Serial.println(manager.sensorStatus, BIN);
+  // VL530 Time of flight sensor setup
+  manager.setupSensors(LONG_RANGE);
+  Serial.println(manager.sensorStatus, BIN);
 
-    // Temperature sensor init
-    // if (! tempsensor.begin(0x18)) {
-    //   Serial.println("Couldn't find MCP9808! Check your connections and verify the address is correct.");
-    //   while (1);
-    // }
-    // Mode Resolution SampleTime
-    //  0    0.5°C       30 ms
-    //  1    0.25°C      65 ms
-    //  2    0.125°C     130 ms
-    //  3    0.0625°C    250 ms
-    // tempsensor.setResolution(1);
+  // Digital Control setup
+  digitalControl.begin();      // use default address 0x20
+  digitalControl.pinMode(pneumatic0, OUTPUT);
+  digitalControl.pinMode(pneumatic1, OUTPUT);
+  digitalControl.pinMode(pneumatic2, OUTPUT);
+  digitalControl.pinMode(pneumatic3, OUTPUT);
+  digitalControl.pinMode(limitSW1, INPUT);
+  digitalControl.pinMode(limitSW2, INPUT);
 
-    // FS
-    SPIFFS.begin();
-    server.serveStatic("/", SPIFFS, "/").setDefaultFile("index.htm");
-    // server.serveStatic("/log", SD, "/")
+  for(int i = 0; i < 4; i++)
+  {
+    // Set high for all pneumatic control pins
+    digitalControl.digitalWrite(i, HIGH);
+  }
 
-    // Server Handlers
-    // WS Handlers
-    ws.onEvent(onWsEvent);
-    server.addHandler(&ws);
+  // Temperature sensor init
+  // if (! tempsensor.begin(0x18)) {
+  //   Serial.println("Couldn't find MCP9808! Check your connections and verify the address is correct.");
+  //   while (1);
+  // }
+  // Mode Resolution SampleTime
+  //  0    0.5°C       30 ms
+  //  1    0.25°C      65 ms
+  //  2    0.125°C     130 ms
+  //  3    0.0625°C    250 ms
+  // tempsensor.setResolution(1);
 
-    // server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
-    //     request->send(200, "text/plain", "Hello, world");
-    // });
+  // FS
+  SPIFFS.begin();
+  server.serveStatic("/", SPIFFS, "/").setDefaultFile("index.htm");
+  // server.serveStatic("/log", SD, "/")
 
-    server.onNotFound(notFound);
+  // Server Handlers
+  // WS Handlers
+  ws.onEvent(onWsEvent);
+  server.addHandler(&ws);
 
-    server.begin();
+  // server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
+  //     request->send(200, "text/plain", "Hello, world");
+  // });
 
-    // Buzzer
-    setupBuzzer();
-    playNokia();
+  server.onNotFound(notFound);
+
+  server.begin();
+
+  // Buzzer
+  setupBuzzer();
+  playNokia();
+  // playDJI();
 }
 
 void loop() {
@@ -252,18 +282,24 @@ void loop() {
   // currentMeasurement.vbatt = pdp.getBatteryVoltage();
   // currentMeasurement.vcap  = pdp.getCapacitorVoltage();
   // currentMeasurement.tempC = tempsensor.readTempC();
+  currentMeasurement.isLeftClaw = digitalControl.digitalRead(limitSW2);
   packet.rawData = currentMeasurement;
   SDlogger.logByte(packet.serialized, sizeof(packet.serialized));
-  Serial.print(currentMeasurement.dist[0]);
+
+  digitalControl.digitalWrite(pneumatic0, currentMeasurement.isLeftClaw);
+
+  Serial.print(currentMeasurement.timestamp);
+  Serial.printf("\t%d\t", sizeof(packet.serialized));
+  Serial.print(sizeof(DefaultValue));
   Serial.print("\t");
-  for(int i = 0; i < NUM_SENSORS; i++) {
-    Serial.print(currentMeasurement.dist[i]);
-    Serial.print(" ");
-  }
-  // for(int i = 0; i < sizeof(packet.serialized); i++) {
-  //   Serial.print(packet.serialized[i]);
+  // for(int i = 0; i < NUM_SENSORS; i++) {
+  //   Serial.print(currentMeasurement.dist[i]);
   //   Serial.print(" ");
   // }
+  for(int i = 0; i < sizeof(packet.serialized); i++) {
+    Serial.print(packet.serialized[i], HEX);
+    Serial.print(" ");
+  }
   Serial.println();
-  delay(250);
+  delay(100);
 }
