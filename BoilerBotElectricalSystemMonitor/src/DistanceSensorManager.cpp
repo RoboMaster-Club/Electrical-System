@@ -7,12 +7,15 @@ SensorManager::SensorManager(uint8_t TCAADDR) {
 }
 
 void SensorManager::setupSensors(uint8_t config) {
+    Serial.println("Setuping up sensors");
     for(uint8_t i = 0; i < NUM_SENSORS; i++) {
         tcaselect(i, managerAddr);
         VL53L0X sensor;
         sensors[i] = sensor;
         uint8_t data;
-        if (! Wire.writeTransmission(ADDRESS_DEFAULT, &data, 0, 1)) {
+        Serial.printf("Manager: %xd, No: %d, Addr: %xd\n", managerAddr, i, ADDRESS_DEFAULT);
+        if (Wire.writeTransmission(ADDRESS_DEFAULT, &data, 0, 1) == I2C_ERROR_OK) {
+            Serial.printf("No. %d online\n", i);
             sensor.init();
             sensorStatus |= 1;
             sensorStatus <<= 1;

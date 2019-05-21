@@ -46,7 +46,11 @@
 			"random": "cpp",
 			"tuple": "cpp",
 			"utility": "cpp",
-			"cwchar": "cpp"
+			"cwchar": "cpp",
+			"esp32-hal.h": "c",
+			"dport_reg.h": "c",
+			"ledc_reg.h": "c",
+			"esp32-hal-ledc.h": "c"
 		}
 	},
 	"extensions": {

@@ -28,6 +28,7 @@
 #include "src/OledMonitor.h"
 #include "src/PowerDistributionBoard.h"
 #include "src/DistanceSensorManager.h"
+#include "src/Audio.h"
 
 //Defining Pins
 #define VBATPIN 13
@@ -39,7 +40,7 @@
 #define RX 11
 #define RX2 16
 #define TX2 17
-#define BUZZ_PIN 0
+#define BUZZ_PIN A1
 
 // SD card
 #define CHIP_SELECT 33
@@ -164,7 +165,7 @@ void setup() {
     pinMode(LED_BUILTIN, OUTPUT);
 
     // Serial & Monitor initialization
-    Serial.begin(115200);
+    Serial.begin(9600);
     Serial.println();
     monitor.init(&Serial);
 
@@ -205,6 +206,7 @@ void setup() {
 
     // VL530 Time of flight sensor setup
     manager.setupSensors(LONG_RANGE);
+    Serial.println(manager.sensorStatus, BIN);
 
     // Temperature sensor init
     // if (! tempsensor.begin(0x18)) {
@@ -236,6 +238,9 @@ void setup() {
 
     server.begin();
 
+    // Buzzer
+    setupBuzzer();
+    playNokia();
 }
 
 void loop() {
@@ -251,10 +256,14 @@ void loop() {
   SDlogger.logByte(packet.serialized, sizeof(packet.serialized));
   Serial.print(currentMeasurement.dist[0]);
   Serial.print("\t");
-  for(int i = 0; i < sizeof(packet.serialized); i++) {
-    Serial.print(packet.serialized[i]);
+  for(int i = 0; i < NUM_SENSORS; i++) {
+    Serial.print(currentMeasurement.dist[i]);
     Serial.print(" ");
   }
+  // for(int i = 0; i < sizeof(packet.serialized); i++) {
+  //   Serial.print(packet.serialized[i]);
+  //   Serial.print(" ");
+  // }
   Serial.println();
   delay(250);
 }

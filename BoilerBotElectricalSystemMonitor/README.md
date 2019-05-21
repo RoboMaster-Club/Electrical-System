@@ -82,9 +82,11 @@ The web interface part mainly provides graphical representation of the sensor va
 - [ ] MCP2300x Testing
 - [ ] Reading from new power distribution board
 - [x] TCA9548A
+  - [ ] Note that the onboard TCA chip on the test board might be damaged as it cannot properly select port sometimes and the #1 port on it cannot communicate with sensors
 - [x] Timer
 - [ ] System Stability Test (Connect all peripheral)
 - [ ] Buzzer (DJI)
+  - [ ] Achieve intel sound
 - [ ] All I2C peripherals
 - [ ] Digital limit switch
 - [ ] UART Protocols to STM32F4

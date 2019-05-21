@@ -1,7 +1,8 @@
 #ifndef PDP_H
 #define PDP_H
-
-// TODO Update to the newest pdp design; integrate sensors using the i2c multiplexer
+/**
+ * TODO Update to the newest pdp design; integrate temperature and ADC IC
+ **/
 
 // Include
 #include <stdint.h>
