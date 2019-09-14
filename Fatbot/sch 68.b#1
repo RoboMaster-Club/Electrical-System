@@ -3,7 +3,7 @@
 <eagle version="9.3.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="0.1" altunitdist="mil" altunit="mil"/>
@@ -2452,16 +2452,16 @@ design rules under a new name.</description>
 <via x="45.72" y="10.16" extent="1-16" drill="0.3048"/>
 <via x="40.132" y="22.098" extent="1-16" drill="0.3048"/>
 <via x="43.18" y="20.066" extent="1-16" drill="0.3048"/>
-<via x="37.338" y="13.208" extent="1-16" drill="0.3048"/>
-<via x="36.068" y="13.208" extent="1-16" drill="0.3048"/>
-<via x="34.798" y="13.208" extent="1-16" drill="0.3048"/>
-<via x="33.528" y="13.208" extent="1-16" drill="0.3048"/>
-<via x="32.258" y="13.208" extent="1-16" drill="0.3048"/>
-<via x="32.258" y="11.938" extent="1-16" drill="0.3048"/>
-<via x="33.528" y="11.938" extent="1-16" drill="0.3048"/>
-<via x="34.798" y="11.938" extent="1-16" drill="0.3048"/>
-<via x="36.068" y="11.938" extent="1-16" drill="0.3048"/>
-<via x="37.338" y="11.938" extent="1-16" drill="0.3048"/>
+<via x="38.1" y="13.462" extent="1-16" drill="0.3048"/>
+<via x="36.83" y="13.462" extent="1-16" drill="0.3048"/>
+<via x="35.56" y="13.462" extent="1-16" drill="0.3048"/>
+<via x="34.29" y="13.462" extent="1-16" drill="0.3048"/>
+<via x="33.02" y="13.462" extent="1-16" drill="0.3048"/>
+<via x="33.02" y="12.192" extent="1-16" drill="0.3048"/>
+<via x="34.29" y="12.192" extent="1-16" drill="0.3048"/>
+<via x="35.56" y="12.192" extent="1-16" drill="0.3048"/>
+<via x="36.83" y="12.192" extent="1-16" drill="0.3048"/>
+<via x="38.1" y="12.192" extent="1-16" drill="0.3048"/>
 <via x="43.942" y="16.764" extent="1-16" drill="0.3048"/>
 <via x="58.928" y="10.414" extent="1-16" drill="0.3048"/>
 <via x="58.42" y="19.304" extent="1-16" drill="0.3048"/>
