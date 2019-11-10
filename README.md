@@ -1,5 +1,5 @@
 # Electrical System
-Welcome to Purdue Robomaster Club's Electrical System Repository. This repository contain everything from PCB design, Design Notebook (In sub-folder's ReadMe.md), and softwares. 
+Welcome to Purdue Robomaster Club's Electrical System Repository Created by Chengming Zhang. This repository contain everything from PCB design, Design Notebook (In sub-folder's ReadMe.md), and softwares. 
 
 If you are not familier with Robomaster, or Purdue's Robomaster Team, please refer to [Our Website](https://www.PurdueRM.com "Purdue Robomaster"). The image bellow is our latest **Electrical System Diagram** which lays out all the connection between our subsystems.
 
