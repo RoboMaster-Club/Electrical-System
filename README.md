@@ -99,7 +99,7 @@ The newst power distribution board is divided into three seperated board:
 
   This board provides power to the Pitch Motor for the gimbal system, as well as power for Electrical System Controller. The board also provide pre-organization of the wires that goes up through the slip-ring.
 
-  [SlipRing Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/SlipRing Distribution%20Board)‼️
+  [SlipRing Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/SlipRing%20Distribution%20Board)‼️
 
 * **Gimbal Power Distribution Board**
 
