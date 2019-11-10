@@ -53,10 +53,10 @@ Ben Mirvish ` @bmivish`
 
 Due to the competition rule, the robot chassis, which consists of four DJI 3508 geared brushless motor, can not draw more than 240W of power at any given time. To overcome this limitation, we designed our custom made supercapacitor bank as a buffer that provides instantaneous power to our robot on demand. **This Capacitor Bank only consist of voltage banlancing circuit, ADC, and the Super Capacitor Unit.** Since this is a passive electrical unit, there is no firmware.
 
-‼️#Plan for your PCB, Electrical Parameter and Mechinical Parameters like dimentions in your own folder
+> Plan for your PCB, Electrical Parameter and Mechinical Parameters like dimentions in your own folder‼️
 
-* PCB Design  @#todo‼️
-* CAD Design Enclosure @#google drive link‼️
+> * PCB Design  @#todo‼️
+> * CAD Design Enclosure @#google drive link‼️
 <br>
 
 
