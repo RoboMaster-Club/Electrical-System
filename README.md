@@ -47,7 +47,7 @@ Ben Mirvish ` @bmivish`
 
 ### Power Electronics
 
-#### - Super Capacitor Bank ‼️ ▶️ ⚠️
+#### 📌 Super Capacitor Bank ‼️ ▶️ ⚠️
 
  `Made by @bmirvish @blaticslm`
 
@@ -60,7 +60,7 @@ Due to the competition rule, the robot chassis, which consists of four DJI 3508 
 
 
 
-#### - Super Capacitor Charger (STM32) ‼️ 🔜 ⚠️ 🔂
+#### 📌 Super Capacitor Charger (STM32) ‼️ 🔜 ⚠️ 🔂
 
 `Made by @cmz97`
 
@@ -71,7 +71,7 @@ Since Capacitor is a short circuit when not charged, we need to design a consita
 
 
 
-#### - Power Distribution Board 🉑
+#### 📌 Power Distribution Board 🉑
 
 `Made by @cmz97`
 
@@ -109,7 +109,7 @@ The newst power distribution board is divided into three seperated board:
 
 ### Embedded System
 
-#### Electrical System Controller (STM32) ‼️🔂
+#### 📌 Electrical System Controller (STM32) ‼️🔂
 
 * PCB Design `Made by @cmz97`
 
@@ -117,25 +117,25 @@ The newst power distribution board is divided into three seperated board:
 
   
 
-#### Remote Electrical System Monitor ‼️🔜
+#### 📌 Remote Electrical System Monitor ‼️🔜
 
 `Made by @cmz97`
 
-#### Gimbal Electrical System Controller (ATMEGA) 🔂 ▶️‼️
+#### 📌 Gimbal Electrical System Controller (ATMEGA) 🔂 ▶️‼️
 
  `Made by @Lazloian`
 
 
 
-#### Low Ammo Detection ‼️🔜
+#### 📌 Low Ammo Detection ‼️🔜
 
  `Made by @Lazloian`
 
 
 
-#### Robot Controller (STM32) ‼️
+#### 📌 Robot Controller (STM32) ‼️
 
 
 
-#### Computer Vision System (Jetson TX 2)‼️
+#### 📌 Computer Vision System (Jetson TX 2)‼️
 
