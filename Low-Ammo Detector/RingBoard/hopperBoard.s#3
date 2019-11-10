@@ -202,13 +202,16 @@
 <wire x1="0.8" y1="1.9" x2="1.6" y2="1.9" width="0.127" layer="25"/>
 <wire x1="0.8" y1="-0.1" x2="1.6" y2="-0.1" width="0.127" layer="25"/>
 </package>
-<package name="XT30U-M">
+<package name="XT30">
 <pad name="P$1" x="0" y="0" drill="1.7"/>
 <pad name="P$2" x="5" y="0" drill="1.7"/>
-<wire x1="-2" y1="2" x2="-2" y2="-2" width="0.127" layer="21"/>
-<wire x1="-2" y1="-2" x2="7" y2="-2" width="0.127" layer="21"/>
-<wire x1="7" y1="-2" x2="7" y2="2" width="0.127" layer="21"/>
-<wire x1="7" y1="2" x2="-2" y2="2" width="0.127" layer="21"/>
+<pad name="P$3" x="-3" y="10" drill="1"/>
+<pad name="P$4" x="8" y="10" drill="1"/>
+<wire x1="-4.1" y1="14.7" x2="9.1" y2="14.7" width="0.127" layer="21"/>
+<wire x1="-4.1" y1="14.7" x2="-4.1" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="-4.1" y1="-1.5" x2="9.1" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="9.1" y1="14.7" x2="9.1" y2="-1.5" width="0.127" layer="21"/>
+<text x="0" y="-3.81" size="1.27" layer="21">XT30</text>
 </package>
 </packages>
 <symbols>
@@ -362,12 +365,12 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="XT30U-M">
+<deviceset name="XT30PW-M">
 <gates>
 <gate name="G$1" symbol="XT30PW-M" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="XT30U-M">
+<device name="" package="XT30">
 <connects>
 <connect gate="G$1" pin="GND" pad="P$2"/>
 <connect gate="G$1" pin="VCC" pad="P$1"/>
@@ -8309,7 +8312,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="U$10" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
 <part name="U$11" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
 <part name="U$12" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
-<part name="U$6" library="_HenrySilva" deviceset="XT30U-M" device=""/>
+<part name="U$6" library="_HenrySilva" deviceset="XT30PW-M" device=""/>
 </parts>
 <sheets>
 <sheet>

@@ -8313,6 +8313,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="U$11" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
 <part name="U$12" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
 <part name="U$6" library="_HenrySilva" deviceset="XT30PW-M" device=""/>
+<part name="U$7" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
 </parts>
 <sheets>
 <sheet>
@@ -8359,6 +8360,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <instance part="U$11" gate="G$1" x="25.4" y="20.32" smashed="yes"/>
 <instance part="U$12" gate="G$1" x="43.18" y="20.32" smashed="yes"/>
 <instance part="U$6" gate="G$1" x="-45.72" y="63.5" smashed="yes" rot="R270"/>
+<instance part="U$7" gate="G$1" x="25.4" y="2.54" smashed="yes"/>
 </instances>
 <busses>
 </busses>

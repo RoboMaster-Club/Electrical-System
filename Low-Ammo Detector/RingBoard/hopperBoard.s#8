@@ -8362,20 +8362,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="162.56" y1="10.16" x2="172.72" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="1.5V1" class="0">
-<segment>
-<pinref part="U$2" gate="G$1" pin="1.5V"/>
-<wire x1="-22.86" y1="50.8" x2="-22.86" y2="45.72" width="0.1524" layer="91"/>
-<label x="-22.86" y="45.72" size="1.778" layer="95" rot="R270"/>
-</segment>
-</net>
-<net name="1.5V2" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="1.5V"/>
-<wire x1="-7.62" y1="50.8" x2="-7.62" y2="45.72" width="0.1524" layer="91"/>
-<label x="-7.62" y="45.72" size="1.778" layer="95" rot="R270"/>
-</segment>
-</net>
 <net name="1.5V" class="0">
 <segment>
 <pinref part="U$9" gate="G$1" pin="2"/>
@@ -8393,6 +8379,16 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="162.56" y1="25.4" x2="162.56" y2="22.86" width="0.1524" layer="91"/>
 <junction x="162.56" y="25.4"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="1.5V"/>
+<wire x1="-22.86" y1="50.8" x2="-22.86" y2="45.72" width="0.1524" layer="91"/>
+<label x="-22.86" y="45.72" size="1.778" layer="95" rot="R270"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="1.5V"/>
+<wire x1="-7.62" y1="50.8" x2="-7.62" y2="45.72" width="0.1524" layer="91"/>
+<label x="-7.62" y="45.72" size="1.778" layer="95" rot="R270"/>
 </segment>
 </net>
 </nets>

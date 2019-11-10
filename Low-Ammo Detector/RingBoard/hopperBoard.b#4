@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -168,7 +168,6 @@
 <wire x1="22.8865" y1="-83.033640625" x2="30.29038125" y2="-80.62796875" width="0.001" layer="20" curve="-103.69"/>
 <wire x1="30.29038125" y1="-80.62796875" x2="86.042" y2="-3.89245" width="0.001" layer="20" curve="66.82"/>
 <wire x1="86.042" y1="-3.89245" x2="86.042" y2="3.89245" width="0.001" layer="20" curve="-103.69"/>
-<circle x="0" y="0" radius="68.31" width="0.001" layer="20"/>
 <wire x1="-67.32151875" y1="53.72326875" x2="-71.897359375" y2="47.425159375" width="0.001" layer="20" curve="-103.69"/>
 <wire x1="-71.897359375" y1="47.425159375" x2="-71.897359375" y2="-47.425159375" width="0.001" layer="20" curve="66.82"/>
 <wire x1="-71.897359375" y1="-47.425159375" x2="-67.32151875" y2="-53.72326875" width="0.001" layer="20" curve="-103.69"/>
@@ -178,6 +177,9 @@
 <wire x1="86.042" y1="-3.89245" x2="86.042" y2="3.89245" width="0.001" layer="20" curve="-103.69"/>
 <wire x1="86.042" y1="3.89245" x2="30.29038125" y2="80.62796875" width="0.001" layer="20" curve="66.82"/>
 <wire x1="30.29038125" y1="80.62796875" x2="22.8865" y2="83.033640625" width="0.001" layer="20" curve="-103.69"/>
+<circle x="0" y="0" radius="69.00724375" width="0.254" layer="20"/>
+<text x="24" y="-76" size="1.778" layer="26" font="vector" rot="MR0">Purdue Robomaster Ammo Sensor Board V1.0
+By Henry Silva 11/9/2019</text>
 </plain>
 <libraries>
 <library name="_HenrySilva">
@@ -1589,11 +1591,11 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="R" x="77.964" y="-4.6904" size="1.778" layer="27" font="vector" rot="R90" display="off"/>
 <attribute name="VALUE" x="79.869" y="-5.3254" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="U$10" library="microbuilder" package="MOUNTINGHOLE_3.0_PLATEDTHIN" value="MOUNTINGHOLE3.0THIN" x="55.302" y="-54.87" smashed="yes"/>
-<element name="U$11" library="microbuilder" package="MOUNTINGHOLE_3.0_PLATEDTHIN" value="MOUNTINGHOLE3.0THIN" x="-54.016" y="-54.87" smashed="yes"/>
-<element name="U$12" library="microbuilder" package="MOUNTINGHOLE_3.0_PLATEDTHIN" value="MOUNTINGHOLE3.0THIN" x="-56" y="55" smashed="yes"/>
-<element name="U$6" library="_HenrySilva" package="XT30" value="XT30PW-M" x="70" y="-15" smashed="yes" rot="R270"/>
-<element name="U$7" library="microbuilder" package="MOUNTINGHOLE_3.0_PLATEDTHIN" value="MOUNTINGHOLE3.0THIN" x="54.7" y="54.8" smashed="yes"/>
+<element name="U$10" library="microbuilder" package="MOUNTINGHOLE_3.0_PLATEDTHIN" value="MOUNTINGHOLE3.0THIN" x="54.73" y="-54.806" smashed="yes"/>
+<element name="U$11" library="microbuilder" package="MOUNTINGHOLE_3.0_PLATEDTHIN" value="MOUNTINGHOLE3.0THIN" x="-54.841" y="-54.806" smashed="yes"/>
+<element name="U$12" library="microbuilder" package="MOUNTINGHOLE_3.0_PLATEDTHIN" value="MOUNTINGHOLE3.0THIN" x="-54.809" y="54.809" smashed="yes"/>
+<element name="U$6" library="_HenrySilva" package="XT30" value="XT30PW-M" x="70.5" y="-15" smashed="yes" rot="R270"/>
+<element name="U$7" library="microbuilder" package="MOUNTINGHOLE_3.0_PLATEDTHIN" value="MOUNTINGHOLE3.0THIN" x="54.764" y="54.872" smashed="yes"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -1731,6 +1733,10 @@ design rules under a new name.</description>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)

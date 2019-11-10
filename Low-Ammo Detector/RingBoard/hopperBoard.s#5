@@ -8310,7 +8310,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10uF"/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="540k"/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="360k"/>
-<part name="U$7" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
 <part name="U$10" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
 <part name="U$11" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
 <part name="U$12" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
@@ -8357,7 +8356,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <attribute name="NAME" x="161.0614" y="-1.27" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="165.862" y="-1.27" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="U$7" gate="G$1" x="25.4" y="2.54" smashed="yes"/>
 <instance part="U$10" gate="G$1" x="43.18" y="2.54" smashed="yes"/>
 <instance part="U$11" gate="G$1" x="25.4" y="20.32" smashed="yes"/>
 <instance part="U$12" gate="G$1" x="43.18" y="20.32" smashed="yes"/>

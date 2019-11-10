@@ -8447,26 +8447,26 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </net>
 <net name="AMMO2" class="0">
 <segment>
-<pinref part="U$8" gate="G$1" pin="2"/>
-<wire x1="-58.42" y1="50.8" x2="-58.42" y2="45.72" width="0.1524" layer="91"/>
-<label x="-58.42" y="45.72" size="1.778" layer="95" rot="R270"/>
-</segment>
-<segment>
 <pinref part="U$3" gate="G$1" pin="OUT"/>
 <wire x1="30.48" y1="48.26" x2="30.48" y2="43.18" width="0.1524" layer="91"/>
 <label x="30.48" y="43.18" size="1.778" layer="95" rot="R270"/>
 </segment>
-</net>
-<net name="AMMO1" class="0">
 <segment>
 <pinref part="U$8" gate="G$1" pin="1"/>
 <wire x1="-55.88" y1="50.8" x2="-55.88" y2="45.72" width="0.1524" layer="91"/>
 <label x="-55.88" y="45.72" size="1.778" layer="95" rot="R270"/>
 </segment>
+</net>
+<net name="AMMO1" class="0">
 <segment>
 <pinref part="U$4" gate="G$1" pin="OUT"/>
 <wire x1="45.72" y1="48.26" x2="45.72" y2="43.18" width="0.1524" layer="91"/>
 <label x="45.72" y="43.18" size="1.778" layer="95" rot="R270"/>
+</segment>
+<segment>
+<pinref part="U$8" gate="G$1" pin="2"/>
+<wire x1="-58.42" y1="50.8" x2="-58.42" y2="45.72" width="0.1524" layer="91"/>
+<label x="-58.42" y="45.72" size="1.778" layer="95" rot="R270"/>
 </segment>
 </net>
 <net name="N$1" class="0">
