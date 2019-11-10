@@ -67,8 +67,8 @@ Due to the competition rule, the robot chassis, which consists of four DJI 3508 
 
 Since Capacitor is a short circuit when not charged, we need to design a consitance current charger to avoid damage of the battery and capacitor. Chengming Selected to use a H bridge Configuration to create a custon buck convertor using STM32F334. Currently, the Super Capacitor Charger can takes any voltage between 5v - 50v and convert it to 1v - 40v. The maxium output current is 10A. The PCB has a dimension of 2.599 in x 2.487 in and four layer. 
 
-* PCB Design @[SuperCapacitor v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor v2.0)
-* Firmware @[SuperCapacitor v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor v2.0)
+* PCB Design @[SuperCapacitor-v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor-v2.0)
+* Firmware @[SuperCapacitor-v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor-v2.0)
 <br>
 
 
@@ -85,7 +85,7 @@ Power Distribution Board is used to distribute electrical current in different v
 * **3.3 Volt** for all the embedded chip, STM32F4, ESP32, ATMEGA
 * **1.5 Volt** for Ammo remaining detection circuit
 
-For a more accurate and compelete report on voltage and current usage of our robot, pls refer to [Power Distribution Board Design Log](https://github.com/RoboMaster-Club/Electrical-System/blob/master/Power Distribution Board  V3.0/README.md)
+For a more accurate and compelete report on voltage and current usage of our robot, pls refer to [Power Distribution Board Design Log](https://github.com/RoboMaster-Club/Electrical-System/blob/master/Power-Distribution-Board -V3.0/README.md)
 
 The newst power distribution board is divided into three seperated board:
 
@@ -93,19 +93,19 @@ The newst power distribution board is divided into three seperated board:
 
   This board provides all the power delivery on the robot chassis, which consist of four DJI M3508 Motor
 
-  [Chassis Power Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power Distribution Board  V3.0/Chassis Power Distribution Board)‼️
+  [Chassis Power Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/Chassis Power Distribution Board)‼️
 
 * **Slip-Ring Power Distribution Board**
 
   This board provides power to the Pitch Motor for the gimbal system, as well as power for Electrical System Controller. The board also provide pre-organization of the wires that goes up through the slip-ring.
 
-  [SlipRing Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power Distribution Board  V3.0/SlipRing Distribution Board)‼️
+  [SlipRing Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/SlipRing Distribution Board)‼️
 
 * **Gimbal Power Distribution Board**
 
   This board provides power to the STM32 Robot controller, JetsonTX2, Yall Motor, Flywheel, ammo motor, as well as the Gimbal Electrical System Controller.
 
-  [Robomater Gimbal Power Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power Distribution Board  V3.0/Robomater Gimbal Power Distribution Board)‼️
+  [Robomater Gimbal Power Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/Robomater Gimbal Power Distribution Board)‼️
   
   
 
