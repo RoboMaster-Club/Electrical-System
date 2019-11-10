@@ -43,7 +43,7 @@ Ben Mirvish ` @bmivish`
 
 🚮 Abanded Project
 
-
+<br>
 
 ### Power Electronics
 
@@ -57,6 +57,7 @@ Due to the competition rule, the robot chassis, which consists of four DJI 3508 
 
 * PCB Design  @#todo‼️
 * CAD Design Enclosure @#google drive link‼️
+<br>
 
 
 
@@ -68,6 +69,7 @@ Since Capacitor is a short circuit when not charged, we need to design a consita
 
 * PCB Design @[SuperCapacitor v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor v2.0)
 * Firmware @[SuperCapacitor v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor v2.0)
+<br>
 
 
 
@@ -104,7 +106,10 @@ The newst power distribution board is divided into three seperated board:
   This board provides power to the STM32 Robot controller, JetsonTX2, Yall Motor, Flywheel, ammo motor, as well as the Gimbal Electrical System Controller.
 
   [Robomater Gimbal Power Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power Distribution Board  V3.0/Robomater Gimbal Power Distribution Board)‼️
-
+  
+  
+<br>
+<br>
 
 
 ### Embedded System
@@ -115,27 +120,33 @@ The newst power distribution board is divided into three seperated board:
 
 * Firmware `Made by @William-An`
 
+<br>
+
   
 
 #### 📌 Remote Electrical System Monitor ‼️🔜
 
 `Made by @cmz97`
 
+<br>
+
 #### 📌 Gimbal Electrical System Controller (ATMEGA) 🔂 ▶️‼️
 
  `Made by @Lazloian`
 
+<br>
 
 
 #### 📌 Low Ammo Detection ‼️🔜
 
  `Made by @Lazloian`
 
-
+<br>
 
 #### 📌 Robot Controller (STM32) ‼️
 
-
+<br>
 
 #### 📌 Computer Vision System (Jetson TX 2)‼️
 
+<br>
