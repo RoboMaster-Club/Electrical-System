@@ -1,7 +1,7 @@
 # Power System
 This repository belong to Purdue Robomaster, Electrical team's Robotics Power System
 
-<img src = "https://github.com/RoboMaster-Club/Power-System/raw/master/download.png"> 
+<img src = "https://github.com/RoboMaster-Club/Power-System/raw/master/Electrical Diagram.png"> 
 
 ## SubProjects
 1. `digitalSuperCapacitor/`
