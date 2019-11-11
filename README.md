@@ -81,12 +81,15 @@ Since Capacitor is a short circuit when not charged, we need to design a consita
 
 Power Distribution Board is used to distribute electrical current in different voltage across the robot. Currently the Robot takes the following voltage level. 
 
-1. **24 Volt** for Robot controller, Any motor
-
-2. **12 Volt** for Jetson TX 2, Transparent OLED
-3. **5 Volt** for Gimbal Electrical Controller Board (ATMEGA), Electrical System Controller(ESP32)
-4. **3.3 Volt** for all the embedded chip, STM32F4, ESP32, ATMEGA
-5. **1.5 Volt** for Ammo remaining detection circuit
+> **24 Volt** for Robot controller, Any motor
+>
+> **12 Volt** for Jetson TX 2, Transparent OLED
+>
+> **5 Volt** for Gimbal Electrical Controller Board (ATMEGA), Electrical System Controller(ESP32)
+>
+> **3.3 Volt** for all the embedded chip, STM32F4, ESP32, ATMEGA
+>
+> **1.5 Volt** for Ammo remaining detection circuit
 
 For a more accurate and compelete report on voltage and current usage of our robot, pls refer to [Power Distribution Board Design Log](https://github.com/RoboMaster-Club/Electrical-System/blob/master/Power-Distribution-Board-V3.0/README.md)
 
