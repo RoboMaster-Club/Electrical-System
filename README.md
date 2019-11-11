@@ -91,25 +91,31 @@ For a more accurate and compelete report on voltage and current usage of our rob
 
 The newst power distribution board is divided into three seperated board:
 
-* **Chassis Power Distribution Board**
 
-  This board provides all the power delivery on the robot chassis, which consist of four DJI M3508 Motor
 
-  [Chassis Power Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/Chassis%20Power%20Distribution%20Board)‼️
+#####Chassis Power Distribution Board
 
-* **Slip-Ring Power Distribution Board**
+This board provides all the power delivery on the robot chassis, which consist of four DJI M3508 Motor
 
-  This board provides power to the Pitch Motor for the gimbal system, as well as power for Electrical System Controller. The board also provide pre-organization of the wires that goes up through the slip-ring.
+[Chassis Power Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/Chassis%20Power%20Distribution%20Board)‼️
 
-  [SlipRing Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/SlipRing%20Distribution%20Board)‼️
 
-* **Gimbal Power Distribution Board**
 
-  This board provides power to the STM32 Robot controller, JetsonTX2, Yall Motor, Flywheel, ammo motor, as well as the Gimbal Electrical System Controller.
+#####Slip-Ring Power Distribution Board
 
-  [Robomater Gimbal Power Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/Robomater%20Gimbal%20Power%20Distribution%20Board)‼️
-  
-  
+This board provides power to the Pitch Motor for the gimbal system, as well as power for Electrical System Controller. The board also provide pre-organization of the wires that goes up through the slip-ring.
+
+[SlipRing Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/SlipRing%20Distribution%20Board)‼️
+
+
+
+#####Gimbal Power Distribution Board
+
+This board provides power to the STM32 Robot controller, JetsonTX2, Yall Motor, Flywheel, ammo motor, as well as the Gimbal Electrical System Controller.
+
+[Robomater Gimbal Power Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/Robomater%20Gimbal%20Power%20Distribution%20Board)‼️
+
+
 
 <br>
 <br>
