@@ -47,9 +47,7 @@ Ben Mirvish ` @bmivish`
 
 <br>
 
-### Power Electronics
-
-#### Super Capacitor Bank ‼️ ▶️ ⚠️
+### Super Capacitor Bank ‼️ ▶️ ⚠️
 
  `Made by @bmirvish @blaticslm`
 
@@ -64,7 +62,7 @@ Due to the competition rule, the robot chassis, which consists of four DJI 3508 
 
 <br>
 
-#### Super Capacitor Charger (STM32) ‼️ 🔜 ⚠️ 🔂
+### Super Capacitor Charger (STM32) ‼️ 🔜 ⚠️ 🔂
 
 `Made by @cmz97`
 
@@ -78,7 +76,7 @@ Firmware @[SuperCapacitor-v2.0](https://github.com/RoboMaster-Club/Electrical-Sy
 
 <br>
 
-#### Power Distribution Boards 🉑
+### Power Distribution Boards 🉑
 
 `Made by @cmz97`
 
@@ -100,7 +98,7 @@ The newst power distribution board is divided into three seperated board:
 
 <br>
 
-#### Chassis Power Distribution Board
+### Chassis Power Distribution Board
 
 This board provides all the power delivery on the robot chassis, which consist of four DJI M3508 Motor
 
@@ -116,7 +114,7 @@ This board provides all the power delivery on the robot chassis, which consist o
 
 <br>
 
-#### Slip-Ring Power Distribution Board
+### Slip-Ring Power Distribution Board
 
 This board provides power to the Pitch Motor for the gimbal system, as well as power for Electrical System Controller. The board also provide pre-organization of the wires that goes up through the slip-ring.
 
@@ -132,7 +130,7 @@ This board provides power to the Pitch Motor for the gimbal system, as well as p
 
 <br>
 
-#### Gimbal Power Distribution Board
+### Gimbal Power Distribution Board
 
 This board provides power to the STM32 Robot controller, JetsonTX2, Yall Motor, Flywheel, ammo motor, as well as the Gimbal Electrical System Controller.
 
@@ -150,9 +148,8 @@ This board provides power to the STM32 Robot controller, JetsonTX2, Yall Motor, 
 <br>
 
 
-### Embedded System
 
-#### Electrical System Controller (STM32) ‼️🔂
+### Electrical System Controller (STM32) ‼️🔂
 
 * PCB Design `Made by @cmz97`
 
@@ -162,13 +159,13 @@ This board provides power to the STM32 Robot controller, JetsonTX2, Yall Motor, 
 
   
 
-#### Remote Electrical System Monitor ‼️🔜
+### Remote Electrical System Monitor ‼️🔜
 
 `Made by @cmz97`
 
 <br>
 
-#### Gimbal Electrical System Controller (ATMEGA) 🔂 ▶️‼️
+### Gimbal Electrical System Controller (ATMEGA) 🔂 ▶️‼️
 
  `Made by @Lazloian`
 
@@ -183,16 +180,16 @@ This board provides power to the STM32 Robot controller, JetsonTX2, Yall Motor, 
 <br>
 
 
-#### Low Ammo Detection ‼️🔜
+### Low Ammo Detection ‼️🔜
 
  `Made by @Lazloian`
 
 <br>
 
-#### Robot Controller (STM32) ‼️
+### Robot Controller (STM32) ‼️
 
 <br>
 
-#### Computer Vision System (Jetson TX 2)‼️
+### Computer Vision System (Jetson TX 2)‼️
 
 <br>
