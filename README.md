@@ -100,7 +100,7 @@ The newst power distribution board is divided into three seperated board:
 
 <br>
 
-##### Chassis Power Distribution Board
+#### Chassis Power Distribution Board
 
 This board provides all the power delivery on the robot chassis, which consist of four DJI M3508 Motor
 
@@ -116,7 +116,7 @@ This board provides all the power delivery on the robot chassis, which consist o
 
 <br>
 
-##### Slip-Ring Power Distribution Board
+#### Slip-Ring Power Distribution Board
 
 This board provides power to the Pitch Motor for the gimbal system, as well as power for Electrical System Controller. The board also provide pre-organization of the wires that goes up through the slip-ring.
 
@@ -132,7 +132,7 @@ This board provides power to the Pitch Motor for the gimbal system, as well as p
 
 <br>
 
-##### Gimbal Power Distribution Board
+#### Gimbal Power Distribution Board
 
 This board provides power to the STM32 Robot controller, JetsonTX2, Yall Motor, Flywheel, ammo motor, as well as the Gimbal Electrical System Controller.
 
