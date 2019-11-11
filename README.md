@@ -135,6 +135,14 @@ The newst power distribution board is divided into three seperated board:
 
  `Made by @Lazloian`
 
+  System Controller uses a transparent OLED in front of the driver's camera to display information to the driver.
+
+  HUD Info
+
+  * Lines on the sides indicate walls that are close to the robot
+
+  * Cross hairs in the center of the screen indicate low ammo in the hopper
+
 <br>
 
 
