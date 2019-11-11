@@ -1,4 +1,4 @@
-# Electrical System
+# Robomaster Electrical System Repo
 Welcome to Purdue Robomaster Club's Electrical System Repository Created by Chengming Zhang. This repository contain everything from PCB design, Design Notebook (In sub-folder's ReadMe.md), and softwares. 
 
 If you are not familier with Robomaster, or Purdue's Robomaster Team, please refer to [Our Website](https://www.PurdueRM.com "Purdue Robomaster"). The image bellow is our latest **Electrical System Diagram** which lays out all the connection between our subsystems.
@@ -72,8 +72,9 @@ Since Capacitor is a short circuit when not charged, we need to design a consita
 
 <br>
 
-* PCB Design @[SuperCapacitor-v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor-v2.0)
-* Firmware @[SuperCapacitor-v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor-v2.0)
+PCB Design @[SuperCapacitor-v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor-v2.0)
+
+Firmware @[SuperCapacitor-v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor-v2.0)
 
 <br>
 
@@ -100,6 +101,8 @@ The newst power distribution board is divided into three seperated board:
 <br>
 
 #####Chassis Power Distribution Board
+
+
 
 This board provides all the power delivery on the robot chassis, which consist of four DJI M3508 Motor
 
