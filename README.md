@@ -116,7 +116,7 @@ This board provides all the power delivery on the robot chassis, which consist o
 
 `Made by @cmz97`
 
-This board provides power to the Pitch Motor for the gimbal system, as well as power for Electrical System Controller. The board also provides pre-organization of the wires that go up through the slip-ring. Slipring is used in the robot due to mechanical constraints, where the robot's gimbal needs to rotate continuously. Since there are only 24 wires passess through the slipring used in our standard robot, with each of the wire capable of carring 2A of maxium continouse current, proper signal allocation need to be conducted. <br>
+This board provides power to the Pitch Motor for the gimbal system, as well as power for Electrical System Controller. The board also provides pre-organization of the wires that go up through the slip-ring. Slipring is used in the robot due to mechanical constraints, where the robot's gimbal needs to rotate continuously. Since there are only 24 wires passess through the slipring used in our standard robot, with each of the wire capable of carring 2A of maxium continouse current, proper signal allocation need to be conducted. <br><br>
 
 We concluded the following wiring asssignment:
 
