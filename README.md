@@ -70,6 +70,8 @@ Due to the competition rule, the robot chassis, which consists of four DJI 3508 
 
 Since Capacitor is a short circuit when not charged, we need to design a consitance current charger to avoid damage of the battery and capacitor. Chengming Selected to use a H bridge Configuration to create a custon buck convertor using STM32F334. Currently, the Super Capacitor Charger can takes any voltage between 5v - 50v and convert it to 1v - 40v. The maxium output current is 10A. The PCB has a dimension of 2.599 in x 2.487 in and four layer. 
 
+<br>
+
 * PCB Design @[SuperCapacitor-v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor-v2.0)
 * Firmware @[SuperCapacitor-v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor-v2.0)
 
