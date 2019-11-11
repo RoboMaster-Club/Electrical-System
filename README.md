@@ -5,6 +5,8 @@ If you are not familier with Robomaster, or Purdue's Robomaster Team, please ref
 
 <img src = "https://github.com/RoboMaster-Club/Power-System/raw/master/Electrical Diagram.png"> 
 
+<br>
+
 ## Team Structure
 
 **Electrical Team Lead**: Chengming Zhang ` @cmz97` 
@@ -57,9 +59,10 @@ Due to the competition rule, the robot chassis, which consists of four DJI 3508 
 
 > * PCB Design  @#todo‼️
 > * CAD Design Enclosure @#google drive link‼️
+
+
+
 <br>
-
-
 
 #### Super Capacitor Charger (STM32) ‼️ 🔜 ⚠️ 🔂
 
@@ -69,9 +72,8 @@ Since Capacitor is a short circuit when not charged, we need to design a consita
 
 * PCB Design @[SuperCapacitor-v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor-v2.0)
 * Firmware @[SuperCapacitor-v2.0](https://github.com/RoboMaster-Club/Electrical-System/tree/master/SuperCapacitor-v2.0)
+
 <br>
-
-
 
 #### Power Distribution Board 🉑
 
