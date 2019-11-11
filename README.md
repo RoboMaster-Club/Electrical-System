@@ -135,7 +135,7 @@ The newst power distribution board is divided into three seperated board:
 
  `Made by @Lazloian`
 
-  System Controller uses a transparent OLED in front of the driver's camera to display information to the driver.
+  System Controller uses a transparent OLED in front of the driver's camera to display information to the driver. Board recieves info from ammo detector and tof sensors
 
   HUD Info
 
