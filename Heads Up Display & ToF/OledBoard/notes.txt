@@ -1,6 +1,0 @@
-Custom OLED Board
-	Microcontroller: ATMEGA328p TQFP
-	Communication Requirments
-	- Read UART
-	- Send I2C
-

@@ -1,5 +1,0 @@
-{
-    "board": "arduino:avr:uno",
-    "sketch": "ToFTest.ino",
-    "port": "COM6"
-}

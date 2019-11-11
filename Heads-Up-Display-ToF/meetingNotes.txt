@@ -1,0 +1,143 @@
+TODO 11/9
+
+ OLED
+  - Leave spi holes, dont solder pins into them
+  - DONE Add Logo to the back of the board
+
+ Ammo Board
+  - Get rid of xt30, use 2 pin jst
+  - Test ammo sensor for 7 inches
+
+TODO 11/1
+
+  - DONE Test control board (Seems to work, will do more thourough test later, although without the bootloader only power can be tested)
+
+  - DONE Test ammo sensors (test successful, photoresistor has large fov, so a cover might be a good idea to block IR from other sources)
+
+  - DONE Decide whether to receive 12 volt or 3.3 volt for the control board (we will recieve 3.3v)
+
+  - DONE Add 5v to 3.3v buck converter (measure power consumption of the HUD control board)
+
+  - DONE Add spi pins on board so that the bootloader can be burned onto the board
+
+  - Make ring outline for the ammo detector
+
+  - DONE Camera position changed, let dansen know
+
+Ammo Indicator
+  - Can use mux 8 to 3 or GPIO expander to take all photogate sensor outputs and condense it to less pins / data (dont need mux because only 2 photoresistors)
+
+  - Need logic amplifier (don't need)
+
+  - IR beam break sensor OR Photodetector logic output (latter)
+
+  - PLPVQ Diode (Kevin sent it) for the laser, find photodetector that can sense it 
+
+  - Seperate PCB for indicators, take 24V from slip ring and step down to 1.5V (Use XT30 right angle connectors for the high voltage)
+
+Notes from Meeting (10/26)
+
+  - Find own regulators to step down the voltage (buck converter may not work)
+
+Feedback for OLEDBoard (10/16)
+
+  - DONE Check logic voltage levels on all logic lines, (check if CH340 can take 5v logic when powered by 3.3V (check if it has level shifting)
+
+  - DONE Remove XT30 for the ammo board (it will be powered by new power distro)
+
+  - DONE Add ground to all connectors (including ammo gpio)
+
+  - DONE remove unnecessory pins for connectors
+
+Notes from Meeting (10/12)
+
+Control Board Code
+  - Use software I2C to mimic another I2C line so that the oled wont slow us down
+
+  - OLED will be right in front of camera, so  smaller HUD elements will be used (make sure not to get blocked by the dji hud elements)
+
+Control Board
+
+  - DONE Get button from kevin
+
+  - DONE Add 3.3V capacitor group from the boost under the atmega
+
+  - DONE Copy sparkfun's schematic for a usb c to serial converter, so change micro usb to usb c
+
+  - DONE Add 2 XT30 power connectors to power the control board and to output power to the ammo indicator
+
+  - DONE Resonators must have same length for both in and out wires
+
+  - DONE Move boost away from ATMEGA328
+
+  - NO Use same hole dimensions and placement as the sparkfun OLED board (might change)
+
+Notes from Meeting (10/7)
+
+  OLED Board
+  - DONE Add mounting holes from what kevin sent you (you have to add it as a symbol)
+
+  - DONE Change liquid crystal to surface mount and have it and the capacitors next to it closer to the atmega DONE (no more capacitors because it is a resonator)
+
+  - DONE Use 0603 size for all capacitors and resistors
+
+  - DONE Use the specified layout on the boost converter datasheet or copy from the sparkfun board (do this)
+
+  - DONE Change connector to the one kevin sent you
+
+  - DONE Change options to vcc or gronund depending on which side of resistor they are on
+
+  - DONE Add reset button on the atmega
+
+  - DONE Add pullup resistor for the I2C (1K)
+
+  - DONE More space efficiency (Rotate boost and shove it in the corner)
+
+  - CS can run on the bottom under the atmega
+
+  - DONE Include on-board usb c programmer using sparkfun avr programmer and changing the mini usb to micro usb with the usb c breakout from sparkfun
+
+  - DONE Add 3 pin connector for the ammo indecator system (GPIO Connection)
+
+  Tof Code
+  - Do not make wall direction relative to gimbal view, add where the front of the robot is currently relative to the gimbal
+
+  Ammo Indicator
+  - Can use mux 8 to 3 or GPIO expander to take all photogate sensor outputs and condense it to less pins / data
+
+  - IR beam break sensor OR Photodetector logic output (latter)
+
+  - PLPVQ Diode (Kevin sent it) for the laser, find photodetector that can sense it 
+
+  - Seperate PCB for indicators, take 24V from slip ring and step down to 1.5V (Use XT30 right angle connectors for the high voltage)
+
+  Orientation
+  - The data for the orientation can be an int from 0 to 8 that gives a general direction
+
+  Communication
+  - Create struct for the data that is being sent to the board
+
+Notes from Meeting (9/28)
+
+ - HUD will be seperate from main control board. So either make the HUD work with STM32 (HUD library is very big so that will be difficult) or create a pcb board for the HUD with an onboard microcontroller (arduino) that will read the UART package and take the apropriate data
+
+ - Robot needs to be able  to navigate through a tunnel so 2 ToF sensors on the front and back will be needed so that the robot does not run into a wall. The two on the side will still be there, bringing the total number of ToF sensors to 6.
+
+ - FPV camera from china is still not here so buying a similar one to test the HUD will be the best. FPV camera stats should be in the referee system manual, find one that is similar and buy it.
+
+ - Still no extra control board for testing, need more breadboards and jumper wire.
+
+ - Seperate code for ToF sensors on engineer robot. 2 sensors on the front of the robot to determine if the robot is perpendicular to the platform that the ammo is on top oof. 2 more to determine if the grabber arms are in between the ammo box and wont hit it when the arms drop down. Maybe 2 more to detect if the box is inbetween the two arms after the arms drop down.
+
+ - Be able to see feedback for enemy hit or their health. Enemy health data can be gathered from the referee system. When the robot shoots a ball, see if any of the health values of the enemy robots change.
+
+ - Refresh rate for HUD info: 50Hz (Take average of last 5 ToF readings, so interrupt is at 250 Hz
+
+ - OLED will be small part of FPV camera feed, so make all HUD elements big and noticible
+
+ - Get DGI Hud so that we don't cover an element of the HUD
+
+ - Investigate sparkfun functions for sending data to the OLED and see if we can get the display to work without it
+
+ - Find solution for when the ammo is low and displaying that to the HUD (detect is balls are within a certain plane)
+ 	- Have 2 PCBs with photogate emmiters on one side and photogate recievers on the other, have LEDs that light up when there is something in the way so that it can be calibrated

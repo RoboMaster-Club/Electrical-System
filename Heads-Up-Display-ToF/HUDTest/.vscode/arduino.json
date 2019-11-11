@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:uno",
+    "port": "COM7",
+    "sketch": "HUDTest.ino"
+}

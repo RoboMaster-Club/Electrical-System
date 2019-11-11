@@ -1,4 +1,0 @@
-Robomaster Video Transmitter Module
-
-	Resolution: 1280 x 720	
-	Framerate: 60 Hz

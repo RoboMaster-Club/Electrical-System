@@ -1,0 +1,140 @@
+/*
+  Take a guided tour of the basic capabilities of the Transparent Graphical OLED
+
+  By: Owen Lyke
+  SparkFun Electronics
+  Date: February 27, 2019
+  License: MIT. See license file for more information but you can
+  basically do whatever you want with this code.
+  Feel like supporting open source hardware?
+  Buy a board from SparkFun! https://www.sparkfun.com/products/15173
+
+
+
+  The graphics library is like a 3-layer cake. Here they are from top-down
+  https://github.com/sparkfun/SparkFun_HyperDisplay
+  https://github.com/sparkfun/HyperDisplay_SSD1309_ArduinoLibrary
+  https://github.com/sparkfun/HyperDisplay_UG2856KLBAG01_ArduinoLibrary
+
+  Hardware Compatibility
+    - The IO pins on this board are designed for use with 3.3V so if you are using a 5V microcontroller
+      please use a level shifter. Note: Qwiic connectors on SparkFun dev boards are already at 3.3V
+    - This display relies on a copy of graphics data in your microcontroller, a total of 1024 bytes. 
+      That is half the RAM available on an Uno so it is easy to run into sinister low-memory related
+      bugs. We reccomend using a micro with more memory like a SAMD21, Esp32, Teensy, etc.
+
+  Hardware Connections:
+  Option 1 (I2C):
+    Connect using a Qwiic jumper if you have a Qwiic compatible board and you plan to use I2C
+
+  Option 2 (SPI):
+    Connect SCLK and MOSI to the SPI port of your choice (13 and 11 for SPI on Uno-like boards) 
+    Also connect D/C and CS to two unused GPIO pins of your choice (and set the proper pin definitions below)
+    Don't forget power - connect 3.3V and GND
+*/
+
+#include "HyperDisplay_UG2856KLBAG01.h"   // Your library can be installed here: http://librarymanager/All#SparkFun_Transparent_Graphical_OLED
+                                          // The rest of the Layer Cake:         http://librarymanager/All#SparkFun_HyperDisplay_SSD1309
+                                          //                                     http://librarymanager/All#SparkFun_HyperDisplay
+//////////////////////////
+//      User Setup      //
+//////////////////////////
+#define SERIAL_PORT Serial  
+#define WIRE_PORT Wire      // Used if USE_SPI == 0
+#define SPI_PORT SPI        // Used if USE_SPI == 1
+
+#define RES_PIN 2           // Optional
+#define CS_PIN 4            // Used only if USE_SPI == 1
+#define DC_PIN 5            // Used only if USE_SPI == 1
+
+#define USE_SPI 0           // Choose your interface. 0 = I2C, 1 = SPI
+
+// END USER SETUP
+
+
+// Object Declaration. A class exists for each interface option
+#if USE_SPI
+  UG2856KLBAG01_SPI myTOLED;  // Declare a SPI-based Transparent OLED object called myTOLED
+#else
+  UG2856KLBAG01_I2C myTOLED;  // Declare a I2C-based Transparent OLED object called myTOLED
+#endif /* USE_SPI */
+
+void setup() {
+  Serial.begin(9600);
+
+  Serial.println("Example2_DrawingBasics: Transparent Graphical OLED");
+
+#if USE_SPI 
+  SPI_PORT.begin();
+  myTOLED.begin(CS_PIN, DC_PIN, SPI_PORT);                  // Begin for SPI requires that you provide the CS and DC pin numbers
+#else
+  WIRE_PORT.begin();
+  myTOLED.begin(WIRE_PORT, false, SSD1309_ARD_UNUSED_PIN);  // Begin for I2C has default values for every argument
+  Wire.setClock(400000);
+#endif /* USSE_SPI */
+
+  /* 
+   *  Drawing with the Transparent Graphical OLED
+   *  
+   *  The TOLED display is a 1-bit per pixel display, meaning that each pixel can either be on or off. It is also possible to
+   *  raise/lower the contrast of the entire display, but not any pixel individually.
+   *  
+   *  This simplicity allows the TOLED HyperDisplay driver not to worry about color, instead each HyperDisplay function is 
+   *  given two variants - one to 'Set' the pixels and one to 'Clear' the pixels. In th following code block we will try 
+   *  out a few of those functions. Note, all the 'Set' functions have a 'Clear' counterpart that turns off pixels, but we
+   *  will only show those in comments to avoid redundancy
+   */
+
+  uint8_t x0      = 0;
+  uint8_t y0      = 0;
+  uint8_t x1      = 0;
+  uint8_t y1      = 0;
+  uint8_t r       = 0;
+
+  x0 = 5;
+  y0 = 5;
+  myTOLED.pixelSet(x0, y0);             // Provide the X and Y locations of the single pixel to set or clear
+  // myTOLED.pixelClear(x0, y0);        // 
+
+  x0 = 10;
+  y0 = 10;
+  x1 = 65;
+  y1 = 35;
+  myTOLED.rectangleSet(x0, y0, x1, y1);               // Draw a rectangle outline from (x0, y0) to (x1, y1)
+  myTOLED.rectangleSet(x0+2, y0+2, x1-2, y1-2, true); // Supply the 'filled' parameter as true to fill in the rectangle
+  //  myTOLED.rectangleClear(x0, y0, x1, y1);               
+  //  myTOLED.rectangleClear(x0+2, y0+2, x1-2, y1-2, true); 
+
+  x0 = 70;
+  y0 = 5;
+  x1 = 85;
+  y1 = 50;
+  myTOLED.lineSet(x0, y0, x1, y1);          // Draw a simple line from (x0, y0) to (x1, y1)  
+  myTOLED.lineSet(x0+5, y0, x1+5, y1, 3);   // Draw a line with width 3 
+  //  myTOLED.lineSet(x0, y0, x1, y1);        
+  //  myTOLED.lineSet(x0+5, y0, x1+5, y1, 3); 
+
+  x0 = 108;
+  y1 = 24;
+  r  = 14;
+  myTOLED.circleSet(x0, y1, r);             // Outline circle centered at (x0, y0) with radius r
+  myTOLED.circleSet(x0, y1, r-4, true);     // Filled in 
+  //  myTOLED.circleSet(x0, y1, r);    
+  //  myTOLED.circleSet(x0, y1, r-4, true);
+
+  hd_extent_t x[] = {5, 42, 52};
+  hd_extent_t y[] = {48, 40, 60};
+  uint8_t numSides = sizeof(x)/sizeof(hd_extent_t);
+  myTOLED.polygonSet(x, y, numSides);               // Make a polygon with numSides at the x, y coordinate pairs
+  //  myTOLED.polygonClear(x, y, numSides);
+}
+
+void loop() {
+
+  myTOLED.pixelSet(126,2);
+  delay(1000);
+
+  myTOLED.pixelClear(126,2);
+  delay(1000);
+
+}
