@@ -1,11 +1,11 @@
 # Robomaster Electrical System Repo
 Welcome to Purdue Robomaster Club's Electrical System Repository Created by Chengming Zhang. This repository contain everything from PCB design, Design Notebook (In sub-folder's ReadMe.md), and softwares. 
 
-If you are not familier with Robomaster, or Purdue's Robomaster Team, please refer to [Our Website](https://www.PurdueRM.com "Purdue Robomaster"). The image bellow is our latest **Electrical System Diagram** which lays out all the connection between our subsystems.
+If you are not familier with Robomaster, or Purdue's Robomaster Team, please refer to [Our Website](https://www.PurdueRM.com "Purdue Robomaster"). 
 
-<img src = "https://github.com/RoboMaster-Club/Power-System/raw/master/Electrical Diagram.png"> 
+<br><br>
 
-<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ECr4zgK6cPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Team Structure
 
@@ -23,7 +23,7 @@ Ben Mirvish ` @bmivish`
 
 
 
-## Project Status Symbol
+## Project Structure
 
 📣**For detail design notebook, pls visit the coresponding directory**📣
 
@@ -41,7 +41,11 @@ Ben Mirvish ` @bmivish`
 
 🚮 Abanded Project
 
-<br>
+<br><br>
+
+The image bellow is our latest **Electrical System Diagram** which lays out all the connection between our subsystems.
+
+<img src = "https://github.com/RoboMaster-Club/Power-System/raw/master/Electrical Diagram.png"> 
 
 ## Power Electronics
 
