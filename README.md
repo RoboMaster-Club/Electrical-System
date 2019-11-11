@@ -102,7 +102,11 @@ The newst power distribution board is divided into three seperated board:
 
 #####Chassis Power Distribution Board
 
+<img src = "https://raw.githubusercontent.com/RoboMaster-Club/Electrical-System/master/Power-Distribution-Board-V3.0/Chassis Power Distribution Board/Chassis-Power-Distribution-Board-sch.png">
 
+
+
+<img src = "https://raw.githubusercontent.com/RoboMaster-Club/Electrical-System/master/Power-Distribution-Board-V3.0/Chassis Power Distribution Board/Chassis-Power-Distribution-Board.png">
 
 This board provides all the power delivery on the robot chassis, which consist of four DJI M3508 Motor
 
