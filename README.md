@@ -23,13 +23,9 @@ Ben Mirvish ` @bmivish`
 
 
 
-## Project Structure
+## Project Status Symbol
 
 📣**For detail design notebook, pls visit the coresponding directory**📣
-
-
-
-**Project Status Symbol**
 
 ▶️ Work in-Progress
 
@@ -46,6 +42,8 @@ Ben Mirvish ` @bmivish`
 🚮 Abanded Project
 
 <br>
+
+## Power Electronics
 
 ### Super Capacitor Bank ‼️ ▶️ ⚠️
 
@@ -147,7 +145,7 @@ This board provides power to the STM32 Robot controller, JetsonTX2, Yall Motor, 
 <br>
 <br>
 
-
+## Embedded Systems
 
 ### Electrical System Controller (STM32) ‼️🔂
 
