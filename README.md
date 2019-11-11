@@ -1,7 +1,7 @@
 # Robomaster Electrical System Repo
 Welcome to Purdue Robomaster Club's Electrical System Repository Created by Chengming Zhang. This repository contain everything from PCB design, Design Notebook (In sub-folder's ReadMe.md), and softwares. 
 
-If you are not familier with Robomaster, or Purdue's Robomaster Team, please refer to [Our Website](https://www.PurdueRM.com "Purdue Robomaster"). 
+If you are not familier with Robomaster, or Purdue's Robomaster Team, please refer to [Our Website](https://www.PurdueRM.com "Purdue Robomaster") or check out this video covered by **The Verge**.
 
 <br><br>
 
