@@ -98,11 +98,11 @@ The newst power distribution board is divided into three seperated board:
 
 `Made by @cmz97`
 
-This board provides all the power delivery on the robot chassis, which consist of four DJI M3508 Motor. It also has a 3.3v relay on board that selection output from either the super capacitor bank or the battery directorly. This switching action can be controlled by software via a logic high, which is passed through a opto-isolator for signal isolation. In case of emergency, such as super capacitor failure, one can flip a by-pass switch that disable all software input, and force the circuit to take battery input only. 
+This board provides all the power delivery on the robot chassis, which consist of four DJI M3508 Motor. It also has a 3.3v relay on board that selection output from either the super capacitor bank or the battery directorly. This switching action can be controlled by software via a logic high, which is passed through a opto-isolator  for signal isolation. In case of emergency, such as super capacitor failure, one can flip a by-pass switch that disable all software input, and force the circuit to take battery input only. 
 
+<br><br>
 
-
-The software
+The software switch is controlled by the Electrical System Controller (STM32/ESP32) that switch the output dynamically according to the current power usage. In seniorio such as low votage on super capacitor, Electrical System Controller can select battery input to avoid damage to the supercapacitor, and left it for charging. 
 
 [Chassis Power Distribution Board  Repository for Detail Info](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/Chassis%20Power%20Distribution%20Board)‼️
 
