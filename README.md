@@ -98,7 +98,11 @@ The newst power distribution board is divided into three seperated board:
 
 `Made by @cmz97`
 
-This board provides all the power delivery on the robot chassis, which consist of four DJI M3508 Motor
+This board provides all the power delivery on the robot chassis, which consist of four DJI M3508 Motor. It also has a 3.3v relay on board that selection output from either the super capacitor bank or the battery directorly. This switching action can be controlled by software via a logic high, which is passed through a opto-isolator for signal isolation. In case of emergency, such as super capacitor failure, one can flip a by-pass switch that disable all software input, and force the circuit to take battery input only. 
+
+
+
+The software
 
 [Chassis Power Distribution Board  Repository for Detail Info](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/Chassis%20Power%20Distribution%20Board)‼️
 
@@ -125,9 +129,9 @@ We concluded the following wiring asssignment:
 | # of Wire       | 4        | 4      | 2        | 2      | 1           | 1           | 1      | 1      | 1    | 1        | 4              | 2          |
 | Max Current (A) | 8        | 8      | 4        | 4      | 2           | 2           | 2      | 2      | 2    | 2        | 2              | 2          |
 
+<br><br>
 
-
-[SlipRing Distribution Board Repository for Detail Info](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/SlipRing%20Distribution%20Board)‼️
+[SlipRing Distribution Board Repository for Detail Info](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/SlipRing%20Distribution%20Board)
 
 <img src="https://raw.githubusercontent.com/RoboMaster-Club/Electrical-System/master/Power-Distribution-Board-V3.0/SlipRing%20Distribution%20Board/Slipring-Power-Distribution-Board-Sch.png">
 
@@ -145,7 +149,7 @@ We concluded the following wiring asssignment:
 
 This board provides power to the STM32 Robot controller, JetsonTX2, Yall Motor, Flywheel, ammo motor, as well as the Gimbal Electrical System Controller. On board this board, there are two MP1584EN buck convertor that converts 24v from the battery to 12v for Tx2 and 5v for the Gimbal Electrical System Controller.
 
-[Robomater Gimbal Power Distribution Board Repository for Detail Info](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/Robomater%20Gimbal%20Power%20Distribution%20Board)‼️
+[Robomater Gimbal Power Distribution Board Repository for Detail Info](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/Robomater%20Gimbal%20Power%20Distribution%20Board)
 
 <img src = "https://raw.githubusercontent.com/RoboMaster-Club/Electrical-System/master/Power-Distribution-Board-V3.0/Gimbal%20Power%20Distribution%20Board/Gimbal-Power-Distribution-Board-Sch.png">
 
