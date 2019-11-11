@@ -81,17 +81,18 @@ Since Capacitor is a short circuit when not charged, we need to design a consita
 
 Power Distribution Board is used to distribute electrical current in different voltage across the robot. Currently the Robot takes the following voltage level. 
 
-* **24 Volt** for Robot controller, Any motor
-* **12 Volt** for Jetson TX 2, Transparent OLED
-* **5 Volt** for Gimbal Electrical Controller Board (ATMEGA), Electrical System Controller(ESP32)
-* **3.3 Volt** for all the embedded chip, STM32F4, ESP32, ATMEGA
-* **1.5 Volt** for Ammo remaining detection circuit
+1. **24 Volt** for Robot controller, Any motor
+
+2. **12 Volt** for Jetson TX 2, Transparent OLED
+3. **5 Volt** for Gimbal Electrical Controller Board (ATMEGA), Electrical System Controller(ESP32)
+4. **3.3 Volt** for all the embedded chip, STM32F4, ESP32, ATMEGA
+5. **1.5 Volt** for Ammo remaining detection circuit
 
 For a more accurate and compelete report on voltage and current usage of our robot, pls refer to [Power Distribution Board Design Log](https://github.com/RoboMaster-Club/Electrical-System/blob/master/Power-Distribution-Board-V3.0/README.md)
 
 The newst power distribution board is divided into three seperated board:
 
-
+<br>
 
 #####Chassis Power Distribution Board
 
@@ -99,7 +100,7 @@ This board provides all the power delivery on the robot chassis, which consist o
 
 [Chassis Power Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/Chassis%20Power%20Distribution%20Board)‼️
 
-
+<br>
 
 #####Slip-Ring Power Distribution Board
 
@@ -107,7 +108,7 @@ This board provides power to the Pitch Motor for the gimbal system, as well as p
 
 [SlipRing Distribution Board](https://github.com/RoboMaster-Club/Electrical-System/tree/master/Power-Distribution-Board-V3.0/SlipRing%20Distribution%20Board)‼️
 
-
+<br>
 
 #####Gimbal Power Distribution Board
 
