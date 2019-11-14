@@ -1,12 +1,19 @@
 TODO 11/9
 
+ Github
+  - Add documentation
+
  OLED
   - Leave spi holes, dont solder pins into them
   - DONE Add Logo to the back of the board
+  - DONE Try and change resistors to get up to 12v current voltage recorder was 11.67v
+    - Calculation with current resistors is 11.74, so nothing wrong with design. Changing 5.6k resistor to 5.3k will get voltage up to 12.33v
+    - Test current board with power supply at 11.67 to see if it works
 
  Ammo Board
-  - Get rid of xt30, use 2 pin jst
-  - Test ammo sensor for 7 inches
+  - DONE Get rid of xt30, use 2 pin jst
+  - DONE Test ammo sensor for 7 inches
+  - Photo detector can detect up to 7 inches, but voltage needs to be at 1.7 and pulls 340 mA, so buck cant handle two of them (maybe switch to just one detector)
 
 TODO 11/1
 

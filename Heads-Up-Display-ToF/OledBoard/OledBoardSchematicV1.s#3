@@ -13277,6 +13277,24 @@ W = angled&lt;p&gt;
 <wire x1="137.16" y1="93.98" x2="142.24" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="N$21" class="0">
+<segment>
+<pinref part="U3" gate="U1" pin="PB5(SCK)"/>
+<wire x1="15.24" y1="-20.32" x2="20.32" y2="-20.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$22" class="0">
+<segment>
+<pinref part="U3" gate="U1" pin="PB4(MISO)"/>
+<wire x1="15.24" y1="-17.78" x2="20.32" y2="-17.78" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$23" class="0">
+<segment>
+<pinref part="U3" gate="U1" pin="PB3(MOSI/OC2)"/>
+<wire x1="15.24" y1="-15.24" x2="20.32" y2="-15.24" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>

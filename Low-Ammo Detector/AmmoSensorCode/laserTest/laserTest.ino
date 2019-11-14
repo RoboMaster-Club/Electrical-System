@@ -1,4 +1,4 @@
-#define SENSOR_PIN 13
+#define SENSOR_PIN 8
 
 void setup()
 {
@@ -9,9 +9,9 @@ void setup()
 
 void loop()
 {
-    if (digitalRead(SENSOR_PIN) == 1)
+    if (digitalRead(SENSOR_PIN))
         Serial.println("HIGH");
-
     else
         Serial.println("LOW");
+    delay(100);
 }
