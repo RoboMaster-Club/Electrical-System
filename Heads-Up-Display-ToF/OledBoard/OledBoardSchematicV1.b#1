@@ -170,7 +170,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="no" active="no"/>
 </layers>
 <board>
-<fusionsync huburn="a.YnVzaW5lc3M6cHVyZHVlMjIy" projecturn="a.YnVzaW5lc3M6cHVyZHVlMjIyI0QyMDE5MDgyMTIwOTkxNzk1Ng" f3durn="urn:adsk.wipprod:dm.lineage:3E7FAqf_R1mMhfkfxbh4Zg" pcbguid="1636842a-11dd-4d2f-baf7-23fcad12f5e7" lastpulledtime="" lastsyncedchangeguid="2ce688c5-138d-15cc-8410-ffc54df9da87"/>
+<fusionsync huburn="a.YnVzaW5lc3M6cHVyZHVlMjIy" projecturn="a.YnVzaW5lc3M6cHVyZHVlMjIyI0QyMDE5MDgyMTIwOTkxNzk1Ng" f3durn="urn:adsk.wipprod:dm.lineage:3E7FAqf_R1mMhfkfxbh4Zg" pcbguid="1636842a-11dd-4d2f-baf7-23fcad12f5e7" lastpulledtime="" lastsyncedchangeguid="8e040ca2-27e1-8a47-c983-ef4261b36f60"/>
 <plain>
 <wire x1="43.16" y1="32.055" x2="-8.382" y2="32.055" width="0" layer="20"/>
 <wire x1="-8.382" y1="32.055" x2="-10.922" y2="29.515" width="0" layer="20" curve="90"/>
@@ -2671,6 +2671,10 @@ By Henry Silva 11/6/2019</text>
 <rectangle x1="11.11885" y1="16.38935" x2="18.86585" y2="16.40205" layer="22"/>
 <rectangle x1="11.15695" y1="16.40205" x2="18.82775" y2="16.41475" layer="22"/>
 <rectangle x1="11.23315" y1="16.41475" x2="18.75155" y2="16.42745" layer="22"/>
+<text x="26.9367" y="6.9596" size="0.8128" layer="25">CS</text>
+<text x="28.9433" y="0.3937" size="0.8128" layer="25">MOSI</text>
+<text x="26.0985" y="0.4826" size="0.8128" layer="25">GND</text>
+<text x="32.512" y="0.3683" size="0.8128" layer="25">VCC</text>
 </plain>
 <libraries>
 <library name="SparkFun-Capacitors" urn="urn:adsk.eagle:library:510">
@@ -5083,7 +5087,6 @@ design rules under a new name.</description>
 <element name="SV1" library="con-lstb" library_urn="urn:adsk.eagle:library:162" package="MA03-2" package3d_urn="urn:adsk.eagle:package:8334/1" value="" x="30.48" y="4.064" smashed="yes" rot="R180">
 <attribute name="MF" value="" x="30.48" y="4.064" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="30.48" y="4.064" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="34.29" y="1.143" size="1.27" layer="25" ratio="10" rot="R180"/>
 <attribute name="OC_FARNELL" value="unknown" x="30.48" y="4.064" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="30.48" y="4.064" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="POPULARITY" value="15" x="30.48" y="4.064" size="1.778" layer="27" rot="R180" display="off"/>

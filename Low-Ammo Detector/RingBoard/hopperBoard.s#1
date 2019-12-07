@@ -202,16 +202,16 @@
 <wire x1="0.8" y1="1.9" x2="1.6" y2="1.9" width="0.127" layer="25"/>
 <wire x1="0.8" y1="-0.1" x2="1.6" y2="-0.1" width="0.127" layer="25"/>
 </package>
-<package name="XT30">
-<pad name="P$1" x="0" y="0" drill="1.7"/>
-<pad name="P$2" x="5" y="0" drill="1.7"/>
-<pad name="P$3" x="-3" y="10" drill="1"/>
-<pad name="P$4" x="8" y="10" drill="1"/>
-<wire x1="-4.1" y1="14.7" x2="9.1" y2="14.7" width="0.127" layer="21"/>
-<wire x1="-4.1" y1="14.7" x2="-4.1" y2="-1.5" width="0.127" layer="21"/>
-<wire x1="-4.1" y1="-1.5" x2="9.1" y2="-1.5" width="0.127" layer="21"/>
-<wire x1="9.1" y1="14.7" x2="9.1" y2="-1.5" width="0.127" layer="21"/>
-<text x="0" y="-3.81" size="1.27" layer="21">XT30</text>
+<package name="SM02B-GHS-TB">
+<smd name="P$1" x="0.5" y="1.35" dx="1" dy="2.7" layer="1"/>
+<wire x1="0" y1="0.25" x2="5" y2="0.25" width="0.1016" layer="21"/>
+<smd name="P$2" x="4.45" y="1.35" dx="1" dy="2.7" layer="1"/>
+<wire x1="0" y1="0.25" x2="0" y2="4.2" width="0.1016" layer="21"/>
+<wire x1="0" y1="4.2" x2="5" y2="4.2" width="0.1016" layer="21"/>
+<wire x1="5" y1="0.25" x2="5" y2="4.2" width="0.1016" layer="21"/>
+<text x="-0.05" y="-0.8" size="0.6096" layer="21">SM02B-GHS-TB</text>
+<smd name="P$3" x="1.85" y="4.55" dx="0.6" dy="1.7" layer="1"/>
+<smd name="P$4" x="3.1" y="4.55" dx="0.6" dy="1.7" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -269,14 +269,14 @@
 <wire x1="0" y1="-1.27" x2="0" y2="-2.54" width="0.1524" layer="94" curve="-180"/>
 <text x="-2.54" y="-5.08" size="1.016" layer="95" rot="R90">74479776222</text>
 </symbol>
-<symbol name="XT30PW-M">
+<symbol name="SM02B-GHS-TB">
 <wire x1="0" y1="0" x2="0" y2="7.62" width="0.254" layer="94"/>
 <wire x1="0" y1="7.62" x2="7.62" y2="7.62" width="0.254" layer="94"/>
 <wire x1="7.62" y1="7.62" x2="7.62" y2="0" width="0.254" layer="94"/>
 <wire x1="7.62" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<pin name="GND" x="12.7" y="5.08" visible="pin" length="middle" rot="R180"/>
-<pin name="VCC" x="12.7" y="2.54" visible="pin" length="middle" rot="R180"/>
-<text x="0" y="-2.54" size="1.27" layer="95">XT30</text>
+<pin name="1" x="-5.08" y="2.54" visible="pin" length="middle"/>
+<pin name="2" x="-5.08" y="5.08" visible="pin" length="middle"/>
+<text x="-2.54" y="-2.54" size="1.27" layer="95">SM02B-GHS-TB</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -365,15 +365,15 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="XT30PW-M">
+<deviceset name="SM02B-GHS-TB">
 <gates>
-<gate name="G$1" symbol="XT30PW-M" x="0" y="0"/>
+<gate name="G$1" symbol="SM02B-GHS-TB" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="XT30">
+<device name="" package="SM02B-GHS-TB">
 <connects>
-<connect gate="G$1" pin="GND" pad="P$2"/>
-<connect gate="G$1" pin="VCC" pad="P$1"/>
+<connect gate="G$1" pin="1" pad="P$3"/>
+<connect gate="G$1" pin="2" pad="P$4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -8312,8 +8312,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="U$10" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
 <part name="U$11" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
 <part name="U$12" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
-<part name="U$6" library="_HenrySilva" deviceset="XT30PW-M" device=""/>
 <part name="U$7" library="microbuilder" deviceset="MOUNTINGHOLE" device="3.0THIN"/>
+<part name="U$6" library="_HenrySilva" deviceset="SM02B-GHS-TB" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8359,8 +8359,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <instance part="U$10" gate="G$1" x="43.18" y="2.54" smashed="yes"/>
 <instance part="U$11" gate="G$1" x="25.4" y="20.32" smashed="yes"/>
 <instance part="U$12" gate="G$1" x="43.18" y="20.32" smashed="yes"/>
-<instance part="U$6" gate="G$1" x="-45.72" y="63.5" smashed="yes" rot="R270"/>
 <instance part="U$7" gate="G$1" x="25.4" y="2.54" smashed="yes"/>
+<instance part="U$6" gate="G$1" x="-38.1" y="55.88" smashed="yes" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -8375,11 +8375,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pinref part="U$1" gate="G$1" pin="GND"/>
 <wire x1="-12.7" y1="50.8" x2="-12.7" y2="45.72" width="0.1524" layer="91"/>
 <label x="-12.7" y="45.72" size="1.778" layer="95" rot="R270"/>
-</segment>
-<segment>
-<wire x1="-40.64" y1="50.8" x2="-40.64" y2="45.72" width="0.1524" layer="91"/>
-<label x="-40.64" y="45.72" size="1.778" layer="95" rot="R270"/>
-<pinref part="U$6" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="GND"/>
@@ -8416,13 +8411,13 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="162.56" y1="-2.54" x2="162.56" y2="-5.08" width="0.1524" layer="91"/>
 <label x="162.56" y="-5.08" size="1.778" layer="95" rot="R270"/>
 </segment>
-</net>
-<net name="5V" class="0">
 <segment>
+<pinref part="U$6" gate="G$1" pin="2"/>
 <wire x1="-43.18" y1="50.8" x2="-43.18" y2="45.72" width="0.1524" layer="91"/>
 <label x="-43.18" y="45.72" size="1.778" layer="95" rot="R270"/>
-<pinref part="U$6" gate="G$1" pin="VCC"/>
 </segment>
+</net>
+<net name="5V" class="0">
 <segment>
 <pinref part="U$4" gate="G$1" pin="VCC"/>
 <wire x1="48.26" y1="48.26" x2="48.26" y2="43.18" width="0.1524" layer="91"/>
@@ -8445,6 +8440,11 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="109.22" y1="25.4" x2="104.14" y2="25.4" width="0.1524" layer="91"/>
 <junction x="109.22" y="25.4"/>
 <label x="104.14" y="25.4" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="1"/>
+<wire x1="-40.64" y1="50.8" x2="-40.64" y2="45.72" width="0.1524" layer="91"/>
+<label x="-40.64" y="45.72" size="1.778" layer="95" rot="R270"/>
 </segment>
 </net>
 <net name="AMMO2" class="0">
