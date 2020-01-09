@@ -11132,19 +11132,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="-0.15" y="-0.65" size="0.3048" layer="21">CSTNE16M0VH3C000R0</text>
 <text x="2.032" y="1.778" size="0.8128" layer="21">*</text>
 </package>
-<package name="SM04B-GHS-TB">
-<smd name="P$1" x="-0.5" y="1.4" dx="1" dy="2.8" layer="1"/>
-<smd name="4" x="-2.35" y="4.75" dx="0.6" dy="1.7" layer="1"/>
-<smd name="3" x="-3.6" y="4.75" dx="0.6" dy="1.7" layer="1"/>
-<smd name="2" x="-4.85" y="4.75" dx="0.6" dy="1.7" layer="1"/>
-<smd name="1" x="-6.1" y="4.75" dx="0.6" dy="1.7" layer="1"/>
-<smd name="P$6" x="-7.95" y="1.45" dx="1" dy="2.8" layer="1"/>
-<wire x1="0.05" y1="0" x2="-8.5" y2="0" width="0.0762" layer="21"/>
-<wire x1="-8.5" y1="0" x2="-8.5" y2="4.6975" width="0.0762" layer="21"/>
-<wire x1="-8.5" y1="4.6975" x2="0.05" y2="4.6975" width="0.0762" layer="21"/>
-<wire x1="0.05" y1="4.6975" x2="0.05" y2="0" width="0.0762" layer="21"/>
-<text x="-8.89" y="-1.27" size="0.8128" layer="21">SM04B-GHS-TB</text>
-</package>
 <package name="SM03B-GHS-TB">
 <smd name="P$1" x="0.5" y="1.35" dx="1" dy="2.7" layer="1"/>
 <wire x1="0" y1="0.25" x2="7.2" y2="0.25" width="0.1016" layer="21"/>
@@ -11180,17 +11167,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pin name="OUT" x="17.78" y="5.08" visible="pin" length="middle" rot="R180"/>
 <text x="0" y="-2.54" size="1.27" layer="95">CSTNE16M0VH3C000R0</text>
 </symbol>
-<symbol name="SM04B-GHS-TB">
-<wire x1="0" y1="0" x2="12.7" y2="0" width="0.4064" layer="94"/>
-<wire x1="12.7" y1="10.16" x2="0" y2="10.16" width="0.4064" layer="94"/>
-<wire x1="0" y1="10.16" x2="0" y2="0" width="0.4064" layer="94"/>
-<wire x1="12.7" y1="10.16" x2="12.7" y2="0" width="0.4064" layer="94"/>
-<pin name="4" x="2.54" y="15.24" visible="pin" length="middle" rot="R270"/>
-<pin name="3" x="5.08" y="15.24" visible="pin" length="middle" rot="R270"/>
-<pin name="2" x="7.62" y="15.24" visible="pin" length="middle" rot="R270"/>
-<pin name="1" x="10.16" y="15.24" visible="pin" length="middle" rot="R270"/>
-<text x="0" y="-5.08" size="1.27" layer="95">SM04B-GHS-TB</text>
-</symbol>
 <symbol name="SM03B-GHS-TB">
 <wire x1="0" y1="0" x2="0" y2="10.16" width="0.254" layer="94"/>
 <wire x1="0" y1="10.16" x2="7.62" y2="10.16" width="0.254" layer="94"/>
@@ -11222,24 +11198,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <connect gate="G$1" pin="GND" pad="2"/>
 <connect gate="G$1" pin="IN" pad="1"/>
 <connect gate="G$1" pin="OUT" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="SM04B-GHS-TB">
-<gates>
-<gate name="G$1" symbol="SM04B-GHS-TB" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SM04B-GHS-TB">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -12289,7 +12247,6 @@ W = angled&lt;p&gt;
 <part name="C4" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="0.1UF" device="-0603-25V-(+80/-20%)" package3d_urn="urn:adsk.eagle:package:37414/1" value="0.1uF"/>
 <part name="C6" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="0.1UF" device="-0603-25V-(+80/-20%)" package3d_urn="urn:adsk.eagle:package:37414/1" value="0.1uF"/>
 <part name="C1" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="0.1UF" device="-0603-25V-(+80/-20%)" package3d_urn="urn:adsk.eagle:package:37414/1" value="0.1uF"/>
-<part name="U$5" library="oledBoard" deviceset="SM04B-GHS-TB" device=""/>
 <part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1K"/>
 <part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1k"/>
 <part name="P+5" library="audio amplifier example" library_urn="urn:adsk.eagle:library:970892" deviceset="VCC" device=""/>
@@ -12330,6 +12287,7 @@ W = angled&lt;p&gt;
 <part name="P+12" library="audio amplifier example" library_urn="urn:adsk.eagle:library:970892" deviceset="VCC" device=""/>
 <part name="U$7" library="HenrySilva" deviceset="MDKK1616T2R2MM" device="" value="2.2uH/NRH2412T2R2MNGH"/>
 <part name="SV1" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-2" device="" package3d_urn="urn:adsk.eagle:package:8334/1"/>
+<part name="U$5" library="oledBoard" deviceset="SM03B-GHS-TB" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12458,7 +12416,6 @@ W = angled&lt;p&gt;
 <attribute name="NAME" x="62.484" y="8.001" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="62.484" y="2.921" size="1.778" layer="96" font="vector"/>
 </instance>
-<instance part="U$5" gate="G$1" x="96.52" y="121.92" smashed="yes" rot="R270"/>
 <instance part="R5" gate="G$1" x="35.56" y="35.56" smashed="yes" rot="R90">
 <attribute name="NAME" x="34.0614" y="31.75" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="38.862" y="31.75" size="1.778" layer="96" rot="R90"/>
@@ -12595,6 +12552,7 @@ W = angled&lt;p&gt;
 <attribute name="VALUE" x="151.13" y="88.9" size="1.778" layer="96"/>
 <attribute name="NAME" x="151.13" y="102.362" size="1.778" layer="95"/>
 </instance>
+<instance part="U$5" gate="G$1" x="106.68" y="121.92" smashed="yes" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -12755,11 +12713,6 @@ W = angled&lt;p&gt;
 <label x="116.84" y="96.52" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$5" gate="G$1" pin="1"/>
-<wire x1="111.76" y1="111.76" x2="116.84" y2="111.76" width="0.1524" layer="91"/>
-<label x="116.84" y="111.76" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="U5" gate="G$1" pin="GND"/>
 <wire x1="223.52" y1="10.16" x2="218.44" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="218.44" y1="10.16" x2="218.44" y2="5.08" width="0.1524" layer="91"/>
@@ -12779,6 +12732,11 @@ W = angled&lt;p&gt;
 <pinref part="SV1" gate="1" pin="6"/>
 <wire x1="147.32" y1="99.06" x2="142.24" y2="99.06" width="0.1524" layer="91"/>
 <label x="142.24" y="99.06" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="3"/>
+<wire x1="111.76" y1="114.3" x2="116.84" y2="114.3" width="0.1524" layer="91"/>
+<label x="116.84" y="114.3" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -13116,14 +13074,14 @@ W = angled&lt;p&gt;
 </net>
 <net name="AMMO1" class="0">
 <segment>
-<wire x1="111.76" y1="119.38" x2="116.84" y2="119.38" width="0.1524" layer="91"/>
-<label x="116.84" y="119.38" size="1.778" layer="95"/>
-<pinref part="U$5" gate="G$1" pin="4"/>
-</segment>
-<segment>
 <pinref part="U3" gate="U1" pin="PC2(ADC2)"/>
 <wire x1="15.24" y1="33.02" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
 <label x="20.32" y="33.02" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="2"/>
+<wire x1="111.76" y1="116.84" x2="116.84" y2="116.84" width="0.1524" layer="91"/>
+<label x="116.84" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="AMMO2" class="0">
@@ -13133,17 +13091,12 @@ W = angled&lt;p&gt;
 <label x="20.32" y="35.56" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="111.76" y1="116.84" x2="116.84" y2="116.84" width="0.1524" layer="91"/>
-<label x="116.84" y="116.84" size="1.778" layer="95"/>
-<pinref part="U$5" gate="G$1" pin="3"/>
+<pinref part="U$5" gate="G$1" pin="1"/>
+<wire x1="111.76" y1="119.38" x2="116.84" y2="119.38" width="0.1524" layer="91"/>
+<label x="116.84" y="119.38" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="AMMO3" class="0">
-<segment>
-<pinref part="U$5" gate="G$1" pin="2"/>
-<wire x1="111.76" y1="114.3" x2="116.84" y2="114.3" width="0.1524" layer="91"/>
-<label x="116.84" y="114.3" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="U3" gate="U1" pin="PC0(ADC0)"/>
 <wire x1="15.24" y1="38.1" x2="20.32" y2="38.1" width="0.1524" layer="91"/>

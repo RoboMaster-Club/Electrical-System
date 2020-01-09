@@ -2028,7 +2028,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="119.38" y="35.814" size="1.27" layer="27" ratio="10"/>
 </element>
 <element name="U$1" library="HenrySilva" package="CSTNE16M0VH3C000R0" value="CSTNE16M0VH3C000R0" x="69.0118" y="63.373" smashed="yes" rot="R270"/>
-<element name="U$2" library="HenrySilva" package="KSR223GLFG" value="KSR223GLFG" x="36.83" y="46.99" smashed="yes"/>
+<element name="U$2" library="HenrySilva" package="KSR223GLFG" value="KSR223GLFG" x="49.022" y="50.3174" smashed="yes"/>
 <element name="U$3" library="HenrySilva" package="SS1P3L-M3/84A" value="SS1P3L-M3/84A" x="85.09" y="15.24" smashed="yes"/>
 <element name="U1" library="SparkFun-IC-Microcontroller" package="TQFP32-08" value="ATMEGA328P_TQFP" x="60.96" y="59.69" smashed="yes" rot="R180">
 <attribute name="NAME" x="60.96" y="53.975" size="0.6096" layer="25" font="vector" ratio="20" rot="R180" align="bottom-center"/>
@@ -2060,8 +2060,8 @@ design rules under a new name.</description>
 <contactref element="SV1" pad="5"/>
 <wire x1="61.36" y1="55.3974" x2="123.19" y2="38.735" width="0" layer="19" extent="1-1"/>
 <wire x1="59.055" y1="51.015" x2="61.36" y2="55.3974" width="0" layer="19" extent="1-1"/>
-<wire x1="44.33" y1="47.69" x2="59.055" y2="51.015" width="0" layer="19" extent="1-1"/>
-<wire x1="28.155" y1="22.86" x2="44.33" y2="47.69" width="0" layer="19" extent="1-1"/>
+<wire x1="56.522" y1="51.0174" x2="59.055" y2="51.015" width="0" layer="19" extent="1-1"/>
+<wire x1="28.155" y1="22.86" x2="56.522" y2="51.0174" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="U$1" pad="1"/>
