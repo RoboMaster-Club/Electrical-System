@@ -1,0 +1,12 @@
+"Qty";"Value";"Device";"Package";"Parts";"Description";"POPULARITY";"SPICEPREFIX";
+"1";"10uF";"C-USC0603";"C0603";"C3";"CAPACITOR, American symbol";"37";"C";
+"1";"180k";"R-US_R0603";"R0603";"R2";"RESISTOR, American symbol";"77";"R";
+"1";"2.2uH";"74479776222";"74479776222";"U$9";"";"";"";
+"1";"22pF";"C-USC0603";"C0603";"C2";"CAPACITOR, American symbol";"37";"C";
+"2";"2PIN";"2PIN";"2PIN";"U$1, U$2";"";"";"";
+"1";"330k";"R-US_R0603";"R0603";"R1";"RESISTOR, American symbol";"77";"R";
+"1";"4.7uF";"C-USC0603";"C0603";"C1";"CAPACITOR, American symbol";"37";"C";
+"2";"OPL550";"OPL550";"OPL550";"U$3, U$4";"";"";"";
+"1";"SM02B-GHS-TB";"SM02B-GHS-TB";"SM02B-GHS-TB";"U$6";"";"";"";
+"1";"SM03B-GHS-TB";"SM03B-GHS-TB";"SM03B-GHS-TB";"U$8";"";"";"";
+"1";"TPS62260";"TPS62260";"TPS62260";"U$5";"";"";"";

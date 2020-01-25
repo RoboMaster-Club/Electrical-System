@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2020-01-21T02:03:39Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.5.0"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "hopperBoardV2"
+        },
+        "Owner": "Henry Silva <silva67@purdue.edu>",
+        "Size": {
+            "X": 144.000894,
+            "Y": 146.498731
+        }
+    }
+}

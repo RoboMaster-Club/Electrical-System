@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -159,8 +159,6 @@
 <board>
 <fusionsync huburn="a.YnVzaW5lc3M6cHVyZHVlMjIy" projecturn="a.YnVzaW5lc3M6cHVyZHVlMjIyIzIwMTkxMTA4MjM1OTg1Nzgx" f3durn="urn:adsk.wipprod:dm.lineage:DUGREdU3ThqPfMAjgLCw6w" pcbguid="18e90121-f44a-4ee8-9cac-4a6ccbb78db5" lastpulledtime="" lastsyncedchangeguid="3ecf64a5-fef9-4233-5cdc-7bf6968c843e"/>
 <plain>
-<text x="-21" y="-77" size="1.778" layer="26" font="vector">Purdue Robomaster Ammo Sensor Board V1.0
-By Henry Silva 11/9/2019</text>
 <wire x1="58.876790625" y1="-41.443009375" x2="-58.876790625" y2="-41.443009375" width="0.001" layer="20" curve="-109.72"/>
 <wire x1="-58.876790625" y1="-41.443009375" x2="-62.50855" y2="-38.84785" width="0.001" layer="20" curve="37.18"/>
 <wire x1="-62.50855" y1="-38.84785" x2="-64.8975" y2="-34.71006875" width="0.001" layer="20" curve="-86.09"/>
@@ -177,15 +175,17 @@ By Henry Silva 11/9/2019</text>
 <circle x="61.4878" y="-35.5" radius="1.7" width="0.001" layer="20"/>
 <circle x="-61.4878" y="-35.5" radius="1.7" width="0.001" layer="20"/>
 <circle x="0" y="71" radius="1.7" width="0.001" layer="20"/>
+<text x="15" y="-68" size="1.27" layer="26" rot="MR0">Purdue Robomaster Ammo Sensor Board V2.0
+By Henry Silva 12/7/2019</text>
 </plain>
 <libraries>
 <library name="_HenrySilva">
 <packages>
 <package name="OPL550">
-<pad name="P$1" x="0" y="0" drill="0.6" shape="square"/>
-<pad name="P$2" x="2" y="0" drill="0.6"/>
-<pad name="P$3" x="4" y="0" drill="0.6"/>
-<text x="-0.5" y="-2.5" size="1.016" layer="21">OPL550</text>
+<pad name="P$1" x="-2.0066" y="0" drill="0.6" shape="square"/>
+<pad name="P$2" x="-0.0066" y="0" drill="0.6"/>
+<pad name="P$3" x="1.9934" y="0" drill="0.6"/>
+<text x="-2.5066" y="-2.5" size="1.016" layer="21">OPL550</text>
 </package>
 <package name="TPS62260">
 <smd name="P$1" x="0.3" y="0.6" dx="0.6" dy="1.1" layer="1" rot="R180"/>
@@ -201,8 +201,8 @@ By Henry Silva 11/9/2019</text>
 <circle x="-0.6" y="0.95" radius="0.291546875" width="0.127" layer="21"/>
 </package>
 <package name="2PIN">
-<pad name="P$1" x="0" y="0" drill="1" shape="square"/>
-<pad name="P$2" x="2.5" y="0" drill="1"/>
+<pad name="P$1" x="-1.27" y="0" drill="1" shape="square"/>
+<pad name="P$2" x="1.23" y="0" drill="1"/>
 </package>
 <package name="SM03B-GHS-TB">
 <smd name="P$1" x="0.5" y="1.35" dx="1" dy="2.7" layer="1"/>
@@ -1526,11 +1526,11 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U$3" library="_HenrySilva" package="OPL550" value="OPL550" x="2" y="-68" smashed="yes" rot="R180"/>
-<element name="U$4" library="_HenrySilva" package="OPL550" value="OPL550" x="-68" y="-2" smashed="yes" rot="R90"/>
+<element name="U$3" library="_HenrySilva" package="OPL550" value="OPL550" x="0" y="-66" smashed="yes" rot="R180"/>
+<element name="U$4" library="_HenrySilva" package="OPL550" value="OPL550" x="-68" y="-1" smashed="yes" rot="R90"/>
 <element name="U$5" library="_HenrySilva" package="TPS62260" value="TPS62260" x="62.964" y="-11.1904" smashed="yes"/>
-<element name="U$1" library="_HenrySilva" package="2PIN" value="2PIN" x="63.9632" y="-1.2768" smashed="yes" rot="R90"/>
-<element name="U$2" library="_HenrySilva" package="2PIN" value="2PIN" x="-1.226" y="65.102" smashed="yes"/>
+<element name="U$1" library="_HenrySilva" package="2PIN" value="2PIN" x="64.0114" y="0.0068" smashed="yes" rot="R270"/>
+<element name="U$2" library="_HenrySilva" package="2PIN" value="2PIN" x="-0.0068" y="65.0004" smashed="yes"/>
 <element name="U$8" library="_HenrySilva" package="SM03B-GHS-TB" value="SM03B-GHS-TB" x="65" y="-30" smashed="yes" rot="R90"/>
 <element name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="4.7uF" x="63.964" y="-13.1904" smashed="yes">
 <attribute name="NAME" x="63.329" y="-12.5554" size="1.27" layer="25"/>
@@ -1587,6 +1587,15 @@ design rules under a new name.</description>
 <vertex x="-88" y="88"/>
 </polygon>
 <contactref element="U$6" pad="P$4"/>
+<wire x1="-1.2768" y1="65.0004" x2="-68" y2="-3.0066" width="0" layer="19" extent="1-1"/>
+<wire x1="64.0114" y1="1.2768" x2="-1.2768" y2="65.0004" width="0" layer="19" extent="1-1"/>
+<wire x1="66.464" y1="-2.8404" x2="64.0114" y2="1.2768" width="0" layer="19" extent="1-1"/>
+<wire x1="64.214" y1="-10.5904" x2="66.464" y2="-2.8404" width="0" layer="19" extent="1-1"/>
+<wire x1="64.814" y1="-13.1904" x2="64.214" y2="-10.5904" width="0" layer="19" extent="1-1"/>
+<wire x1="68.964" y1="-11.5404" x2="64.814" y2="-13.1904" width="0" layer="19" extent="1-1"/>
+<wire x1="62.45" y1="-18.9" x2="64.814" y2="-13.1904" width="0" layer="19" extent="1-1"/>
+<wire x1="60.45" y1="-25.15" x2="62.45" y2="-18.9" width="0" layer="19" extent="1-1"/>
+<wire x1="2.0066" y1="-66" x2="60.45" y2="-25.15" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="5V">
 <contactref element="U$4" pad="P$3"/>
@@ -1623,17 +1632,35 @@ design rules under a new name.</description>
 <via x="65.93" y="-11.588" extent="1-16" drill="0.35"/>
 <wire x1="65.93" y1="-11.588" x2="65.164" y2="-10.5904" width="0.2032" layer="1"/>
 <contactref element="U$6" pad="P$3"/>
+<via x="60" y="-20" extent="1-16" drill="0.6"/>
+<wire x1="62.45" y1="-20.15" x2="60.15" y2="-20.15" width="0.508" layer="1"/>
+<wire x1="60.15" y1="-20.15" x2="60" y2="-20" width="0.508" layer="1"/>
+<wire x1="-1.9934" y1="-66" x2="-68" y2="0.9934" width="0" layer="19" extent="1-1"/>
+<wire x1="60" y1="-20" x2="-1.9934" y2="-66" width="0" layer="19" extent="1-1"/>
 <wire x1="62.8312" y1="-15.9568" x2="62.45" y2="-20.15" width="0" layer="19" extent="1-1"/>
+<wire x1="62.8312" y1="-14.9408" x2="62.8312" y2="-15.9568" width="0" layer="19" extent="1-1"/>
+<wire x1="61.8152" y1="-14.9408" x2="62.8312" y2="-14.9408" width="0" layer="19" extent="1-1"/>
+<wire x1="61.8152" y1="-13.9248" x2="61.8152" y2="-14.9408" width="0" layer="19" extent="1-1"/>
+<wire x1="61.8152" y1="-12.9088" x2="61.8152" y2="-13.9248" width="0" layer="19" extent="1-1"/>
+<wire x1="61.8152" y1="-15.9568" x2="62.8312" y2="-15.9568" width="0" layer="19" extent="1-1"/>
+<wire x1="63.114" y1="-13.1904" x2="61.8152" y2="-12.9088" width="0" layer="19" extent="1-1"/>
+<wire x1="63.264" y1="-10.5904" x2="63.114" y2="-13.1904" width="0" layer="19" extent="1-1"/>
+<wire x1="65.164" y1="-10.5904" x2="63.264" y2="-10.5904" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="AMMO2">
 <contactref element="U$3" pad="P$2"/>
 <contactref element="U$8" pad="P$3"/>
-<wire x1="60.45" y1="-27.65" x2="0" y2="-68" width="0" layer="19" extent="1-1"/>
+<wire x1="60.45" y1="-27.65" x2="59.35" y2="-27.65" width="0.2032" layer="1"/>
+<wire x1="59.35" y1="-27.65" x2="59" y2="-28" width="0.2032" layer="1"/>
+<wire x1="59" y1="-28" x2="0.0066" y2="-66" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="AMMO1">
 <contactref element="U$4" pad="P$2"/>
 <contactref element="U$8" pad="P$4"/>
-<wire x1="60.45" y1="-26.4" x2="-68" y2="0" width="0" layer="19" extent="1-1"/>
+<wire x1="60.45" y1="-26.4" x2="58.6" y2="-26.4" width="0.2032" layer="1"/>
+<wire x1="58.6" y1="-26.4" x2="58" y2="-27" width="0.2032" layer="1"/>
+<wire x1="-65" y1="-1" x2="58" y2="-27" width="0.2032" layer="1" curve="152.646665"/>
+<wire x1="-65" y1="-1" x2="-68" y2="-1.0066" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="U$5" pad="P$5"/>
@@ -1675,8 +1702,15 @@ design rules under a new name.</description>
 <vertex x="64.66" y="-3.968"/>
 <vertex x="64.406" y="-4.222"/>
 </polygon>
-<wire x1="63.9632" y1="1.2232" x2="1.274" y2="65.102" width="0" layer="19" extent="1-1"/>
-<wire x1="66.464" y1="-4.5404" x2="63.9632" y2="1.2232" width="0" layer="19" extent="1-1"/>
+<wire x1="68" y1="-2" x2="68" y2="-4" width="0.254" layer="1"/>
+<wire x1="3" y1="65" x2="68" y2="-2" width="0.254" layer="1" curve="-88.290186"/>
+<wire x1="3" y1="65" x2="1.2236" y2="65" width="0.254" layer="1"/>
+<wire x1="1.2232" y1="65.0004" x2="1.2236" y2="65" width="0.254" layer="1"/>
+<wire x1="68" y1="-4" x2="66.464" y2="-4.5404" width="0" layer="19" extent="1-1"/>
+<wire x1="64.964" y1="-5.2904" x2="66.464" y2="-4.5404" width="0" layer="19" extent="1-1"/>
+<wire x1="66.464" y1="-6.3404" x2="66.464" y2="-4.5404" width="0" layer="19" extent="1-1"/>
+<wire x1="68.964" y1="-6.3404" x2="66.464" y2="-6.3404" width="0" layer="19" extent="1-1"/>
+<wire x1="64.0114" y1="-1.2232" x2="66.464" y2="-4.5404" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
@@ -1686,6 +1720,10 @@ design rules under a new name.</description>
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
+<errors>
+<approved hash="4,1,b5da25a481491b65"/>
+<approved hash="4,1,1f9ebd615d1ee216"/>
+</errors>
 </board>
 </drawing>
 <compatibility>
