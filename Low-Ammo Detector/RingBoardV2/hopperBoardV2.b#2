@@ -177,8 +177,6 @@
 <circle x="0" y="71" radius="1.7" width="0.001" layer="20"/>
 <text x="15" y="-68" size="1.27" layer="26" rot="MR0">Purdue Robomaster Ammo Sensor Board V2.0
 By Henry Silva 12/7/2019</text>
-<wire x1="-65" y1="0" x2="0" y2="65" width="0.2032" layer="21"/>
-<wire x1="0" y1="65" x2="0" y2="66" width="0.2032" layer="21"/>
 </plain>
 <libraries>
 <library name="_HenrySilva">

@@ -2675,6 +2675,9 @@ By Henry Silva 11/6/2019</text>
 <text x="28.9433" y="0.3937" size="0.8128" layer="25">MOSI</text>
 <text x="26.0985" y="0.4826" size="0.8128" layer="25">GND</text>
 <text x="32.512" y="0.3683" size="0.8128" layer="25">VCC</text>
+<text x="51.562" y="27.178" size="1.778" layer="51">Notes:
+- Put decoupling capacitor behind atmega
+- Possibly change the micro usb footprint</text>
 </plain>
 <libraries>
 <library name="SparkFun-Capacitors" urn="urn:adsk.eagle:library:510">

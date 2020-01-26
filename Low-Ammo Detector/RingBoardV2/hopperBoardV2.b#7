@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="39.3700787" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -1703,9 +1703,7 @@ design rules under a new name.</description>
 <vertex x="64.66" y="-3.968"/>
 <vertex x="64.406" y="-4.222"/>
 </polygon>
-<wire x1="64.0114" y1="-1.2232" x2="68" y2="-2.81293125" width="0.254" layer="1"/>
-<wire x1="68" y1="-2" x2="68" y2="-2.81293125" width="0.254" layer="1"/>
-<wire x1="68" y1="-2.81293125" x2="68" y2="-4" width="0.254" layer="1"/>
+<wire x1="68" y1="-2" x2="68" y2="-4" width="0.254" layer="1"/>
 <wire x1="3" y1="65" x2="68" y2="-2" width="0.254" layer="1" curve="-88.290186"/>
 <wire x1="3" y1="65" x2="1.2236" y2="65" width="0.254" layer="1"/>
 <wire x1="1.2232" y1="65.0004" x2="1.2236" y2="65" width="0.254" layer="1"/>
@@ -1713,6 +1711,7 @@ design rules under a new name.</description>
 <wire x1="64.964" y1="-5.2904" x2="66.464" y2="-4.5404" width="0" layer="19" extent="1-1"/>
 <wire x1="66.464" y1="-6.3404" x2="66.464" y2="-4.5404" width="0" layer="19" extent="1-1"/>
 <wire x1="68.964" y1="-6.3404" x2="66.464" y2="-6.3404" width="0" layer="19" extent="1-1"/>
+<wire x1="64.0114" y1="-1.2232" x2="66.464" y2="-4.5404" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
