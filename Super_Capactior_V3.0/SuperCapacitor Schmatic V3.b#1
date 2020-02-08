@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.2">
+<eagle version="9.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -161,10 +161,14 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="123.297" y2="-0.127" width="0" layer="20"/>
-<wire x1="123.297" y1="-0.127" x2="123.297" y2="47.041" width="0" layer="20"/>
-<wire x1="123.297" y1="47.041" x2="-0.127" y2="47.041" width="0" layer="20"/>
-<wire x1="-0.127" y1="47.041" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="-0.113465625" y1="42.027846875" x2="-0.01345" y2="4.9819" width="0" layer="20"/>
+<wire x1="-0.01345" y1="4.9819" x2="4.981384375" y2="-0.00513125" width="0" layer="20" curve="89.786329"/>
+<wire x1="4.981384375" y1="-0.00513125" x2="118.29185" y2="-0.12184375" width="0" layer="20"/>
+<wire x1="118.29185" y1="-0.12184375" x2="123.297" y2="4.878153125" width="0" layer="20" curve="90.060699"/>
+<wire x1="123.297" y1="4.878153125" x2="123.297" y2="42.041" width="0" layer="20"/>
+<wire x1="123.297" y1="42.041" x2="118.297" y2="47.041" width="0" layer="20" curve="90"/>
+<wire x1="118.297" y1="47.041" x2="4.886515625" y2="47.041" width="0" layer="20"/>
+<wire x1="4.886515625" y1="47.041" x2="-0.113465625" y2="42.027846875" width="0" layer="20" curve="90.150724"/>
 <wire x1="61.214" y1="30.861" x2="71.374" y2="30.861" width="5.08" layer="29"/>
 <wire x1="78.994" y1="30.861" x2="89.154" y2="30.861" width="5.08" layer="29"/>
 <wire x1="96.774" y1="30.861" x2="106.934" y2="30.861" width="5.08" layer="29"/>
@@ -184,6 +188,9 @@
 <wire x1="49.53" y1="30.861" x2="43.053" y2="37.338" width="5.08" layer="29"/>
 <wire x1="43.18" y1="39.37" x2="43.053" y2="39.243" width="5.08" layer="29"/>
 <wire x1="43.053" y1="39.243" x2="43.053" y2="29.21" width="5.08" layer="29"/>
+<text x="53.34" y="43.18" size="1.778" layer="25">PURDUE ROBOMASTER SUPER-CAPACITOR BOARD</text>
+<text x="3.81" y="3.81" size="0.889" layer="25" rot="R90">BEN MIRVISH
+CHENGMING ZHANG</text>
 </plain>
 <libraries>
 <library name="SOIC127P600X170-9N">
@@ -2297,7 +2304,8 @@ design rules under a new name.</description>
 <wire x1="113.1304" y1="35.941" x2="109.3204" y2="39.751" width="0.3048" layer="16"/>
 <via x="109.3204" y="39.751" extent="1-16" drill="0.35"/>
 <wire x1="109.3204" y1="39.751" x2="108.597" y2="39.751" width="0.3048" layer="1"/>
-<wire x1="104.714" y1="37.281" x2="104.814" y2="35.941" width="0" layer="19" extent="1-1"/>
+<wire x1="104.714" y1="37.281" x2="104.814" y2="37.181" width="0.3048" layer="1"/>
+<wire x1="104.814" y1="37.181" x2="104.814" y2="35.941" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$44">
 <contactref element="R31" pad="1"/>
@@ -2621,9 +2629,9 @@ design rules under a new name.</description>
 <wire x1="19.177" y1="4.445" x2="19.177" y2="3.214" width="0.3048" layer="16"/>
 <wire x1="19.177" y1="3.214" x2="18.884" y2="2.921" width="0.3048" layer="16"/>
 <via x="27.393" y="24.13" extent="1-16" drill="0.35"/>
-<wire x1="16.891" y1="18.034" x2="16.891" y2="21.248" width="0.3048" layer="1"/>
-<wire x1="27.393" y1="24.13" x2="19.773" y2="24.13" width="0.3048" layer="1"/>
-<wire x1="19.773" y1="24.13" x2="16.891" y2="21.248" width="0.3048" layer="1"/>
+<wire x1="16.891" y1="18.034" x2="16.891" y2="18.708" width="0.3048" layer="1"/>
+<wire x1="27.393" y1="24.13" x2="22.313" y2="24.13" width="0.3048" layer="1"/>
+<wire x1="22.313" y1="24.13" x2="16.891" y2="18.708" width="0.3048" layer="1"/>
 <polygon width="0.8128" layer="1">
 <vertex x="47.244" y="44.831"/>
 <vertex x="47.244" y="23.241"/>
@@ -2699,7 +2707,8 @@ design rules under a new name.</description>
 <wire x1="59.7904" y1="35.941" x2="55.9804" y2="39.751" width="0.3048" layer="16"/>
 <via x="55.9804" y="39.751" extent="1-16" drill="0.35"/>
 <wire x1="55.9804" y1="39.751" x2="55.257" y2="39.751" width="0.3048" layer="1"/>
-<wire x1="71.434" y1="30.861" x2="73.279" y2="34.964" width="0" layer="19" extent="1-1"/>
+<wire x1="73.279" y1="34.964" x2="73.279" y2="32.706" width="0.3048" layer="1"/>
+<wire x1="73.279" y1="32.706" x2="71.434" y2="30.861" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$68">
 <contactref element="R49" pad="1"/>
@@ -2927,8 +2936,7 @@ design rules under a new name.</description>
 <wire x1="7.699" y1="40.442" x2="7.699" y2="39.3462" width="0.1524" layer="16"/>
 <wire x1="7.699" y1="39.3462" x2="7.9772" y2="39.068" width="0.1524" layer="16"/>
 <via x="7.9772" y="39.068" extent="1-16" drill="0.35"/>
-<wire x1="7.9772" y1="39.068" x2="8.89" y2="39.068" width="0.1524" layer="1"/>
-<wire x1="8.89" y1="39.068" x2="15.24" y2="39.068" width="0.1524" layer="1"/>
+<wire x1="7.9772" y1="39.068" x2="15.24" y2="39.068" width="0.1524" layer="1"/>
 <wire x1="15.24" y1="39.068" x2="25.098" y2="39.068" width="0.1524" layer="1"/>
 <wire x1="25.098" y1="39.068" x2="25.269309375" y2="39.239309375" width="0.1524" layer="1"/>
 <via x="25.269309375" y="39.239309375" extent="1-16" drill="0.35"/>
@@ -3350,16 +3358,13 @@ design rules under a new name.</description>
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
-<errors>
-<approved hash="5,1,3f58a2cc06d771d3"/>
-<approved hash="5,1,696bdad1e8e38616"/>
-<approved hash="5,1,b9c82c40a2521da4"/>
-<approved hash="5,1,34ff9e1177cdae5d"/>
-<approved hash="19,1,a211ff9d0745444f"/>
-</errors>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
