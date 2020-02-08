@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2020-02-01T20:38:05Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.5.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "SuperCapacitor Schmatic V3"
+        },
+        "Owner": "Benjamin Mirvish <bmirvish@purdue.edu>",
+        "Size": {
+            "X": 123.424,
+            "Y": 47.168
+        }
+    }
+}
