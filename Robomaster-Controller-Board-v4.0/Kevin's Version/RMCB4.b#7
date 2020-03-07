@@ -36,7 +36,7 @@
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
@@ -1810,6 +1810,7 @@ BRD: CHENGMING ZHANG</text>
 <rectangle x1="31.8389" y1="35.8267" x2="41.7703" y2="35.8521" layer="22" rot="R180"/>
 <rectangle x1="31.9151" y1="35.8521" x2="41.6941" y2="35.8775" layer="22" rot="R180"/>
 <rectangle x1="32.0929" y1="35.8775" x2="41.5163" y2="35.9029" layer="22" rot="R180"/>
+<text x="17.526" y="-3.048" size="1.778" layer="1">FIX SWITCH, LED PIN</text>
 </plain>
 <libraries>
 <library name="microbuilder">
@@ -4493,7 +4494,7 @@ design rules under a new name.</description>
 <param name="mlMaxStopFrame" value="4mil"/>
 <param name="mlMinCreamFrame" value="0mil"/>
 <param name="mlMaxCreamFrame" value="0mil"/>
-<param name="mlViaStopLimit" value="0mil"/>
+<param name="mlViaStopLimit" value="15mil"/>
 <param name="srRoundness" value="0"/>
 <param name="srMinRoundness" value="0mil"/>
 <param name="srMaxRoundness" value="0mil"/>
@@ -5125,11 +5126,11 @@ design rules under a new name.</description>
 <attribute name="NAME" x="2.159" y="24.765" size="0.635" layer="25" rot="R270"/>
 <attribute name="VALUE" x="-0.381" y="25.273" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="U$31" library="microbuilder" package="MOUNTINGHOLE_2.5_PLATED" value="MOUNTINGHOLE2.5" x="44.069" y="22.479" smashed="yes">
-<attribute name="BOM" value="EXCLUDE" x="44.069" y="22.479" size="1.778" layer="27" display="off"/>
+<element name="U$31" library="microbuilder" package="MOUNTINGHOLE_2.5_PLATED" value="MOUNTINGHOLE2.5" x="44.323" y="34.163" smashed="yes">
+<attribute name="BOM" value="EXCLUDE" x="44.323" y="34.163" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U$32" library="microbuilder" package="MOUNTINGHOLE_2.5_PLATED" value="MOUNTINGHOLE2.5" x="-6.35" y="37.592" smashed="yes">
-<attribute name="BOM" value="EXCLUDE" x="-6.35" y="37.592" size="1.778" layer="27" display="off"/>
+<element name="U$32" library="microbuilder" package="MOUNTINGHOLE_2.5_PLATED" value="MOUNTINGHOLE2.5" x="44.196" y="22.606" smashed="yes">
+<attribute name="BOM" value="EXCLUDE" x="44.196" y="22.606" size="1.778" layer="27" display="off"/>
 </element>
 <element name="U$37" library="microbuilder" package="MOUNTINGHOLE_2.5_PLATED" value="MOUNTINGHOLE2.5" x="10.414" y="7.874" smashed="yes">
 <attribute name="BOM" value="EXCLUDE" x="10.414" y="7.874" size="1.778" layer="27" display="off"/>
@@ -5527,9 +5528,11 @@ design rules under a new name.</description>
 <wire x1="32.992" y1="28.674" x2="33.4505" y2="29.1325" width="0.254" layer="1"/>
 <wire x1="19.265" y1="18.288" x2="19.304" y2="18.288" width="0.254" layer="16"/>
 <wire x1="19.304" y1="18.288" x2="20.32" y2="19.304" width="0.254" layer="16"/>
-<wire x1="27.344" y1="30.734" x2="29.666" y2="32.624" width="0" layer="19" extent="1-16"/>
+<wire x1="29.666" y1="32.624" x2="29.718" y2="32.676" width="0.254" layer="1"/>
+<wire x1="29.718" y1="32.676" x2="29.718" y2="34.036" width="0.254" layer="1"/>
+<via x="29.718" y="34.036" extent="1-16" drill="0.3048"/>
+<wire x1="20.32" y1="20.066" x2="20.32" y2="19.304" width="0" layer="19" extent="16-16"/>
 <wire x1="7.101" y1="9.296" x2="7.494" y2="9.296" width="0" layer="19" extent="1-1"/>
-<wire x1="20.359" y1="21.209" x2="20.32" y2="20.066" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="MOSI">
 <contactref element="STM32F405RGTX" pad="36"/>
@@ -6314,8 +6317,13 @@ design rules under a new name.</description>
 <wire x1="6.324" y1="37.584" x2="5.596" y2="37.584" width="0.254" layer="1"/>
 <wire x1="5.596" y1="37.584" x2="5.588" y2="37.592" width="0.254" layer="1"/>
 <via x="5.588" y="37.592" extent="1-16" drill="0.3048"/>
-<wire x1="22.86" y1="5.588" x2="22.987" y2="4.406" width="0" layer="19" extent="1-1"/>
-<wire x1="27.559" y1="4.406" x2="27.81" y2="3.429" width="0" layer="19" extent="1-16"/>
+<polygon width="0.254" layer="1">
+<vertex x="29.718" y="3.556"/>
+<vertex x="22.352" y="3.556"/>
+<vertex x="20.066" y="3.556"/>
+<vertex x="20.066" y="6.096"/>
+<vertex x="29.718" y="6.096"/>
+</polygon>
 </signal>
 <signal name="N$20">
 <contactref element="STM32F405RGTX" pad="13"/>

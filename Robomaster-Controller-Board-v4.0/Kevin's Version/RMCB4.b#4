@@ -5282,9 +5282,6 @@ design rules under a new name.</description>
 <wire x1="13.861" y1="11.9" x2="14.478" y2="11.283" width="0.254" layer="1"/>
 <wire x1="14.478" y1="11.283" x2="14.478" y2="11.176" width="0.254" layer="1"/>
 <via x="14.478" y="11.176" extent="1-16" drill="0.3048"/>
-<wire x1="9.761" y1="11.9" x2="9.761" y2="10.777" width="0.254" layer="1"/>
-<wire x1="8.28" y1="9.296" x2="7.494" y2="9.296" width="0.254" layer="1"/>
-<wire x1="9.761" y1="10.777" x2="8.28" y2="9.296" width="0.254" layer="1"/>
 <wire x1="9.761" y1="11.9" x2="9.698290625" y2="11.837290625" width="0.254" layer="1"/>
 <wire x1="9.698290625" y1="11.837290625" x2="8.535290625" y2="11.837290625" width="0.254" layer="1"/>
 <via x="8.535290625" y="11.837290625" extent="1-16" drill="0.3048"/>
@@ -5378,9 +5375,9 @@ design rules under a new name.</description>
 <wire x1="29.583" y1="38.18" x2="30.083" y2="38.18" width="0.3048" layer="1"/>
 <wire x1="30.083" y1="38.18" x2="30.433" y2="37.83" width="0.3048" layer="1"/>
 <wire x1="30.433" y1="37.83" x2="30.433" y2="37.33" width="0.3048" layer="1"/>
-<wire x1="30.083" y1="38.18" x2="30.083" y2="38.751" width="0.3048" layer="1"/>
-<wire x1="30.083" y1="38.751" x2="29.972" y2="38.862" width="0.3048" layer="1"/>
-<via x="29.972" y="38.862" extent="1-16" drill="0.3048"/>
+<wire x1="30.083" y1="38.18" x2="30.083" y2="39.116" width="0.3048" layer="1"/>
+<wire x1="30.083" y1="39.116" x2="30.099" y2="39.116" width="0.3048" layer="1"/>
+<via x="30.099" y="39.116" extent="1-16" drill="0.3048"/>
 <wire x1="29.38905" y1="38.18" x2="30.083" y2="38.18" width="0.3048" layer="1"/>
 <wire x1="52.006" y1="39.369" x2="51.306" y2="39.369" width="0.254" layer="1"/>
 <wire x1="51.306" y1="39.369" x2="51.306" y2="38.86" width="0.254" layer="1"/>
@@ -5436,7 +5433,6 @@ design rules under a new name.</description>
 <wire x1="16.61" y1="13.97" x2="18.581" y2="13.97" width="0.889" layer="16"/>
 <wire x1="20.359" y1="21.209" x2="20.359" y2="19.382" width="0.889" layer="16"/>
 <wire x1="20.359" y1="19.382" x2="19.265" y2="18.288" width="0.889" layer="16"/>
-<via x="20.32" y="20.066" extent="1-16" drill="0.3048"/>
 <via x="32.258" y="2.794" extent="1-16" drill="0.3048"/>
 <via x="32.258" y="4.064" extent="1-16" drill="0.3048"/>
 <via x="32.258" y="5.334" extent="1-16" drill="0.3048"/>
@@ -5520,8 +5516,12 @@ design rules under a new name.</description>
 <via x="27.432" y="38.4556" extent="1-16" drill="0.3048"/>
 <wire x1="28.083" y1="38.18" x2="27.7076" y2="38.18" width="0.254" layer="1"/>
 <wire x1="27.7076" y1="38.18" x2="27.432" y2="38.4556" width="0.254" layer="1"/>
-<wire x1="20.32" y1="20.066" x2="20.32" y2="19.304" width="0" layer="19" extent="16-16"/>
-<wire x1="7.101" y1="9.296" x2="7.494" y2="9.296" width="0" layer="19" extent="1-1"/>
+<wire x1="7.101" y1="9.296" x2="8.28" y2="9.296" width="0.254" layer="1"/>
+<wire x1="9.761" y1="10.777" x2="9.761" y2="11.9" width="0.254" layer="1"/>
+<wire x1="8.28" y1="9.296" x2="9.761" y2="10.777" width="0.254" layer="1"/>
+<wire x1="19.265" y1="18.288" x2="20.193" y2="19.216" width="0.254" layer="16"/>
+<wire x1="20.193" y1="19.216" x2="20.193" y2="19.431" width="0.254" layer="16"/>
+<via x="20.193" y="19.431" extent="1-16" drill="0.3048"/>
 </signal>
 <signal name="MOSI">
 <contactref element="STM32F405RGTX" pad="36"/>
@@ -6511,14 +6511,12 @@ design rules under a new name.</description>
 <wire x1="18.6102" y1="41.5798" x2="17.0300125" y2="41.5798" width="0.1524" layer="2"/>
 <wire x1="15.357" y1="42.175" x2="15.622" y2="41.91" width="0.1524" layer="1"/>
 <wire x1="15.622" y1="41.91" x2="15.799" y2="41.91" width="0.1524" layer="1"/>
-<wire x1="28.4894" y1="35.3864" x2="28.583" y2="35.48" width="0.254" layer="1"/>
 <wire x1="27.1018" y1="34.5560125" x2="27.4440125" y2="34.2138" width="0.1524" layer="1"/>
 <wire x1="27.4440125" y1="34.2138" x2="27.9279875" y2="34.2138" width="0.1524" layer="1"/>
-<wire x1="28.4386" y1="35.3356" x2="28.583" y2="35.48" width="0.1524" layer="1"/>
+<wire x1="28.583" y1="34.8688125" x2="27.9279875" y2="34.2138" width="0.1524" layer="1"/>
+<wire x1="28.583" y1="34.8688125" x2="28.583" y2="35.48" width="0.1524" layer="1"/>
 <wire x1="26.975" y1="35.814" x2="27.1018" y2="35.6872" width="0.1524" layer="1"/>
 <wire x1="27.1018" y1="35.6872" x2="27.1018" y2="34.5560125" width="0.1524" layer="1"/>
-<wire x1="27.9279875" y1="34.2138" x2="28.4386" y2="34.7244125" width="0.1524" layer="1"/>
-<wire x1="28.4386" y1="34.7244125" x2="28.4386" y2="35.3356" width="0.1524" layer="1"/>
 </signal>
 <signal name="I2C-1_DA">
 <contactref element="STM32F405RGTX" pad="59"/>
@@ -7118,6 +7116,19 @@ design rules under a new name.</description>
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
+<errors>
+<approved hash="21,19,dc15de17de17dc15"/>
+<approved hash="21,19,fb67f965f965fb67"/>
+<approved hash="21,19,1fda1dd81dd81fda"/>
+<approved hash="21,19,9c029e009e009c02"/>
+<approved hash="21,19,f970fb72fb72f970"/>
+<approved hash="21,19,dca2dea0dea0dca2"/>
+<approved hash="21,19,f374f176f176f374"/>
+<approved hash="21,19,f967fb65fb65f967"/>
+<approved hash="21,19,9cd59ed79ed79cd5"/>
+<approved hash="21,19,dd91df93df93dd91"/>
+<approved hash="21,19,c147c345c345c147"/>
+</errors>
 </board>
 </drawing>
 <compatibility>

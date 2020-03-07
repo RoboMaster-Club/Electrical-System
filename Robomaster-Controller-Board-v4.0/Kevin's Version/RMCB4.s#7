@@ -21553,7 +21553,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="U$13" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$24" library="microbuilder" deviceset="GND" device=""/>
 <part name="X4" library="adafruit2" deviceset="XTAL" device="-3.2X1.5" value="32.768"/>
-<part name="U$40" library="adafruit_micro" deviceset="STM32F405R" device=""/>
+<part name="STM32F405RGTX" library="adafruit_micro" deviceset="STM32F405R" device=""/>
 <part name="GND17" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="GND18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -21575,7 +21575,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND24" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="2.2K"/>
 <part name="GND25" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="LED2" library="microbuilder" deviceset="WS2812B" device="3535"/>
+<part name="NEO" library="microbuilder" deviceset="WS2812B" device="3535"/>
 <part name="GND26" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SPI_FLASH" library="microbuilder" deviceset="SPIFLASH_8PIN" device="" value="25Q16"/>
 <part name="U$44" library="microbuilder" deviceset="GND" device=""/>
@@ -21757,7 +21757,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <attribute name="NAME" x="149.86" y="-6.35" size="1.27" layer="95" font="vector" rot="R180"/>
 <attribute name="VALUE" x="151.13" y="2.54" size="1.27" layer="96" font="vector" rot="R180"/>
 </instance>
-<instance part="U$40" gate="G$1" x="38.1" y="48.26" smashed="yes">
+<instance part="STM32F405RGTX" gate="G$1" x="38.1" y="48.26" smashed="yes">
 <attribute name="NAME" x="0" y="97.79" size="1.778" layer="95"/>
 </instance>
 <instance part="GND17" gate="1" x="-15.24" y="55.88" smashed="yes" rot="MR0">
@@ -21833,7 +21833,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <instance part="GND25" gate="1" x="154.94" y="116.84" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="157.48" y="114.3" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="LED2" gate="G$1" x="256.54" y="78.74" smashed="yes"/>
+<instance part="NEO" gate="G$1" x="256.54" y="78.74" smashed="yes"/>
 <instance part="GND26" gate="1" x="256.54" y="66.04" smashed="yes">
 <attribute name="VALUE" x="254" y="63.5" size="1.778" layer="96"/>
 </instance>
@@ -22362,10 +22362,10 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <nets>
 <net name="GND" class="2">
 <segment>
-<pinref part="U$40" gate="G$1" pin="VSS_1"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="VSS_1"/>
 <wire x1="-5.08" y1="60.96" x2="-15.24" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="-15.24" y1="60.96" x2="-15.24" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="U$40" gate="G$1" pin="VSS_2"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="VSS_2"/>
 <wire x1="-15.24" y1="58.42" x2="-5.08" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="GND17" gate="1" pin="GND"/>
 <junction x="-15.24" y="58.42"/>
@@ -22379,7 +22379,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="C19" gate="G$1" pin="2"/>
 <pinref part="GND19" gate="1" pin="GND"/>
 <pinref part="C20" gate="G$1" pin="2"/>
-<pinref part="U$40" gate="G$1" pin="VSSA"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="VSSA"/>
 <wire x1="-20.32" y1="78.74" x2="-5.08" y2="78.74" width="0.1524" layer="91"/>
 <junction x="-20.32" y="78.74"/>
 <wire x1="-27.94" y1="81.28" x2="-27.94" y2="78.74" width="0.1524" layer="91"/>
@@ -22409,7 +22409,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="C25" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB2/BOOT1(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB2/BOOT1(5T)"/>
 <wire x1="81.28" y1="86.36" x2="99.06" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="GND22" gate="1" pin="GND"/>
 <wire x1="99.06" y1="86.36" x2="99.06" y2="88.9" width="0.1524" layer="91"/>
@@ -22439,7 +22439,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="PC1" gate="G$1" pin="C"/>
 </segment>
 <segment>
-<pinref part="LED2" gate="G$1" pin="GND"/>
+<pinref part="NEO" gate="G$1" pin="GND"/>
 <pinref part="GND26" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -22807,28 +22807,28 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="MOSI" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB15/SPI2_MOSI(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB15/SPI2_MOSI(5T)"/>
 <wire x1="81.28" y1="53.34" x2="99.06" y2="53.34" width="0.1524" layer="91"/>
 <label x="83.82" y="53.34" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MISO" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB14/SPI2_MISO(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB14/SPI2_MISO(5T)"/>
 <wire x1="99.06" y1="55.88" x2="81.28" y2="55.88" width="0.1524" layer="91"/>
 <label x="83.82" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SCK" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB13/SPI2_SCK(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB13/SPI2_SCK(5T)"/>
 <wire x1="81.28" y1="58.42" x2="99.06" y2="58.42" width="0.1524" layer="91"/>
 <label x="83.82" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D11" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PC3/ADC123_IN13(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC3/ADC123_IN13(5T)"/>
 <wire x1="81.28" y1="40.64" x2="99.06" y2="40.64" width="0.1524" layer="91"/>
 <label x="83.82" y="40.64" size="1.778" layer="95"/>
 </segment>
@@ -22840,7 +22840,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="D12" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PC2/ADC123_IN12(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC2/ADC123_IN12(5T)"/>
 <wire x1="81.28" y1="43.18" x2="99.06" y2="43.18" width="0.1524" layer="91"/>
 <label x="83.82" y="43.18" size="1.778" layer="95"/>
 </segment>
@@ -22852,7 +22852,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="D13" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PC1/ADC123_IN11(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC1/ADC123_IN11(5T)"/>
 <wire x1="81.28" y1="45.72" x2="99.06" y2="45.72" width="0.1524" layer="91"/>
 <label x="83.82" y="45.72" size="1.778" layer="95"/>
 </segment>
@@ -22869,26 +22869,26 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="D9" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB8/TIM10_CH1/TIM4_CH3(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB8/TIM10_CH1/TIM4_CH3(5T)"/>
 <wire x1="81.28" y1="71.12" x2="99.06" y2="71.12" width="0.1524" layer="91"/>
 <label x="83.82" y="71.12" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D8_NEOPIX" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PC0/ADC123_IN10(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC0/ADC123_IN10(5T)"/>
 <wire x1="81.28" y1="48.26" x2="99.06" y2="48.26" width="0.1524" layer="91"/>
 <label x="83.82" y="48.26" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="243.84" y1="76.2" x2="231.14" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="LED2" gate="G$1" pin="DI"/>
+<pinref part="NEO" gate="G$1" pin="DI"/>
 <label x="228.6" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D10" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB9/TIM11_CH1/TIM4_CH4(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB9/TIM11_CH1/TIM4_CH4(5T)"/>
 <wire x1="81.28" y1="68.58" x2="99.06" y2="68.58" width="0.1524" layer="91"/>
 <label x="83.82" y="68.58" size="1.778" layer="95"/>
 </segment>
@@ -22911,7 +22911,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="!RESET" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="NRST"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="NRST"/>
 <pinref part="C18" gate="G$1" pin="1"/>
 <wire x1="-5.08" y1="50.8" x2="-45.72" y2="50.8" width="0.1524" layer="91"/>
 <label x="-38.1" y="50.8" size="1.778" layer="95"/>
@@ -22937,7 +22937,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <wire x1="152.4" y1="-7.62" x2="152.4" y2="-2.54" width="0.1524" layer="91"/>
 <junction x="152.4" y="-2.54"/>
 <wire x1="152.4" y1="-2.54" x2="152.4" y2="12.7" width="0.1524" layer="91"/>
-<pinref part="U$40" gate="G$1" pin="PC14/OSC32_IN(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC14/OSC32_IN(5T)"/>
 <wire x1="81.28" y1="12.7" x2="152.4" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="C25" gate="G$1" pin="1"/>
 </segment>
@@ -22948,14 +22948,14 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <wire x1="142.24" y1="-2.54" x2="142.24" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="10.16" x2="142.24" y2="-2.54" width="0.1524" layer="91"/>
 <junction x="142.24" y="-2.54"/>
-<pinref part="U$40" gate="G$1" pin="PC15/OSC32_OUT(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC15/OSC32_OUT(5T)"/>
 <wire x1="142.24" y1="10.16" x2="81.28" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="C23" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="FLASH_MOSI" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB5(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB5(5T)"/>
 <wire x1="81.28" y1="78.74" x2="116.84" y2="78.74" width="0.1524" layer="91"/>
 <label x="83.82" y="78.74" size="1.778" layer="95"/>
 <pinref part="R11" gate="G$1" pin="1"/>
@@ -22968,7 +22968,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="FLASH_MISO" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB4/JNTRST(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB4/JNTRST(5T)"/>
 <wire x1="81.28" y1="81.28" x2="99.06" y2="81.28" width="0.1524" layer="91"/>
 <label x="83.82" y="81.28" size="1.778" layer="95"/>
 </segment>
@@ -22980,7 +22980,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="FLASH_SCK" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB3/JTDO(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB3/JTDO(5T)"/>
 <wire x1="81.28" y1="83.82" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
 <label x="83.82" y="83.82" size="1.778" layer="95"/>
 </segment>
@@ -22992,7 +22992,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="FLASH_CS" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA15/JTDI(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA15/JTDI(5T)"/>
 <wire x1="-5.08" y1="2.54" x2="-22.86" y2="2.54" width="0.1524" layer="91"/>
 <label x="-22.86" y="2.54" size="1.778" layer="95"/>
 </segment>
@@ -23006,7 +23006,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="SWDIO" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA13/JTMS-SWDAT(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA13/JTMS-SWDAT(5T)"/>
 <wire x1="-5.08" y1="7.62" x2="-22.86" y2="7.62" width="0.1524" layer="91"/>
 <label x="-20.32" y="7.62" size="1.778" layer="95"/>
 </segment>
@@ -23018,7 +23018,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="SWCLK" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA14/JTCK-SWCLK(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA14/JTCK-SWCLK(5T)"/>
 <wire x1="-22.86" y1="5.08" x2="-5.08" y2="5.08" width="0.1524" layer="91"/>
 <label x="-20.32" y="5.08" size="1.778" layer="95"/>
 </segment>
@@ -23030,7 +23030,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="VCAP2" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="VCAP_2"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="VCAP_2"/>
 <pinref part="C20" gate="G$1" pin="1"/>
 <wire x1="-5.08" y1="86.36" x2="-20.32" y2="86.36" width="0.1524" layer="91"/>
 <label x="-17.78" y="86.36" size="1.778" layer="95"/>
@@ -23038,7 +23038,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="VCAP1" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="VCAP_1"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="VCAP_1"/>
 <pinref part="C19" gate="G$1" pin="1"/>
 <wire x1="-5.08" y1="88.9" x2="-27.94" y2="88.9" width="0.1524" layer="91"/>
 <label x="-17.78" y="88.9" size="1.778" layer="95"/>
@@ -23046,7 +23046,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="BOOT0" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="BOOT0"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="BOOT0"/>
 <label x="-38.1" y="45.72" size="1.778" layer="95"/>
 <wire x1="-38.1" y1="45.72" x2="-5.08" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="R13" gate="G$1" pin="1"/>
@@ -23054,7 +23054,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="SDIO_D2" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PC10(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC10(5T)"/>
 <wire x1="81.28" y1="22.86" x2="99.06" y2="22.86" width="0.1524" layer="91"/>
 <label x="83.82" y="22.86" size="1.778" layer="95"/>
 </segment>
@@ -23066,7 +23066,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="SDIO_D3" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PC11(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC11(5T)"/>
 <wire x1="81.28" y1="20.32" x2="99.06" y2="20.32" width="0.1524" layer="91"/>
 <label x="83.82" y="20.32" size="1.778" layer="95"/>
 </segment>
@@ -23080,7 +23080,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="SDIO_D0" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PC8/TIM3_CH3/TIM8_CH3(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC8/TIM3_CH3/TIM8_CH3(5T)"/>
 <wire x1="81.28" y1="27.94" x2="99.06" y2="27.94" width="0.1524" layer="91"/>
 <label x="83.82" y="27.94" size="1.778" layer="95"/>
 </segment>
@@ -23099,7 +23099,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <segment>
 <wire x1="81.28" y1="30.48" x2="99.06" y2="30.48" width="0.1524" layer="91"/>
 <label x="83.82" y="30.48" size="1.778" layer="95"/>
-<pinref part="U$40" gate="G$1" pin="PC7/TIM3_CH2/TIM8_CH2/USART6_RX(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC7/TIM3_CH2/TIM8_CH2/USART6_RX(5T)"/>
 </segment>
 </net>
 <net name="SDIO_D1" class="0">
@@ -23111,7 +23111,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <segment>
 <wire x1="81.28" y1="15.24" x2="99.06" y2="15.24" width="0.1524" layer="91"/>
 <label x="83.82" y="15.24" size="1.778" layer="95"/>
-<pinref part="U$40" gate="G$1" pin="PC13(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC13(5T)"/>
 </segment>
 </net>
 <net name="SDIO_CMD" class="0">
@@ -23123,12 +23123,12 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <segment>
 <wire x1="81.28" y1="33.02" x2="99.06" y2="33.02" width="0.1524" layer="91"/>
 <label x="83.82" y="33.02" size="1.778" layer="95"/>
-<pinref part="U$40" gate="G$1" pin="PC6/TIM3_CH1/TIM_CH1/USART6_TX(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC6/TIM3_CH1/TIM_CH1/USART6_TX(5T)"/>
 </segment>
 </net>
 <net name="N$11" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PH0/OSC_IN(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PH0/OSC_IN(5T)"/>
 <wire x1="81.28" y1="7.62" x2="114.3" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="7.62" x2="114.3" y2="0" width="0.1524" layer="91"/>
 <pinref part="Y2" gate="G$1" pin="2"/>
@@ -23140,7 +23140,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="N$12" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PH1/OSC_OUT(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PH1/OSC_OUT(5T)"/>
 <wire x1="81.28" y1="5.08" x2="104.14" y2="5.08" width="0.1524" layer="91"/>
 <pinref part="Y2" gate="G$1" pin="1"/>
 <wire x1="106.68" y1="0" x2="104.14" y2="0" width="0.1524" layer="91"/>
@@ -23152,7 +23152,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="SD_DETECT" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB12(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB12(5T)"/>
 <wire x1="81.28" y1="60.96" x2="99.06" y2="60.96" width="0.1524" layer="91"/>
 <label x="83.82" y="60.96" size="1.778" layer="95"/>
 </segment>
@@ -23291,17 +23291,17 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <label x="-27.94" y="109.22" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="VDD_1"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="VDD_1"/>
 <wire x1="-5.08" y1="73.66" x2="-15.24" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="-15.24" y1="73.66" x2="-15.24" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="U$40" gate="G$1" pin="VDD_4"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="VDD_4"/>
 <wire x1="-15.24" y1="71.12" x2="-15.24" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="-15.24" y1="68.58" x2="-15.24" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="-15.24" y1="66.04" x2="-5.08" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="U$40" gate="G$1" pin="VDD_3"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="VDD_3"/>
 <wire x1="-5.08" y1="68.58" x2="-15.24" y2="68.58" width="0.1524" layer="91"/>
 <junction x="-15.24" y="68.58"/>
-<pinref part="U$40" gate="G$1" pin="VDD_2"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="VDD_2"/>
 <wire x1="-5.08" y1="71.12" x2="-15.24" y2="71.12" width="0.1524" layer="91"/>
 <junction x="-15.24" y="71.12"/>
 <junction x="-15.24" y="73.66"/>
@@ -23338,7 +23338,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <label x="259.08" y="53.34" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="LED2" gate="G$1" pin="VDD"/>
+<pinref part="NEO" gate="G$1" pin="VDD"/>
 <wire x1="261.62" y1="93.98" x2="261.62" y2="99.06" width="0.1524" layer="91"/>
 <label x="261.62" y="99.06" size="1.778" layer="95"/>
 </segment>
@@ -23468,10 +23468,10 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <label x="337.82" y="101.6" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA10/TIM1_CH3/USART1_RX(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA10/TIM1_CH3/USART1_RX(5T)"/>
 <wire x1="-5.08" y1="15.24" x2="-22.86" y2="15.24" width="0.1524" layer="91"/>
 <label x="-22.86" y="15.24" size="1.778" layer="95"/>
-<pinref part="U$40" gate="G$1" pin="PA9/TIM1_CH2/USART1_TX(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA9/TIM1_CH2/USART1_TX(5T)"/>
 <wire x1="-5.08" y1="17.78" x2="-5.08" y2="15.24" width="0.1524" layer="91"/>
 <junction x="-5.08" y="15.24"/>
 </segment>
@@ -23530,7 +23530,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="N$20" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="VDDA"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="VDDA"/>
 <wire x1="-5.08" y1="81.28" x2="-10.16" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="FB1" gate="G$1" pin="P$2"/>
 <wire x1="-20.32" y1="109.22" x2="-10.16" y2="109.22" width="0.1524" layer="91"/>
@@ -23618,7 +23618,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="CANRX_N" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA11/TIM1_CH4/CANRX/USBDM(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA11/TIM1_CH4/CANRX/USBDM(5T)"/>
 <wire x1="-22.86" y1="12.7" x2="-5.08" y2="12.7" width="0.1524" layer="91"/>
 <label x="-22.86" y="12.7" size="1.778" layer="95"/>
 </segment>
@@ -23630,7 +23630,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="CANTX_P" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA12/CANTX/USBDP(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA12/CANTX/USBDP(5T)"/>
 <wire x1="-5.08" y1="10.16" x2="-22.86" y2="10.16" width="0.1524" layer="91"/>
 <label x="-22.86" y="10.16" size="1.778" layer="95"/>
 </segment>
@@ -23654,7 +23654,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="I2C_1" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB6/I2C1_SCL/USART1_TX/TIM4_CH1(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB6/I2C1_SCL/USART1_TX/TIM4_CH1(5T)"/>
 <wire x1="81.28" y1="76.2" x2="99.06" y2="76.2" width="0.1524" layer="91"/>
 <label x="83.82" y="76.2" size="1.778" layer="95"/>
 </segment>
@@ -23686,7 +23686,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="I2C_1" gate="G$1" pin="3"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB7/I2C1_SDA/USART1_RX/TIM4_CH2(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB7/I2C1_SDA/USART1_RX/TIM4_CH2(5T)"/>
 <wire x1="99.06" y1="73.66" x2="81.28" y2="73.66" width="0.1524" layer="91"/>
 <label x="83.82" y="73.66" size="1.778" layer="95"/>
 </segment>
@@ -23718,7 +23718,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="I2C_3" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA8/TIM1_CH1(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA8/TIM1_CH1(5T)"/>
 <wire x1="-5.08" y1="20.32" x2="-22.86" y2="20.32" width="0.1524" layer="91"/>
 <label x="-22.86" y="20.32" size="1.778" layer="95"/>
 </segment>
@@ -23740,7 +23740,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="I2C_3" gate="G$1" pin="3"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PC9/TIM3_CH4/TIM8_CH4(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC9/TIM3_CH4/TIM8_CH4(5T)"/>
 <wire x1="81.28" y1="25.4" x2="99.06" y2="25.4" width="0.1524" layer="91"/>
 <label x="83.82" y="25.4" size="1.778" layer="95"/>
 </segment>
@@ -23762,7 +23762,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="I2C_2" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB10/I2C2_SCL(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB10/I2C2_SCL(5T)"/>
 <wire x1="81.28" y1="66.04" x2="99.06" y2="66.04" width="0.1524" layer="91"/>
 <label x="83.82" y="66.04" size="1.778" layer="95"/>
 </segment>
@@ -23784,7 +23784,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="I2C_2" gate="G$1" pin="3"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB11/I2C2_SDA(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB11/I2C2_SDA(5T)"/>
 <wire x1="81.28" y1="63.5" x2="99.06" y2="63.5" width="0.1524" layer="91"/>
 <label x="83.82" y="63.5" size="1.778" layer="95"/>
 </segment>
@@ -23806,7 +23806,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="AMMO_DETEC" gate="G$1" pin="P1"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA4/ADC12_IN4"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA4/ADC12_IN4"/>
 <wire x1="-5.08" y1="30.48" x2="-22.86" y2="30.48" width="0.1524" layer="91"/>
 <label x="-22.86" y="30.48" size="1.778" layer="95"/>
 </segment>
@@ -23818,7 +23818,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="AMMO_DETEC" gate="G$1" pin="P2"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA5/ADC12_IN5"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA5/ADC12_IN5"/>
 <wire x1="-22.86" y1="27.94" x2="-5.08" y2="27.94" width="0.1524" layer="91"/>
 <label x="-22.86" y="27.94" size="1.778" layer="95"/>
 </segment>
@@ -23830,7 +23830,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="SWITCH" gate="G$1" pin="JST1"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA6/ADC12_IN6(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA6/ADC12_IN6(5T)"/>
 <wire x1="-5.08" y1="25.4" x2="-22.86" y2="25.4" width="0.1524" layer="91"/>
 <label x="-22.86" y="25.4" size="1.778" layer="95"/>
 </segment>
@@ -23842,7 +23842,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="SWITCH" gate="G$1" pin="JST2"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA7/TIM1_CH1N/ADC12_IN7(FT)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA7/TIM1_CH1N/ADC12_IN7(FT)"/>
 <wire x1="-5.08" y1="22.86" x2="-22.86" y2="22.86" width="0.1524" layer="91"/>
 <label x="-22.86" y="22.86" size="1.778" layer="95"/>
 </segment>
@@ -23854,7 +23854,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="AUX_GPIO2" gate="G$1" pin="JST2"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PC5/ADC12_IN15"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC5/ADC12_IN15"/>
 <wire x1="99.06" y1="35.56" x2="81.28" y2="35.56" width="0.1524" layer="91"/>
 <label x="83.82" y="35.56" size="1.778" layer="95"/>
 </segment>
@@ -23866,7 +23866,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="MAIN_BOARD" gate="G$1" pin="JST1"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA0/ADC123_IN0(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA0/ADC123_IN0(5T)"/>
 <wire x1="-5.08" y1="40.64" x2="-22.86" y2="40.64" width="0.1524" layer="91"/>
 <label x="-22.86" y="40.64" size="1.778" layer="95"/>
 </segment>
@@ -23878,7 +23878,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="MAIN_BOARD" gate="G$1" pin="JST2"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA1/ADC123_IN1(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA1/ADC123_IN1(5T)"/>
 <wire x1="-5.08" y1="38.1" x2="-22.86" y2="38.1" width="0.1524" layer="91"/>
 <label x="-22.86" y="38.1" size="1.778" layer="95"/>
 </segment>
@@ -23890,7 +23890,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="VISION" gate="G$1" pin="JST2"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PC12(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC12(5T)"/>
 <wire x1="81.28" y1="17.78" x2="99.06" y2="17.78" width="0.1524" layer="91"/>
 <label x="83.82" y="17.78" size="1.778" layer="95"/>
 </segment>
@@ -23902,21 +23902,21 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <pinref part="VISION" gate="G$1" pin="JST3"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PD2/TIM3_ETR(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PD2/TIM3_ETR(5T)"/>
 <wire x1="81.28" y1="2.54" x2="99.06" y2="2.54" width="0.1524" layer="91"/>
 <label x="83.82" y="2.54" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PB0" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB0/TIM1_CH2N/ADC12_IN8(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB0/TIM1_CH2N/ADC12_IN8(5T)"/>
 <wire x1="81.28" y1="91.44" x2="96.52" y2="91.44" width="0.1524" layer="91"/>
 <label x="83.82" y="91.44" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PB1" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PB1/TIM1_CH3N/ADC12_IN9(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PB1/TIM1_CH3N/ADC12_IN9(5T)"/>
 <wire x1="81.28" y1="88.9" x2="96.52" y2="88.9" width="0.1524" layer="91"/>
 <label x="83.82" y="88.9" size="1.778" layer="95"/>
 </segment>
@@ -24071,7 +24071,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <label x="355.6" y="132.08" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA2/ADC123_IN2(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA2/ADC123_IN2(5T)"/>
 <wire x1="-5.08" y1="35.56" x2="-22.86" y2="35.56" width="0.1524" layer="91"/>
 <label x="-22.86" y="35.56" size="1.778" layer="95"/>
 </segment>
@@ -24083,7 +24083,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 <label x="355.6" y="137.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$40" gate="G$1" pin="PA3/ADC123_IN3(5T)"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PA3/ADC123_IN3(5T)"/>
 <wire x1="-5.08" y1="33.02" x2="-22.86" y2="33.02" width="0.1524" layer="91"/>
 <label x="-22.86" y="33.02" size="1.778" layer="95"/>
 </segment>
@@ -24133,7 +24133,7 @@ pin, but you can watch it for full flow control! This pin is 3.3V out</text>
 </net>
 <net name="D14" class="0">
 <segment>
-<pinref part="U$40" gate="G$1" pin="PC4/ADC12_IN14"/>
+<pinref part="STM32F405RGTX" gate="G$1" pin="PC4/ADC12_IN14"/>
 <wire x1="81.28" y1="38.1" x2="99.06" y2="38.1" width="0.1524" layer="91"/>
 <label x="83.82" y="38.1" size="1.778" layer="95"/>
 </segment>
