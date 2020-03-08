@@ -1527,9 +1527,9 @@ design rules under a new name.</description>
 </autorouter>
 <elements>
 <element name="U$3" library="_HenrySilva" package="OPL550" value="OPL550" x="0" y="-68" smashed="yes" rot="R180"/>
-<element name="U$4" library="_HenrySilva" package="OPL550" value="OPL550" x="-68" y="-2" smashed="yes" rot="R90"/>
+<element name="U$4" library="_HenrySilva" package="OPL550" value="OPL550" x="-68" y="-1" smashed="yes" rot="R90"/>
 <element name="U$5" library="_HenrySilva" package="TPS62260" value="TPS62260" x="62.964" y="-11.1904" smashed="yes"/>
-<element name="U$1" library="_HenrySilva" package="2PIN" value="2PIN" x="64.0368" y="1.2768" smashed="yes" rot="R270"/>
+<element name="U$1" library="_HenrySilva" package="2PIN" value="2PIN" x="64.0114" y="0.0068" smashed="yes" rot="R270"/>
 <element name="U$2" library="_HenrySilva" package="2PIN" value="2PIN" x="-0.0068" y="65.0004" smashed="yes"/>
 <element name="U$8" library="_HenrySilva" package="SM03B-GHS-TB" value="SM03B-GHS-TB" x="65" y="-30" smashed="yes" rot="R90"/>
 <element name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="4.7uF" x="63.964" y="-13.1904" smashed="yes">
@@ -1587,9 +1587,9 @@ design rules under a new name.</description>
 <vertex x="-88" y="88"/>
 </polygon>
 <contactref element="U$6" pad="P$4"/>
-<wire x1="-1.2768" y1="65.0004" x2="-68" y2="-4.0066" width="0" layer="19" extent="1-1"/>
-<wire x1="64.0368" y1="2.5468" x2="-1.2768" y2="65.0004" width="0" layer="19" extent="1-1"/>
-<wire x1="66.464" y1="-2.8404" x2="64.0368" y2="2.5468" width="0" layer="19" extent="1-1"/>
+<wire x1="-1.2768" y1="65.0004" x2="-68" y2="-3.0066" width="0" layer="19" extent="1-1"/>
+<wire x1="64.0114" y1="1.2768" x2="-1.2768" y2="65.0004" width="0" layer="19" extent="1-1"/>
+<wire x1="66.464" y1="-2.8404" x2="64.0114" y2="1.2768" width="0" layer="19" extent="1-1"/>
 <wire x1="64.214" y1="-10.5904" x2="66.464" y2="-2.8404" width="0" layer="19" extent="1-1"/>
 <wire x1="64.814" y1="-13.1904" x2="64.214" y2="-10.5904" width="0" layer="19" extent="1-1"/>
 <wire x1="68.964" y1="-11.5404" x2="64.814" y2="-13.1904" width="0" layer="19" extent="1-1"/>
@@ -1635,7 +1635,7 @@ design rules under a new name.</description>
 <via x="60" y="-20" extent="1-16" drill="0.6"/>
 <wire x1="62.45" y1="-20.15" x2="60.15" y2="-20.15" width="0.508" layer="1"/>
 <wire x1="60.15" y1="-20.15" x2="60" y2="-20" width="0.508" layer="1"/>
-<wire x1="-1.9934" y1="-68" x2="-68" y2="-0.0066" width="0" layer="19" extent="1-1"/>
+<wire x1="-1.9934" y1="-68" x2="-68" y2="0.9934" width="0" layer="19" extent="1-1"/>
 <wire x1="60" y1="-20" x2="-1.9934" y2="-68" width="0" layer="19" extent="1-1"/>
 <wire x1="62.8312" y1="-15.9568" x2="62.45" y2="-20.15" width="0" layer="19" extent="1-1"/>
 <wire x1="62.8312" y1="-14.9408" x2="62.8312" y2="-15.9568" width="0" layer="19" extent="1-1"/>
@@ -1661,7 +1661,7 @@ design rules under a new name.</description>
 <wire x1="60.45" y1="-26.4" x2="58.6" y2="-26.4" width="0.2032" layer="1"/>
 <wire x1="58.6" y1="-26.4" x2="58" y2="-27" width="0.2032" layer="1"/>
 <wire x1="-65" y1="-1" x2="58" y2="-27" width="0.2032" layer="1" curve="152.646665"/>
-<wire x1="-65" y1="-1" x2="-68" y2="-2.0066" width="0" layer="19" extent="1-1"/>
+<wire x1="-65" y1="-1" x2="-68" y2="-1.0066" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="U$5" pad="P$5"/>
@@ -1703,9 +1703,9 @@ design rules under a new name.</description>
 <vertex x="64.66" y="-3.968"/>
 <vertex x="64.406" y="-4.222"/>
 </polygon>
-<wire x1="64.0368" y1="0.0468" x2="67.2232" y2="-1.2232" width="0.254" layer="1"/>
-<wire x1="67.2232" y1="-1.2232" x2="68" y2="-2" width="0.254" layer="1"/>
-<wire x1="68" y1="-2" x2="68" y2="-4" width="0.254" layer="1"/>
+<wire x1="64.0114" y1="-1.2232" x2="68" y2="-2.81293125" width="0.254" layer="1"/>
+<wire x1="68" y1="-2" x2="68" y2="-2.81293125" width="0.254" layer="1"/>
+<wire x1="68" y1="-2.81293125" x2="68" y2="-4" width="0.254" layer="1"/>
 <wire x1="3" y1="65" x2="68" y2="-2" width="0.254" layer="1" curve="-88.290186"/>
 <wire x1="3" y1="65" x2="1.2236" y2="65" width="0.254" layer="1"/>
 <wire x1="1.2232" y1="65.0004" x2="1.2236" y2="65" width="0.254" layer="1"/>
