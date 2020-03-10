@@ -28,9 +28,9 @@ LED is for debugging.
 ## Connectors
 | Connector Name  | Connected Object | 
 | ------------- | ------------- |
-| I2C_1 () | IMU  |
-| I2C_2 () | Multi Plexer (Three TOFs)  |
-| I2C_3 () | TMU_extra  |
+| I2C_1 () | IMU (Address: Ch 3, IMU: 1101011 - supply) |
+| I2C_2 () | Multi Plexer (Three TOFs) (Address: Ch 1, ToF 1: 1101010 - ground; Ch 2, ToF 2: 1101010 - ground; Ch 3, ToF 3: 1101010 - ground) |
+| I2C_3 () | IMU_extra  |
 | I2C_4 () | Multi Plexer_extra |
 | RELAY1 | Vertical Pneumatic Control (24V output) |
 | RELAY2 | Horizontal Pneumatic Control (24V output) |
